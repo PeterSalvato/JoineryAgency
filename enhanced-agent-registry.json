@@ -1,0 +1,227 @@
+{
+  "registry_metadata": {
+    "version": "1.0.0",
+    "created": "2025-01-14",
+    "total_agents": 28,
+    "architecture_type": "Enhanced Individual Agents with Meta-Orchestrator",
+    "communication_protocol": "Structured YAML input/output schemas",
+    "orchestration_patterns": ["sequential", "mapreduce", "consensus", "hierarchical"]
+  },
+  "agent_categories": {
+    "business_strategy_sales": {
+      "count": 8,
+      "agents": [
+        "enhanced-sales-specialist",
+        "enhanced-pricing-strategist", 
+        "enhanced-proposal-specialist",
+        "enhanced-brand-strategist",
+        "enhanced-business-development-specialist",
+        "enhanced-client-discovery-specialist",
+        "enhanced-client-onboarding-specialist",
+        "enhanced-client-success-specialist"
+      ]
+    },
+    "design_visual": {
+      "count": 6,
+      "agents": [
+        "enhanced-visual-design-specialist",
+        "enhanced-brand-designer",
+        "enhanced-ux-interaction-specialist",
+        "enhanced-photography-specialist",
+        "enhanced-illustration-specialist",
+        "enhanced-web-design-specialist"
+      ]
+    },
+    "technical_architecture": {
+      "count": 5,
+      "agents": [
+        "enhanced-frontend-architecture-specialist",
+        "enhanced-responsive-design-specialist",
+        "enhanced-performance-specialist",
+        "enhanced-accessibility-specialist",
+        "enhanced-seo-specialist"
+      ]
+    },
+    "content_communication": {
+      "count": 5,
+      "agents": [
+        "enhanced-copywriter",
+        "enhanced-content-strategist",
+        "enhanced-marketing-strategist",
+        "enhanced-email-marketing-specialist",
+        "enhanced-social-media-specialist"
+      ]
+    },
+    "analysis_operations": {
+      "count": 6,
+      "agents": [
+        "enhanced-user-researcher",
+        "enhanced-competitive-analyst",
+        "enhanced-financial-analyst",
+        "enhanced-operations-specialist",
+        "enhanced-project-manager",
+        "enhanced-conversion-specialist"
+      ]
+    }
+  },
+  "expert_methodologies": {
+    "chris_do": {
+      "agents": ["enhanced-sales-specialist", "enhanced-proposal-specialist", "enhanced-operations-specialist"],
+      "focus": "Value-based selling, outcome-focused proposals, business systems"
+    },
+    "don_norman": {
+      "agents": ["enhanced-ux-interaction-specialist"],
+      "focus": "Human-centered design principles, usability, cognitive psychology"
+    },
+    "becca_luna": {
+      "agents": ["enhanced-pricing-strategist"],
+      "focus": "Menu-based pricing model, service packaging psychology"
+    },
+    "paula_scher": {
+      "agents": ["enhanced-brand-designer"],
+      "focus": "Visual identity systems, Pentagram methodology"
+    },
+    "massimo_vignelli": {
+      "agents": ["enhanced-visual-design-specialist"],
+      "focus": "Systematic design approach, mathematical proportions"
+    },
+    "marty_neumeier": {
+      "agents": ["enhanced-brand-strategist"],
+      "focus": "Brand Gap framework, strategic positioning"
+    },
+    "blair_enns": {
+      "agents": ["enhanced-business-development-specialist"],
+      "focus": "Win Without Pitching principles, partnership development"
+    },
+    "lincoln_murphy": {
+      "agents": ["enhanced-client-success-specialist"],
+      "focus": "Customer success methodology, value realization"
+    },
+    "ann_handley": {
+      "agents": ["enhanced-copywriter"],
+      "focus": "MarketingProfs approach, brand voice development"
+    },
+    "kristina_halvorson": {
+      "agents": ["enhanced-content-strategist"],
+      "focus": "Content strategy frameworks, editorial planning"
+    },
+    "seth_godin": {
+      "agents": ["enhanced-marketing-strategist"],
+      "focus": "Permission marketing, purple cow differentiation"
+    },
+    "chase_jarvis": {
+      "agents": ["enhanced-photography-specialist"],
+      "focus": "Creative photography methodology, visual storytelling"
+    },
+    "jessica_hische": {
+      "agents": ["enhanced-illustration-specialist"],
+      "focus": "Systematic illustration approach, brand illustration"
+    },
+    "steve_krug": {
+      "agents": ["enhanced-user-researcher"],
+      "focus": "Practical usability methodology, user testing"
+    },
+    "michael_porter": {
+      "agents": ["enhanced-competitive-analyst"],
+      "focus": "Five Forces framework, competitive analysis"
+    }
+  },
+  "orchestration_integration": {
+    "parallel_collaboration_patterns": {
+      "pricing_strategy": ["enhanced-sales-specialist", "enhanced-pricing-strategist", "enhanced-financial-analyst"],
+      "brand_development": ["enhanced-brand-strategist", "enhanced-brand-designer", "enhanced-visual-design-specialist"],
+      "web_optimization": ["enhanced-ux-interaction-specialist", "enhanced-web-design-specialist", "enhanced-performance-specialist"],
+      "content_creation": ["enhanced-content-strategist", "enhanced-copywriter", "enhanced-marketing-strategist"],
+      "technical_implementation": ["enhanced-frontend-architecture-specialist", "enhanced-responsive-design-specialist", "enhanced-accessibility-specialist"]
+    },
+    "sequential_workflow_patterns": {
+      "client_engagement": ["enhanced-client-discovery-specialist", "enhanced-pricing-strategist", "enhanced-proposal-specialist", "enhanced-sales-specialist"],
+      "brand_identity": ["enhanced-brand-strategist", "enhanced-brand-designer", "enhanced-visual-design-specialist", "enhanced-copywriter"],
+      "website_project": ["enhanced-user-researcher", "enhanced-ux-interaction-specialist", "enhanced-web-design-specialist", "enhanced-frontend-architecture-specialist"],
+      "market_analysis": ["enhanced-competitive-analyst", "enhanced-brand-strategist", "enhanced-marketing-strategist", "enhanced-content-strategist"]
+    },
+    "consensus_scenarios": {
+      "strategic_decisions": ["enhanced-brand-strategist", "enhanced-marketing-strategist", "enhanced-competitive-analyst"],
+      "design_validation": ["enhanced-brand-designer", "enhanced-visual-design-specialist", "enhanced-ux-interaction-specialist"],
+      "performance_optimization": ["enhanced-performance-specialist", "enhanced-accessibility-specialist", "enhanced-seo-specialist"]
+    }
+  },
+  "communication_schemas": {
+    "input_schema": {
+      "consultation_request": {
+        "objective": "string - Specific challenge or consultation need",
+        "context": "object - Business and project context information",
+        "constraints": "object - Limitations and restrictions",
+        "output_format": "enum - Desired response format",
+        "success_criteria": "string - Success metrics and goals"
+      }
+    },
+    "output_schema": {
+      "response": {
+        "status": "enum [success, partial, failed]",
+        "result": "object - Primary consultation output",
+        "metadata": {
+          "confidence": "float [0.0-1.0]",
+          "methodology_applied": "string - Expert framework used",
+          "processing_time": "string - Analysis duration"
+        },
+        "recommendations": "object - Follow-up actions and consultations",
+        "scope_boundaries": "object - What agent covers and doesn't cover", 
+        "potential_conflicts": "object - Areas of disagreement with other agents",
+        "errors": "string - Any limitations or missing context"
+      }
+    }
+  },
+  "meta_orchestrator_capabilities": {
+    "task_decomposition": {
+      "vertical_decomposition": "Sequential multi-step consulting workflows",
+      "horizontal_decomposition": "Parallel analysis with result aggregation"
+    },
+    "agent_coordination": {
+      "overlap_detection": "Identify agent expertise conflicts and overlaps",
+      "consensus_management": "Resolve conflicting advice through weighted consensus",
+      "context_optimization": "Filter and compress context for each agent"
+    },
+    "quality_assurance": {
+      "methodology_validation": "Ensure agents follow their expert frameworks",
+      "output_consistency": "Maintain structured response formats",
+      "conflict_resolution": "Present user with clear choices on conflicting advice"
+    }
+  },
+  "usage_patterns": {
+    "single_agent_consultation": {
+      "description": "Direct consultation with individual specialist",
+      "use_cases": ["Specific domain expertise", "Quick focused advice", "Initial problem exploration"],
+      "example": "User requests pricing strategy → enhanced-pricing-strategist provides Becca Luna methodology"
+    },
+    "multi_agent_coordination": {
+      "description": "Meta-orchestrator coordinates multiple specialists",
+      "use_cases": ["Complex multi-domain challenges", "Comprehensive project planning", "Strategic decision support"],
+      "example": "User requests complete brand development → orchestrator coordinates brand-strategist, brand-designer, visual-design-specialist, copywriter"
+    },
+    "consensus_resolution": {
+      "description": "Multiple agents provide conflicting advice, user chooses approach",
+      "use_cases": ["Strategic trade-offs", "Methodology conflicts", "Priority decisions"],
+      "example": "Pricing approach conflict between sales-specialist (discovery-based) and pricing-strategist (menu-based)"
+    }
+  },
+  "implementation_status": {
+    "phase_1_complete": "All 28 agents transformed to enhanced JSON format with structured I/O",
+    "phase_2_pending": "Meta-orchestrator implementation",
+    "phase_3_pending": "Orchestration pattern implementation", 
+    "phase_4_pending": "Testing and optimization framework",
+    "phase_5_pending": "Production deployment and monitoring"
+  },
+  "file_structure": {
+    "enhanced_agents": {
+      "location": "/agents/enhanced-*.json",
+      "format": "Structured JSON with input/output schemas",
+      "total_files": 28
+    },
+    "documentation": {
+      "system_overview": "docs/system-architecture-overview.md",
+      "implementation_guide": "docs/enhanced-agent-system-architecture.md", 
+      "registry": "enhanced-agent-registry.json"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "agent_identity": {
+    "name": "client-onboarding-specialist",
+    "methodology": "Relationship foundation and expectation management",
+    "expert_framework": "Onboarding systems, expectation alignment, communication protocols",
+    "state": "stateless"
+  },
+  "input_schema": {
+    "consultation_request": {
+      "objective": "string - Client onboarding challenge or process optimization",
+      "context": {
+        "client_profile": {
+          "project_type": "enum [brand_identity, website, marketing, comprehensive]",
+          "client_experience": "enum [first_time, occasional, frequent, sophisticated]",
+          "organization_complexity": "enum [individual, small_team, corporate, enterprise]",
+          "communication_preference": "enum [email, meetings, collaborative_tools, formal_reports]"
+        },
+        "onboarding_challenge": {
+          "type": "enum [new_process, expectation_issues, communication_problems, scope_creep]",
+          "specific_issue": "string - Current onboarding pain points",
+          "project_complexity": "enum [simple, moderate, complex, multi_phase]",
+          "timeline_pressure": "enum [relaxed, standard, urgent, rush]"
+        },
+        "relationship_context": {
+          "stakeholder_count": "number - Number of client-side participants",
+          "decision_hierarchy": "string - Client's approval and decision process",
+          "past_experience": "string - Client's previous agency or consultant experiences",
+          "success_expectations": "string - Client's stated project goals and outcomes"
+        }
+      },
+      "constraints": {
+        "onboarding_time": "string - Available time for onboarding process",
+        "resource_limitations": "string - Team capacity for client management",
+        "communication_barriers": "string - Language, timezone, or cultural considerations",
+        "technology_constraints": "string - Client's tool and platform limitations"
+      },
+      "output_format": "enum [process_design, communication_strategy, expectation_framework]",
+      "success_criteria": "string - Onboarding process success metrics"
+    }
+  },
+  "methodology_engine": {
+    "onboarding_framework": {
+      "relationship_foundation": [
+        "Establish trust through clear communication and expertise",
+        "Set mutual expectations for collaboration and outcomes",
+        "Define roles, responsibilities, and decision-making authority",
+        "Create psychological safety for honest feedback and questions"
+      ],
+      "expectation_alignment": {
+        "project_scope_clarity": "Detailed agreement on deliverables and boundaries",
+        "process_transparency": "Clear explanation of methodology and timeline",
+        "communication_protocols": "Established channels, frequency, and formats",
+        "quality_standards": "Shared understanding of success criteria and metrics"
+      },
+      "onboarding_systems": {
+        "welcome_sequence": "Systematic introduction to team, process, and tools",
+        "information_gathering": "Efficient collection of necessary project inputs",
+        "kickoff_process": "Structured project launch with all stakeholders",
+        "ongoing_communication": "Regular check-ins and progress reporting"
+      },
+      "risk_prevention": [
+        "Identify potential miscommunication or expectation gaps",
+        "Establish escalation procedures for issues and concerns",
+        "Create documentation for decisions and scope changes",
+        "Build buffer time for clarification and adjustment"
+      ]
+    }
+  },
+  "output_schema": {
+    "response": {
+      "status": "enum [success, partial, failed]",
+      "result": {
+        "primary_recommendation": "string - Client onboarding strategy and process design",
+        "onboarding_process": {
+          "pre_kickoff_preparation": "array - Steps before project launch meeting",
+          "kickoff_meeting_agenda": "object - Structured project launch process",
+          "information_collection": "object - Systematic gathering of project inputs",
+          "expectation_setting": "string - Process for aligning on outcomes and process"
+        },
+        "communication_strategy": {
+          "communication_channels": "object - Primary and secondary communication methods",
+          "meeting_cadence": "string - Regular check-in and review schedule",
+          "reporting_format": "string - Progress updates and milestone reporting",
+          "feedback_mechanisms": "array - How client provides input and concerns"
+        },
+        "expectation_framework": {
+          "scope_boundaries": "string - Clear definition of included and excluded work",
+          "timeline_expectations": "object - Realistic project schedule and milestones",
+          "quality_standards": "string - Shared definition of acceptable deliverables",
+          "change_management": "string - Process for handling scope or requirement changes"
+        },
+        "relationship_management": {
+          "stakeholder_engagement": "object - How to work with different client team members",
+          "decision_protocols": "string - Who decides what and when",
+          "conflict_resolution": "string - Process for addressing disagreements",
+          "success_celebration": "string - How to acknowledge progress and achievements"
+        }
+      },
+      "metadata": {
+        "confidence": "float [0.0-1.0]",
+        "methodology_applied": "string - Relationship foundation and expectation management",
+        "onboarding_complexity": "enum [simple, standard, complex, enterprise]",
+        "customization_level": "enum [template, adapted, custom]",
+        "processing_time": "string - Analysis duration"
+      },
+      "recommendations": {
+        "complementary_consultations": ["project-manager", "client-success-specialist", "operations-specialist"],
+        "onboarding_timeline": "string - Recommended onboarding duration",
+        "optimization_approach": "string - How to improve process over time"
+      },
+      "scope_boundaries": {
+        "covers": "Onboarding process, expectation setting, communication protocols",
+        "does_not_cover": "Project execution, deliverable creation, ongoing project management"
+      },
+      "potential_conflicts": {
+        "project_timeline": "Thorough onboarding vs quick project start",
+        "communication_preference": "Structured process vs client's preferred style"
+      },
+      "errors": "string - Missing stakeholder information or access limitations"
+    }
+  },
+  "orchestration_integration": {
+    "parallel_collaboration": [
+      {
+        "agent": "project-manager",
+        "scenario": "Project planning and timeline management",
+        "synthesis": "Integrate onboarding with project management processes"
+      },
+      {
+        "agent": "client-success-specialist",
+        "scenario": "Long-term relationship management",
+        "synthesis": "Connect onboarding with ongoing client success strategy"
+      }
+    ],
+    "sequential_workflow": {
+      "prerequisites": ["client-discovery-specialist", "proposal-specialist"],
+      "next_steps": ["project-manager", "relevant-specialist-based-on-project"]
+    },
+    "consensus_participation": {
+      "expertise_weight": 0.85,
+      "domain_authority": "Client relationship management and process design",
+      "conflict_resolution": "Prioritize relationship foundation over speed"
+    }
+  },
+  "quality_validation": {
+    "onboarding_methodology_validation": {
+      "relationship_focused": "Builds trust and psychological safety",
+      "expectation_clear": "Eliminates ambiguity about scope and process",
+      "communication_effective": "Establishes clear channels and protocols",
+      "prevention_oriented": "Anticipates and prevents common issues"
+    },
+    "output_quality_checks": {
+      "process_comprehensive": "Covers all aspects of client integration",
+      "expectation_specific": "Clear, measurable success criteria",
+      "communication_structured": "Systematic approach to client interaction",
+      "scalability_considered": "Process works for different client types"
+    }
+  },
+  "usage_triggers": [
+    "New client project setup and relationship establishment",
+    "Client expectation management and scope alignment",
+    "Communication process optimization and improvement",
+    "Stakeholder coordination and decision-making clarity",
+    "Onboarding process standardization and scaling",
+    "Client relationship foundation and trust building"
+  ],
+  "example_consultation": {
+    "input": "Large corporate client with 8 stakeholders, unclear decision hierarchy, and tight timeline pressure",
+    "output": "Structured onboarding process with stakeholder mapping, clear decision protocols, accelerated expectation alignment, and communication framework designed for complex organizational dynamics."
+  }
+}

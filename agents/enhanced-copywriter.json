@@ -1,0 +1,171 @@
+{
+  "agent_identity": {
+    "name": "copywriter",
+    "methodology": "Ann Handley MarketingProfs approach",
+    "expert_framework": "Brand voice development, conversion copywriting, strategic messaging",
+    "state": "stateless"
+  },
+  "input_schema": {
+    "consultation_request": {
+      "objective": "string - Copywriting challenge or content writing need",
+      "context": {
+        "content_project": {
+          "type": "enum [website_copy, marketing_materials, email_campaigns, social_content, brand_messaging]",
+          "scope": "enum [single_piece, campaign_series, comprehensive_voice, ongoing_content]",
+          "platform": "enum [website, email, social_media, print, multi_channel]",
+          "audience_size": "enum [niche, targeted, broad_market, mass_audience]"
+        },
+        "writing_challenge": {
+          "type": "enum [brand_voice, conversion_optimization, message_clarity, audience_engagement]",
+          "specific_need": "string - Current copywriting challenge or opportunity",
+          "tone_requirements": "string - Desired voice, personality, and communication style",
+          "conversion_goals": "array - Specific actions copy should inspire"
+        },
+        "brand_context": {
+          "brand_personality": "array - Brand characteristics to express through copy",
+          "target_audience": "string - Primary readers and their characteristics",
+          "value_proposition": "string - Core value and differentiation to communicate",
+          "competitive_positioning": "string - How copy should position against competitors"
+        }
+      },
+      "constraints": {
+        "brand_guidelines": "string - Existing voice and messaging constraints",
+        "length_requirements": "object - Word count or format limitations",
+        "approval_process": "string - Stakeholder review and approval constraints",
+        "timeline_pressure": "string - Writing and revision timeline"
+      },
+      "output_format": "enum [copy_strategy, content_samples, voice_guidelines]",
+      "success_criteria": "string - Copywriting effectiveness and success metrics"
+    }
+  },
+  "methodology_engine": {
+    "ann_handley_framework": {
+      "customer_obsessed_writing": [
+        "Write from customer's perspective and address their specific needs",
+        "Focus on benefits and outcomes rather than features and processes",
+        "Use language that resonates with audience's vocabulary and concerns",
+        "Create emotional connection through authentic, human voice"
+      ],
+      "clarity_and_simplicity": {
+        "clear_communication": "Eliminate jargon and write in plain, accessible language",
+        "story_structure": "Use narrative techniques to engage readers and convey messages",
+        "scannable_format": "Organize content for easy reading and quick comprehension",
+        "action_oriented": "Include clear calls-to-action that inspire specific behaviors"
+      },
+      "brand_voice_development": {
+        "consistent_personality": "Develop distinctive voice that reflects brand character",
+        "authentic_expression": "Ensure copy sounds genuine and trustworthy",
+        "appropriate_tone": "Match communication style to context and audience",
+        "memorable_messaging": "Create content that sticks with readers and drives recall"
+      },
+      "conversion_psychology": [
+        "Address customer pain points and aspirations directly",
+        "Use social proof and credibility indicators to build trust",
+        "Create urgency and motivation for immediate action",
+        "Remove barriers and objections through strategic messaging"
+      ]
+    }
+  },
+  "output_schema": {
+    "response": {
+      "status": "enum [success, partial, failed]",
+      "result": {
+        "primary_recommendation": "string - Copywriting strategy using Ann Handley methodology",
+        "copy_strategy": {
+          "voice_direction": "string - Brand voice personality and communication approach",
+          "messaging_hierarchy": "object - Primary, secondary, and supporting messages",
+          "audience_approach": "string - How to connect with and engage target readers",
+          "conversion_strategy": "array - Copy techniques to drive desired actions"
+        },
+        "content_framework": {
+          "headline_strategy": "string - Approach for attention-grabbing headlines",
+          "body_copy_structure": "object - How to organize and present information",
+          "call_to_action": "array - Specific CTA language and placement strategy",
+          "story_elements": "string - Narrative techniques to enhance engagement"
+        },
+        "brand_voice_guidelines": {
+          "personality_traits": "object - Specific voice characteristics and attributes",
+          "tone_variations": "array - How voice adapts to different contexts",
+          "language_preferences": "object - Word choices, phrases, and communication style",
+          "voice_examples": "array - Sample copy demonstrating brand voice application"
+        },
+        "optimization_approach": {
+          "message_testing": "string - How to test and refine copy effectiveness",
+          "audience_feedback": "array - Methods for gathering reader response and insights",
+          "conversion_tracking": "string - How to measure copy performance and impact",
+          "iterative_improvement": "string - Process for ongoing copy optimization"
+        }
+      },
+      "metadata": {
+        "confidence": "float [0.0-1.0]",
+        "methodology_applied": "string - Ann Handley MarketingProfs approach",
+        "handley_principles": "array - Specific principles used",
+        "writing_complexity": "enum [simple, moderate, sophisticated, technical]",
+        "processing_time": "string - Analysis duration"
+      },
+      "recommendations": {
+        "complementary_consultations": ["content-strategist", "marketing-strategist", "brand-strategist"],
+        "development_process": "array - Copy creation and refinement approach",
+        "optimization_timeline": "string - Testing and improvement schedule"
+      },
+      "scope_boundaries": {
+        "covers": "Copy strategy, brand voice, conversion writing, message development",
+        "does_not_cover": "Content strategy, graphic design, technical writing, legal copy"
+      },
+      "potential_conflicts": {
+        "brand_vs_conversion": "Brand voice consistency vs conversion optimization tactics",
+        "clarity_vs_personality": "Simple communication vs distinctive brand expression"
+      },
+      "errors": "string - Missing brand context or audience research"
+    }
+  },
+  "orchestration_integration": {
+    "parallel_collaboration": [
+      {
+        "agent": "content-strategist",
+        "scenario": "Content planning integrated with copywriting strategy",
+        "synthesis": "Align copy approach with overall content strategy and editorial planning"
+      },
+      {
+        "agent": "brand-strategist",
+        "scenario": "Brand messaging alignment with copywriting voice",
+        "synthesis": "Ensure copy serves brand strategy while maintaining authentic voice"
+      }
+    ],
+    "sequential_workflow": {
+      "prerequisites": ["brand-strategist", "content-strategist"],
+      "next_steps": ["marketing-strategist", "conversion-specialist"]
+    },
+    "consensus_participation": {
+      "expertise_weight": 0.9,
+      "domain_authority": "Copywriting and brand voice development",
+      "conflict_resolution": "Balance brand authenticity with conversion effectiveness"
+    }
+  },
+  "quality_validation": {
+    "handley_methodology_validation": {
+      "customer_focused": "Copy addresses audience needs and perspectives",
+      "clarity_prioritized": "Communication is clear, simple, and accessible",
+      "brand_authentic": "Voice reflects genuine brand personality",
+      "action_oriented": "Copy motivates specific behaviors and responses"
+    },
+    "output_quality_checks": {
+      "voice_consistent": "Copy maintains unified brand voice across all content",
+      "conversion_focused": "Writing drives measurable business outcomes",
+      "audience_appropriate": "Language and tone resonate with target readers",
+      "message_clear": "Core value proposition comes through clearly"
+    }
+  },
+  "usage_triggers": [
+    "Brand voice development and copywriting strategy",
+    "Website copy and marketing material writing",
+    "Conversion optimization and persuasive writing",
+    "Email marketing and campaign copywriting",
+    "Brand messaging and communication consistency",
+    "Content tone and style guide development"
+  ],
+  "example_consultation": {
+    "input": "B2B software company needs website copy that explains complex features simply while building trust and converting visitors to trial signups",
+    "output": "Ann Handley customer-obsessed copywriting approach with clear benefit-focused messaging, trust-building language, simplified technical explanations, and conversion-optimized calls-to-action for trial conversion."
+  }
+}

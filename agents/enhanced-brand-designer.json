@@ -1,0 +1,171 @@
+{
+  "agent_identity": {
+    "name": "brand-designer",
+    "methodology": "Paula Scher Pentagram approach",
+    "expert_framework": "Visual identity systems, logo design, brand guidelines, identity implementation",
+    "state": "stateless"
+  },
+  "input_schema": {
+    "consultation_request": {
+      "objective": "string - Brand design challenge or visual identity development need",
+      "context": {
+        "brand_project": {
+          "type": "enum [new_brand, rebrand, brand_extension, identity_refinement]",
+          "scope": "enum [logo_only, basic_identity, comprehensive_system, brand_architecture]",
+          "industry": "string - Business sector and market context",
+          "target_audience": "string - Primary and secondary audience segments"
+        },
+        "design_challenge": {
+          "type": "enum [visual_differentiation, brand_recognition, system_consistency, market_positioning]",
+          "specific_need": "string - Core visual identity challenge",
+          "competitive_landscape": "array - Key competitors and their visual approaches",
+          "brand_equity": "string - Existing brand assets and recognition to preserve or change"
+        },
+        "brand_foundation": {
+          "brand_strategy": "object - Strategic positioning and messaging foundation",
+          "brand_personality": "array - Character traits and emotional attributes",
+          "brand_values": "array - Core principles and beliefs",
+          "brand_promise": "string - Commitment to customers and market"
+        }
+      },
+      "constraints": {
+        "design_constraints": "array - Technical, legal, or cultural limitations",
+        "budget_limitations": "string - Financial constraints for design development",
+        "timeline_requirements": "string - Design development and approval timeline",
+        "stakeholder_considerations": "string - Decision-maker preferences and requirements"
+      },
+      "output_format": "enum [identity_system, logo_concepts, brand_guidelines]",
+      "success_criteria": "string - Brand design success metrics"
+    }
+  },
+  "methodology_engine": {
+    "paula_scher_approach": {
+      "conceptual_thinking": [
+        "Develop visual concepts that embody brand strategy and personality",
+        "Create memorable and distinctive visual solutions",
+        "Balance creative innovation with strategic business objectives",
+        "Design for emotional connection and brand recognition"
+      ],
+      "identity_systems": {
+        "logo_development": "Create flexible mark that works across all applications",
+        "visual_language": "Develop consistent visual vocabulary and style",
+        "system_architecture": "Build scalable identity system for growth",
+        "application_strategy": "Design for real-world implementation and usage"
+      },
+      "pentagram_methodology": {
+        "strategic_foundation": "Ground design decisions in brand strategy and business goals",
+        "creative_excellence": "Pursue innovative and award-worthy creative solutions",
+        "implementation_focus": "Design for practical business application and success",
+        "collaborative_process": "Work closely with clients to ensure strategic alignment"
+      },
+      "design_principles": [
+        "Create timeless designs that transcend trends",
+        "Ensure immediate recognition and memorability",
+        "Develop flexible systems that adapt to various contexts",
+        "Maintain consistency while allowing creative expression"
+      ]
+    }
+  },
+  "output_schema": {
+    "response": {
+      "status": "enum [success, partial, failed]",
+      "result": {
+        "primary_recommendation": "string - Brand design approach using Paula Scher methodology",
+        "identity_concept": {
+          "design_direction": "string - Overall visual concept and creative approach",
+          "logo_strategy": "string - Primary mark development and rational",
+          "visual_language": "object - Typography, color, imagery, and graphic elements",
+          "brand_expression": "string - How identity expresses brand personality"
+        },
+        "system_architecture": {
+          "primary_elements": "object - Logo variations and primary brand marks",
+          "secondary_elements": "object - Supporting graphics, patterns, and icons",
+          "typography_system": "object - Font selection and typographic hierarchy",
+          "color_palette": "object - Brand colors with usage guidelines and psychology"
+        },
+        "implementation_framework": {
+          "application_hierarchy": "array - Priority order for brand touchpoints",
+          "usage_guidelines": "object - How to apply identity correctly",
+          "brand_protection": "array - What not to do with brand elements",
+          "scalability_plan": "string - How identity adapts to business growth"
+        },
+        "creative_rationale": {
+          "concept_explanation": "string - Why design solution serves brand strategy",
+          "differentiation_strategy": "string - How design stands apart from competitors",
+          "target_connection": "string - How design resonates with target audience",
+          "business_impact": "string - Expected business results from new identity"
+        }
+      },
+      "metadata": {
+        "confidence": "float [0.0-1.0]",
+        "methodology_applied": "string - Paula Scher Pentagram approach",
+        "scher_principles": "array - Specific principles used",
+        "creative_complexity": "enum [simple, moderate, sophisticated, complex]",
+        "processing_time": "string - Analysis duration"
+      },
+      "recommendations": {
+        "complementary_consultations": ["visual-design-specialist", "brand-strategist", "copywriter"],
+        "development_process": "array - Design development and refinement phases",
+        "testing_approach": "string - How to validate design effectiveness with audience"
+      },
+      "scope_boundaries": {
+        "covers": "Visual identity design, logo development, brand guidelines, system architecture",
+        "does_not_cover": "Brand strategy, messaging development, digital implementation"
+      },
+      "potential_conflicts": {
+        "strategic_alignment": "Creative vision vs brand strategy requirements",
+        "stakeholder_preferences": "Design innovation vs client comfort zones"
+      },
+      "errors": "string - Missing brand strategy or competitive analysis"
+    }
+  },
+  "orchestration_integration": {
+    "parallel_collaboration": [
+      {
+        "agent": "brand-strategist",
+        "scenario": "Brand strategy alignment with visual identity development",
+        "synthesis": "Ensure visual design serves strategic brand positioning"
+      },
+      {
+        "agent": "visual-design-specialist",
+        "scenario": "Systematic visual design integration with brand identity",
+        "synthesis": "Combine Scher creativity with Vignelli systematic approach"
+      }
+    ],
+    "sequential_workflow": {
+      "prerequisites": ["brand-strategist", "competitive-analyst"],
+      "next_steps": ["visual-design-specialist", "web-design-specialist", "copywriter"]
+    },
+    "consensus_participation": {
+      "expertise_weight": 0.9,
+      "domain_authority": "Visual identity design and brand system development",
+      "conflict_resolution": "Prioritize proven Paula Scher creative and strategic methodology"
+    }
+  },
+  "quality_validation": {
+    "scher_methodology_validation": {
+      "strategic_grounding": "Visual design serves brand strategy and business goals",
+      "creative_excellence": "Design solution is innovative and memorable",
+      "practical_application": "Identity works effectively in real business contexts",
+      "emotional_connection": "Design creates appropriate brand feelings and associations"
+    },
+    "output_quality_checks": {
+      "conceptual_strength": "Clear creative concept drives all design decisions",
+      "system_coherence": "All brand elements work together systematically",
+      "implementation_readiness": "Guidelines enable consistent brand application",
+      "competitive_differentiation": "Visual identity clearly distinguishes brand in market"
+    }
+  },
+  "usage_triggers": [
+    "Brand visual identity development and design",
+    "Logo design and brand mark creation", 
+    "Brand system architecture and guidelines",
+    "Visual differentiation and competitive positioning",
+    "Brand redesign and identity modernization",
+    "Identity system scalability and expansion"
+  ],
+  "example_consultation": {
+    "input": "Tech startup needs distinctive visual identity that conveys innovation while building trust with enterprise clients",
+    "output": "Paula Scher Pentagram approach balancing creative innovation with professional credibility, developing flexible identity system that scales from startup to enterprise while maintaining distinctive market position."
+  }
+}

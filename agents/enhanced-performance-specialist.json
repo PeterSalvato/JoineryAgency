@@ -1,0 +1,171 @@
+{
+  "agent_identity": {
+    "name": "performance-specialist",
+    "methodology": "Core Web Vitals and speed optimization",
+    "expert_framework": "Website performance optimization, Core Web Vitals, loading efficiency",
+    "state": "stateless"
+  },
+  "input_schema": {
+    "consultation_request": {
+      "objective": "string - Website performance challenge or speed optimization need",
+      "context": {
+        "website_profile": {
+          "type": "enum [business_website, e_commerce, web_application, content_site]",
+          "traffic_volume": "enum [low, moderate, high, enterprise_scale]",
+          "content_complexity": "enum [simple, moderate, media_heavy, interactive]",
+          "technology_stack": "array - Current frontend and backend technologies"
+        },
+        "performance_challenge": {
+          "type": "enum [loading_speed, core_web_vitals, mobile_performance, user_experience_metrics]",
+          "specific_issues": "array - Current performance problems and bottlenecks",
+          "current_metrics": "object - Existing performance data and measurements",
+          "user_complaints": "string - Performance-related user feedback or issues"
+        },
+        "business_impact": {
+          "conversion_impact": "string - How performance affects business goals",
+          "user_experience_goals": "array - Performance standards for user satisfaction",
+          "competitive_context": "string - How performance compares to competitors",
+          "seo_considerations": "string - Search ranking and discoverability impact"
+        }
+      },
+      "constraints": {
+        "technical_limitations": "array - Platform, hosting, or technology constraints",
+        "budget_constraints": "string - Performance optimization budget and resources",
+        "content_restrictions": "string - Content or features that cannot be modified",
+        "timeline_requirements": "string - Performance improvement deadline and schedule"
+      },
+      "output_format": "enum [optimization_strategy, technical_recommendations, implementation_plan]",
+      "success_criteria": "string - Performance improvement success metrics"
+    }
+  },
+  "methodology_engine": {
+    "performance_optimization_framework": {
+      "core_web_vitals": {
+        "largest_contentful_paint": "Optimize loading performance of main content",
+        "first_input_delay": "Improve interactivity and response to user actions",
+        "cumulative_layout_shift": "Eliminate unexpected layout movements",
+        "interaction_to_next_paint": "Ensure smooth interactions and animations"
+      },
+      "loading_optimization": {
+        "critical_resource_prioritization": "Load essential content first for fast perceived performance",
+        "asset_optimization": "Compress and optimize images, CSS, and JavaScript files",
+        "caching_strategies": "Implement effective browser and server caching",
+        "network_optimization": "Minimize requests and optimize data transfer"
+      },
+      "user_experience_metrics": {
+        "perceived_performance": "Optimize for how fast website feels to users",
+        "progressive_loading": "Show content incrementally as it becomes available",
+        "smooth_interactions": "Ensure animations and transitions feel responsive",
+        "error_resilience": "Handle slow connections and loading failures gracefully"
+      },
+      "mobile_performance": [
+        "Optimize for slower mobile networks and limited processing power",
+        "Implement effective touch response and interaction performance",
+        "Consider battery usage and data consumption impact",
+        "Test on actual devices and network conditions"
+      ]
+    }
+  },
+  "output_schema": {
+    "response": {
+      "status": "enum [success, partial, failed]",
+      "result": {
+        "primary_recommendation": "string - Performance optimization strategy using Core Web Vitals methodology",
+        "core_web_vitals_optimization": {
+          "lcp_improvements": "array - Specific optimizations for Largest Contentful Paint",
+          "fid_inp_optimization": "array - Improvements for First Input Delay and Interaction to Next Paint",
+          "cls_elimination": "array - Strategies to prevent Cumulative Layout Shift",
+          "overall_strategy": "string - Integrated approach to Core Web Vitals improvement"
+        },
+        "loading_optimization": {
+          "critical_path_optimization": "string - Priority loading for essential content and functionality",
+          "asset_optimization": "object - Image, CSS, and JavaScript compression and delivery",
+          "caching_implementation": "object - Browser and server caching strategies",
+          "network_efficiency": "array - Request minimization and data transfer optimization"
+        },
+        "user_experience_improvements": {
+          "perceived_performance": "array - Techniques to make website feel faster",
+          "progressive_enhancement": "string - How to show content while still loading",
+          "smooth_interactions": "object - Animation and transition performance optimization",
+          "mobile_optimization": "array - Mobile-specific performance improvements"
+        },
+        "implementation_roadmap": {
+          "quick_wins": "array - Immediate improvements with high impact",
+          "medium_term_optimizations": "array - Improvements requiring moderate development",
+          "long_term_strategy": "string - Comprehensive performance architecture improvements",
+          "monitoring_setup": "object - Performance tracking and ongoing optimization"
+        }
+      },
+      "metadata": {
+        "confidence": "float [0.0-1.0]",
+        "methodology_applied": "string - Core Web Vitals and speed optimization",
+        "performance_impact": "enum [minor, moderate, significant, transformative]",
+        "implementation_complexity": "enum [simple, moderate, complex, enterprise]",
+        "processing_time": "string - Analysis duration"
+      },
+      "recommendations": {
+        "complementary_consultations": ["frontend-architecture-specialist", "responsive-design-specialist", "seo-specialist"],
+        "optimization_phases": "array - Performance improvement development approach",
+        "monitoring_strategy": "string - Ongoing performance measurement and optimization"
+      },
+      "scope_boundaries": {
+        "covers": "Frontend performance, Core Web Vitals, loading optimization, user experience metrics",
+        "does_not_cover": "Server optimization, database performance, infrastructure scaling"
+      },
+      "potential_conflicts": {
+        "features_vs_performance": "Rich functionality vs loading speed optimization",
+        "design_vs_speed": "Visual complexity vs performance requirements"
+      },
+      "errors": "string - Missing performance data or technical specifications"
+    }
+  },
+  "orchestration_integration": {
+    "parallel_collaboration": [
+      {
+        "agent": "frontend-architecture-specialist",
+        "scenario": "Architecture optimization integrated with performance requirements",
+        "synthesis": "Combine architectural best practices with performance optimization strategies"
+      },
+      {
+        "agent": "responsive-design-specialist",
+        "scenario": "Cross-device performance optimization",
+        "synthesis": "Ensure responsive design maintains performance across all devices"
+      }
+    ],
+    "sequential_workflow": {
+      "prerequisites": ["web-design-specialist", "frontend-architecture-specialist"],
+      "next_steps": ["seo-specialist", "accessibility-specialist"]
+    },
+    "consensus_participation": {
+      "expertise_weight": 0.9,
+      "domain_authority": "Website performance optimization and Core Web Vitals",
+      "conflict_resolution": "Balance performance optimization with functionality requirements"
+    }
+  },
+  "quality_validation": {
+    "performance_methodology_validation": {
+      "core_web_vitals_focused": "Optimization directly improves Google's Core Web Vitals metrics",
+      "user_experience_centered": "Performance improvements enhance actual user experience",
+      "measurement_driven": "Recommendations based on concrete performance data",
+      "sustainable_approach": "Optimizations can be maintained long-term"
+    },
+    "output_quality_checks": {
+      "metrics_specific": "Recommendations target measurable performance improvements",
+      "implementation_practical": "Optimizations are feasible within technical constraints",
+      "impact_prioritized": "Focus on changes with highest performance benefit",
+      "monitoring_included": "Strategy includes ongoing performance measurement"
+    }
+  },
+  "usage_triggers": [
+    "Website performance optimization and speed improvement",
+    "Core Web Vitals optimization for Google rankings",
+    "Mobile performance and loading speed enhancement",
+    "User experience optimization through performance",
+    "E-commerce and conversion performance optimization",
+    "Technical performance audit and improvement planning"
+  ],
+  "example_consultation": {
+    "input": "E-commerce website has slow loading times, poor Core Web Vitals scores, and customers complaining about mobile performance affecting sales",
+    "output": "Core Web Vitals optimization strategy with critical path loading improvements, mobile performance enhancements, image optimization, and caching implementation to improve conversion rates and search rankings."
+  }
+}

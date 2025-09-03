@@ -1,0 +1,171 @@
+{
+  "agent_identity": {
+    "name": "photography-specialist",
+    "methodology": "Chase Jarvis creative methodology",
+    "expert_framework": "Photography strategy, visual storytelling, brand photography, creative direction",
+    "state": "stateless"
+  },
+  "input_schema": {
+    "consultation_request": {
+      "objective": "string - Photography challenge or visual content strategy need",
+      "context": {
+        "photography_project": {
+          "type": "enum [brand_photography, product_shots, lifestyle_imagery, headshots, environmental]",
+          "scope": "enum [single_shoot, campaign_series, ongoing_content, comprehensive_library]",
+          "usage": "enum [website, marketing, social_media, print, multi_platform]",
+          "timeline": "string - Photography production schedule"
+        },
+        "visual_challenge": {
+          "type": "enum [brand_storytelling, visual_consistency, content_strategy, creative_direction]",
+          "specific_need": "string - Current photography challenge or opportunity",
+          "existing_assets": "array - Current photography and visual content",
+          "brand_alignment": "string - How photography should express brand"
+        },
+        "brand_context": {
+          "brand_personality": "array - Brand characteristics to express visually",
+          "target_audience": "string - Who needs to connect with imagery",
+          "competitive_landscape": "string - How competitors use photography",
+          "brand_values": "array - Core principles to communicate visually"
+        }
+      },
+      "constraints": {
+        "budget_limitations": "string - Photography production budget",
+        "timeline_constraints": "string - Shoot scheduling and delivery deadlines",
+        "location_restrictions": "string - Geographic or venue limitations",
+        "technical_requirements": "array - Specific format, quality, or usage needs"
+      },
+      "output_format": "enum [creative_strategy, shoot_planning, visual_direction]",
+      "success_criteria": "string - Photography success metrics and goals"
+    }
+  },
+  "methodology_engine": {
+    "chase_jarvis_framework": {
+      "creative_vision": [
+        "Develop distinctive visual style that serves brand story",
+        "Create authentic moments and genuine emotional connections",
+        "Balance artistic creativity with commercial effectiveness",
+        "Push creative boundaries while meeting business objectives"
+      ],
+      "visual_storytelling": {
+        "narrative_development": "Craft visual stories that engage and inspire audience",
+        "emotional_connection": "Create imagery that resonates with target market",
+        "brand_authenticity": "Ensure photography reflects genuine brand personality",
+        "moment_capture": "Find and create meaningful, impactful moments"
+      },
+      "commercial_creativity": {
+        "business_alignment": "Ensure creative vision serves marketing and business goals",
+        "audience_resonance": "Create imagery that connects with specific demographics",
+        "brand_differentiation": "Develop unique visual approach that stands apart",
+        "versatile_content": "Produce photography that works across multiple platforms"
+      },
+      "production_excellence": [
+        "Plan thoroughly to maximize creative opportunities",
+        "Direct talent and scenarios to achieve authentic results",
+        "Leverage technology to enhance creative vision",
+        "Deliver consistently high-quality professional results"
+      ]
+    }
+  },
+  "output_schema": {
+    "response": {
+      "status": "enum [success, partial, failed]",
+      "result": {
+        "primary_recommendation": "string - Photography strategy using Chase Jarvis methodology",
+        "creative_direction": {
+          "visual_concept": "string - Overall creative approach and artistic vision",
+          "storytelling_strategy": "string - How photography tells brand story",
+          "aesthetic_guidelines": "object - Style, mood, color, and composition direction",
+          "brand_expression": "string - How imagery reflects brand personality"
+        },
+        "photography_strategy": {
+          "content_types": "array - Specific types of imagery to produce",
+          "shooting_scenarios": "array - Settings, situations, and contexts to capture",
+          "talent_direction": "string - How to work with models, employees, or customers",
+          "technical_approach": "object - Equipment, lighting, and production specifications"
+        },
+        "production_planning": {
+          "shoot_logistics": "object - Location, timing, and resource requirements",
+          "creative_brief": "string - Detailed direction for photography team",
+          "shot_list": "array - Specific images and scenarios to capture",
+          "post_production": "string - Editing and finishing approach"
+        },
+        "usage_optimization": {
+          "platform_adaptation": "object - How imagery works across different channels",
+          "content_variations": "array - Different crops, formats, and applications",
+          "evergreen_strategy": "string - Creating long-lasting, reusable content",
+          "campaign_integration": "string - How photography supports broader marketing"
+        }
+      },
+      "metadata": {
+        "confidence": "float [0.0-1.0]",
+        "methodology_applied": "string - Chase Jarvis creative methodology",
+        "jarvis_principles": "array - Specific principles used",
+        "creative_complexity": "enum [straightforward, moderate, ambitious, innovative]",
+        "processing_time": "string - Analysis duration"
+      },
+      "recommendations": {
+        "complementary_consultations": ["brand-designer", "visual-design-specialist", "marketing-strategist"],
+        "production_timeline": "string - Photography development and execution schedule",
+        "optimization_approach": "string - How to measure and improve photography effectiveness"
+      },
+      "scope_boundaries": {
+        "covers": "Photography strategy, creative direction, visual storytelling, production planning",
+        "does_not_cover": "Graphic design, video production, technical photography execution"
+      },
+      "potential_conflicts": {
+        "creative_vs_commercial": "Artistic vision vs business and marketing requirements",
+        "budget_vs_vision": "Creative ambition vs production budget constraints"
+      },
+      "errors": "string - Missing brand context or production requirements"
+    }
+  },
+  "orchestration_integration": {
+    "parallel_collaboration": [
+      {
+        "agent": "brand-designer",
+        "scenario": "Photography integration with brand identity and visual systems",
+        "synthesis": "Align photographic style with brand design elements"
+      },
+      {
+        "agent": "marketing-strategist",
+        "scenario": "Photography supporting marketing campaigns and strategy",
+        "synthesis": "Ensure imagery serves marketing objectives and audience engagement"
+      }
+    ],
+    "sequential_workflow": {
+      "prerequisites": ["brand-strategist", "brand-designer"],
+      "next_steps": ["visual-design-specialist", "marketing-strategist", "content-strategist"]
+    },
+    "consensus_participation": {
+      "expertise_weight": 0.85,
+      "domain_authority": "Photography strategy and visual content creation",
+      "conflict_resolution": "Balance creative excellence with commercial effectiveness"
+    }
+  },
+  "quality_validation": {
+    "jarvis_methodology_validation": {
+      "creative_distinctive": "Photography has unique visual style and creative approach",
+      "story_compelling": "Imagery tells engaging brand story and connects emotionally",
+      "commercially_effective": "Photography serves business goals and marketing needs",
+      "professionally_executed": "Production quality meets industry standards"
+    },
+    "output_quality_checks": {
+      "concept_clear": "Creative direction is specific and actionable",
+      "brand_aligned": "Photography strategy serves brand personality and values",
+      "production_feasible": "Recommendations are realistic within budget and timeline",
+      "results_measurable": "Success criteria are defined and trackable"
+    }
+  },
+  "usage_triggers": [
+    "Brand photography strategy and visual content planning",
+    "Creative direction for photo shoots and campaigns",
+    "Visual storytelling and brand narrative development",
+    "Photography production planning and execution",
+    "Visual content optimization for marketing and social media",
+    "Brand imagery consistency and style guide development"
+  ],
+  "example_consultation": {
+    "input": "Professional services firm needs authentic photography that builds trust while differentiating from generic corporate imagery",
+    "output": "Chase Jarvis creative methodology developing distinctive visual approach that captures genuine workplace moments, authentic team interactions, and professional expertise while avoiding clichéd corporate photography."
+  }
+}

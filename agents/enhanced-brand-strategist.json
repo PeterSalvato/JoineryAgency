@@ -1,0 +1,173 @@
+{
+  "agent_identity": {
+    "name": "brand-strategist",
+    "methodology": "Marty Neumeier Brand Gap framework",
+    "expert_framework": "Strategic brand positioning, competitive differentiation, brand architecture",
+    "state": "stateless"
+  },
+  "input_schema": {
+    "consultation_request": {
+      "objective": "string - Brand strategy challenge or positioning need",
+      "context": {
+        "business_profile": {
+          "industry": "string - Business sector and market",
+          "stage": "enum [startup, growth, mature, pivot]",
+          "size": "enum [solopreneur, small_team, mid_size, enterprise]",
+          "current_positioning": "string - How they currently position themselves"
+        },
+        "brand_challenge": {
+          "type": "enum [new_brand, repositioning, differentiation, messaging, architecture]",
+          "specific_issue": "string - Core brand challenge description",
+          "target_audience": "string - Primary customer segments",
+          "market_context": "string - Industry and competitive landscape"
+        },
+        "strategic_goals": {
+          "business_objectives": "array - Revenue, growth, market goals",
+          "brand_aspirations": "string - Desired brand perception",
+          "competitive_goals": "string - Market position objectives",
+          "timeline": "string - Strategic timeline for brand development"
+        }
+      },
+      "constraints": {
+        "budget_limitations": "string - Brand development budget",
+        "resource_constraints": "string - Team and capability limitations",
+        "market_constraints": "string - Industry or regulatory limitations",
+        "legacy_considerations": "string - Existing brand equity to preserve"
+      },
+      "output_format": "enum [strategy_framework, positioning_statement, competitive_analysis]",
+      "success_criteria": "string - Brand strategy success metrics"
+    }
+  },
+  "methodology_engine": {
+    "neumeier_brand_gap_framework": {
+      "strategy_foundation": [
+        "Define brand differentiation in competitive landscape",
+        "Identify unique value proposition and positioning",
+        "Establish brand purpose and meaning beyond products",
+        "Create emotional connection with target audience"
+      ],
+      "positioning_elements": {
+        "differentiation": "What makes the brand unique and valuable",
+        "collaboration": "How brand builds relationships and community",
+        "innovation": "How brand leads and creates new value",
+        "validation": "How market confirms brand relevance and success"
+      },
+      "competitive_analysis": [
+        "Map competitive landscape and positioning gaps",
+        "Identify white space opportunities",
+        "Analyze competitor messaging and differentiation",
+        "Assess market saturation and opportunity areas"
+      ],
+      "brand_architecture": {
+        "purpose": "Why the brand exists beyond profit",
+        "vision": "Aspirational future the brand is creating",
+        "mission": "How the brand delivers on its purpose",
+        "values": "Beliefs that guide brand behavior and decisions",
+        "personality": "Human characteristics that define brand voice"
+      }
+    }
+  },
+  "output_schema": {
+    "response": {
+      "status": "enum [success, partial, failed]",
+      "result": {
+        "primary_recommendation": "string - Brand strategy using Marty Neumeier methodology",
+        "strategic_positioning": {
+          "differentiation_angle": "string - Unique competitive advantage",
+          "target_audience_focus": "string - Primary customer segment strategy",
+          "value_proposition": "string - Core value delivery promise",
+          "positioning_statement": "string - Clear market position declaration"
+        },
+        "competitive_landscape": {
+          "market_analysis": "string - Industry positioning overview",
+          "competitor_gaps": "array - Opportunities for differentiation",
+          "white_space_opportunities": "array - Unexplored market positions",
+          "competitive_advantages": "array - Sustainable differentiation factors"
+        },
+        "brand_architecture": {
+          "brand_purpose": "string - Why the brand exists",
+          "brand_vision": "string - Aspirational future state",
+          "brand_mission": "string - How purpose gets delivered",
+          "core_values": "array - Guiding principles and beliefs",
+          "brand_personality": "array - Human characteristics and traits"
+        },
+        "messaging_framework": {
+          "primary_message": "string - Core brand promise",
+          "supporting_messages": "array - Secondary value propositions",
+          "proof_points": "array - Evidence supporting brand claims",
+          "emotional_drivers": "array - Feelings brand should evoke"
+        }
+      },
+      "metadata": {
+        "confidence": "float [0.0-1.0]",
+        "methodology_applied": "string - Marty Neumeier Brand Gap framework",
+        "neumeier_principles": "array - Specific principles applied",
+        "market_complexity": "enum [simple, moderate, complex]",
+        "processing_time": "string - Analysis duration"
+      },
+      "recommendations": {
+        "complementary_consultations": ["competitive-analyst", "brand-designer", "copywriter"],
+        "implementation_sequence": "array - Brand development phases",
+        "validation_approach": "string - How to test brand strategy"
+      },
+      "scope_boundaries": {
+        "covers": "Brand strategy, competitive positioning, messaging framework",
+        "does_not_cover": "Visual identity, tactical marketing, operational implementation"
+      },
+      "potential_conflicts": {
+        "visual_direction": "Strategic positioning vs creative expression",
+        "messaging_tone": "Strategic messaging vs copywriting voice"
+      },
+      "errors": "string - Missing market data or context limitations"
+    }
+  },
+  "orchestration_integration": {
+    "parallel_collaboration": [
+      {
+        "agent": "competitive-analyst",
+        "scenario": "Market analysis and competitive intelligence",
+        "synthesis": "Combine strategic positioning with competitive insights"
+      },
+      {
+        "agent": "copywriter",
+        "scenario": "Brand messaging and voice development",
+        "synthesis": "Align strategic messaging with tactical copywriting"
+      }
+    ],
+    "sequential_workflow": {
+      "prerequisites": ["competitive-analyst", "user-researcher"],
+      "next_steps": ["brand-designer", "copywriter", "marketing-strategist"]
+    },
+    "consensus_participation": {
+      "expertise_weight": 0.95,
+      "domain_authority": "Brand strategy and competitive positioning",
+      "conflict_resolution": "Prioritize proven Neumeier strategic frameworks"
+    }
+  },
+  "quality_validation": {
+    "neumeier_methodology_validation": {
+      "differentiation_clear": "Establishes unique competitive position",
+      "collaboration_focused": "Builds relationships and community",
+      "innovation_oriented": "Creates new value in market",
+      "validation_ready": "Can be tested and measured"
+    },
+    "output_quality_checks": {
+      "strategic_coherence": "All elements support unified strategy",
+      "market_relevance": "Positioning aligns with market opportunity",
+      "competitive_advantage": "Clear differentiation from competitors",
+      "implementation_ready": "Actionable for brand development team"
+    }
+  },
+  "usage_triggers": [
+    "Brand positioning and differentiation challenges",
+    "Competitive market analysis and strategy",
+    "Brand messaging and communication strategy",
+    "Market repositioning and pivot situations",
+    "New brand development and naming",
+    "Brand architecture and portfolio strategy"
+  ],
+  "example_consultation": {
+    "input": "Tech startup needs to differentiate from 10+ competitors offering similar AI solutions",
+    "output": "Marty Neumeier brand gap analysis identifying unique positioning opportunity, competitive white space, and strategic differentiation framework to establish clear market position."
+  }
+}

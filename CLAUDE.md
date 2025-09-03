@@ -115,6 +115,13 @@ Each agent file includes:
 - Maintain focus on specific domain expertise
 - Test with real consultation scenarios
 
+### Planning & Session Continuity
+- **CRITICAL**: When planning or strategy sessions begin, immediately document the context in `CURRENT_PLANNING.md`
+- Update planning documentation continuously throughout the session
+- Always read existing planning files at session start to maintain continuity
+- Document decisions, next steps, and current state to prevent loss of progress
+- Use git commits to preserve planning milestones and major decisions
+
 ### Quality Standards
 - Professional consultation quality in all agent responses
 - Actionable, specific recommendations based on established frameworks

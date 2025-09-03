@@ -142,5 +142,105 @@ priority: "high" | "normal" | "low"
 - `/CURRENT_PLANNING.md` - This planning document (created)
 
 ---
-**Last Updated**: September 3, 2025, 14:35 UTC  
-**Next Action Required**: Define production department type and scope
+**Last Updated**: September 3, 2025, 17:00 UTC  
+**Current Focus**: Business architecture for 2-person agency using AI system as internal staff
+
+## Business Architecture Context - NEW PLANNING PHASE
+
+**Business Model**: Expert consultants with AI as productivity tool
+**Key Principle**: AI reduces workload, enables 2-person capacity for larger projects
+**Positioning**: Premium consultancy, not AI service provider
+**Client Perspective**: Working with expert humans, AI invisible/transparent tool
+
+### Confirmed Architecture Requirements
+- ✅ Expert consultancy positioning with AI as internal staff
+- ✅ Partner role division: Client Relations & Production Oversight
+- ✅ AI system handles 80% of production workload invisibly
+- ✅ All client communication remains human (Partners)
+- ✅ **NEW**: Internal project management dashboard with Gantt charts
+
+### Current Technical Context - UPDATED
+- **Previous**: AI System and Agency Website in separate repositories
+- **NEW INSIGHT**: Website should be part of this infrastructure project
+- **Rationale**: Website is the client-facing layer of the same operational system
+- **Integration**: Unified project with client-facing and internal components
+
+### Unified System Architecture - FINAL DESIGN
+
+#### Core Business Model
+- **2-Person Expert Consultancy** with AI as invisible productivity multiplier
+- **Client Experience**: Premium consulting with human partners as experts
+- **AI Role**: Internal staff handling 80% of production workload
+- **Positioning**: Expert consultants, not AI service providers
+
+#### Partner Role Division
+**Partner 1 - Client Relations & Strategy**:
+- Client discovery and relationship management
+- Strategic consultation and creative direction  
+- Quality assurance and client communication
+- Business development and sales
+
+**Partner 2 - Production & Technical Oversight**:
+- AI system management and workflow orchestration
+- Technical quality control and standards
+- Production timeline management  
+- System optimization and capability development
+
+#### System Components Architecture
+**Layer 1: Core AI System (Existing)**
+- 30 Consultant agents with expert methodologies
+- Production Manager + 6 production agents
+- Standardized YAML interfaces and workflows
+
+**Layer 2: Data & API Layer (NEW)**
+- Unified project database
+- Client information and project tracking
+- API endpoints for all system interactions
+- Authentication and access control
+
+**Layer 3: Interface Layer (NEW)**
+- Website: Client-facing agency site + client portal
+- Dashboard: Internal project management for partners
+- Admin: System configuration and AI management
+
+#### Operational Workflows
+**Client Journey**: Public Website → Lead Capture → Discovery Process → Client Portal → Project Updates → Deliverable Access → Ongoing Relationship
+**Partner Operations**: Dashboard Login → Project Overview → AI Task Management → Quality Review → Client Communication → Project Delivery
+
+#### Daily Partner Usage Patterns
+**Partner 1 Daily Flow**:
+- Morning: Review client projects and upcoming deliverables
+- Discovery calls: AI assistant captures requirements automatically
+- Strategy presentations: Present AI research with partner insights
+- Proposal review: Customize AI-generated proposals with relationship context
+
+**Partner 2 Daily Flow**:
+- Morning: Review overnight AI production work
+- Quality control: Approve/revise AI deliverables against standards
+- Production management: Brief new AI tasks, monitor workflows
+- System optimization: Manage AI performance and improve processes
+
+#### Project Management Integration
+- **Gantt Chart Dashboard**: Visual project timelines with AI task integration
+- **Real-time Status Updates**: AI task completion automatically updates project status
+- **Quality Gates**: Partner approval points before client deliverable presentation
+- **Resource Management**: Partner availability tracking with AI workload monitoring
+
+#### Technical Implementation Structure
+```
+/workspaces/JoineryAgency/
+├── agents/ (existing - 30 consultant agents)
+├── production/ (existing - production system)
+├── api/ (NEW - system integration layer)
+├── website/ (NEW - client-facing interface)
+├── dashboard/ (NEW - internal management)
+├── database/ (NEW - unified data layer)
+└── shared/ (NEW - common utilities)
+```
+
+### Key Success Factors
+- **Quality Control**: Partners approve all AI outputs before client delivery
+- **Human Relationships**: All client communication remains partner-managed
+- **Invisible AI**: Clients experience premium consultancy, AI productivity hidden
+- **Unified System**: Single codebase for all client and internal interfaces
+- **Scalable Operations**: 2 partners can handle 5-10x typical agency capacity

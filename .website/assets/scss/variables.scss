@@ -1,0 +1,238 @@
+// Mathematical Golden Ratio Design System - Precise φ Foundation
+// ============================================================
+
+// True Golden Ratio Constants - Mathematical Precision
+$GoldenRatio: 1.618033989; // True φ (phi) - Mathematical golden ratio
+$ModifiedRatio: 1.25; // Alternative scale for UI elements needing restraint
+$BaseUnit: 1rem; // 18px base (set in HTML)
+
+// True Golden Ratio Scale Progression (φ^n)
+$Scale: (
+  'micro': $BaseUnit * 0.236,    // φ^-3 ≈ 0.236rem ≈ 4.25px (fine details)
+  'xs': $BaseUnit * 0.382,       // φ^-2 ≈ 0.382rem ≈ 6.88px (captions, icons)
+  'sm': $BaseUnit * 0.618,       // φ^-1 ≈ 0.618rem ≈ 11.12px (small text)
+  'base': $BaseUnit,             // φ^0 = 1rem = 18px (body text)
+  'lg': $BaseUnit * $GoldenRatio,        // φ^1 ≈ 1.618rem ≈ 29.12px (large text, h4)
+  'xl': $BaseUnit * ($GoldenRatio * $GoldenRatio),    // φ^2 ≈ 2.618rem ≈ 47.12px (h3)
+  'xxl': $BaseUnit * ($GoldenRatio * $GoldenRatio * $GoldenRatio),  // φ^3 ≈ 4.236rem ≈ 76.25px (h2)
+  'xxxl': $BaseUnit * ($GoldenRatio * $GoldenRatio * $GoldenRatio * $GoldenRatio), // φ^4 ≈ 6.854rem ≈ 123.37px (h1, display)
+  'massive': $BaseUnit * ($GoldenRatio * $GoldenRatio * $GoldenRatio * $GoldenRatio * $GoldenRatio) // φ^5 ≈ 11.09rem ≈ 199.62px (hero displays)
+);
+
+// Contextual Scales for Different Use Cases
+$ModerateScale: (
+  'xs': $BaseUnit * 0.64,        // 1.25^-1 ≈ 0.8, adjusted
+  'sm': $BaseUnit * 0.8,         // 1.25^-1 = 0.8rem
+  'base': $BaseUnit,             // 1rem = 18px
+  'lg': $BaseUnit * $ModifiedRatio,       // 1.25rem ≈ 22.5px
+  'xl': $BaseUnit * ($ModifiedRatio * $ModifiedRatio),    // 1.563rem ≈ 28.13px
+  'xxl': $BaseUnit * ($ModifiedRatio * $ModifiedRatio * $ModifiedRatio)  // 1.953rem ≈ 35.15px
+);
+
+// Enhanced Concrete Palette - Optimized Contrast & Accessibility
+// Professional, architectural, mathematically harmonized
+$ColorWhite: #ffffff;
+$ColorConcrete: #6b6b6b;        // Main weathered concrete - 4.5:1 contrast on white
+$ColorConcreteLight: #9a9a9a;   // Enhanced light concrete - improved readability
+$ColorConcreteDark: #424242;    // Darker concrete - better contrast
+$ColorCharcoal: #1a1a1a;        // Deeper charcoal - enhanced contrast (14.7:1)
+$ColorWarmWhite: #fafafa;       // Slightly warm white - maintains warmth
+$ColorCoolGray: #f7f7f7;        // Lighter cool gray - better contrast base
+
+// Legacy aliases for compatibility
+$ColorBlack: $ColorCharcoal;
+$ColorGray: $ColorConcrete;
+$ColorLightGray: $ColorCoolGray;
+$ColorDarkGray: $ColorConcreteDark;
+
+// Restrained Accent Colors - Let imagery provide color
+$ColorPrimary: $ColorCharcoal;
+$ColorSecondary: $ColorCoolGray;
+$ColorAccent: $ColorConcrete;     // Subtle concrete accent
+$ColorSuccess: #5a6b47;           // Muted sage green
+$ColorWarning: #8b7355;           // Muted amber
+$ColorError: #7a4d4d;             // Muted burgundy
+
+// Professional Typography System - Modern Hierarchy
+$FontDisplay: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; // Headlines - Modern & friendly
+$FontBody: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; // Body text - Readable & professional
+$FontMono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Inconsolata', monospace; // Code/technical
+$FontSystem: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; // Fallback
+
+// Golden Ratio Typography Scale - Mathematical Precision with Usability
+$FontSizes: (
+  // Fine-grained text elements - φ^-2 to φ^-1 range
+  'caption': map-get($Scale, 'xs') * 1.2,     // 0.458rem ≈ 8.25px - accessible captions
+  'small': map-get($Scale, 'sm') * 1.25,      // 0.773rem ≈ 13.91px - small text, meta info
+  
+  // Core reading text - φ^0 foundation
+  'body': map-get($Scale, 'base'),             // 1rem = 18px - primary body text
+  'lead': map-get($Scale, 'base') * 1.2,      // 1.2rem ≈ 21.6px - lead paragraphs
+  
+  // Hierarchical headings - True φ progression with accessibility
+  'h5': map-get($Scale, 'lg') * 0.8,          // 1.294rem ≈ 23.29px - minor headings
+  'h4': map-get($Scale, 'lg'),                // φ^1 ≈ 1.618rem ≈ 29.12px - section headings  
+  'h3': map-get($Scale, 'xl') * 0.85,         // 2.225rem ≈ 40.05px - major headings (readable)
+  'h2': map-get($Scale, 'xl'),                // φ^2 ≈ 2.618rem ≈ 47.12px - page headings
+  'h1': map-get($Scale, 'xxl') * 0.7,         // 2.965rem ≈ 53.37px - primary headlines (mobile)
+  
+  // Display typography - φ^3 and φ^4 range
+  'display': map-get($Scale, 'xxl') * 0.8,    // 3.389rem ≈ 61px - hero displays (mobile)
+  'display-lg': map-get($Scale, 'xxxl') * 0.65 // 4.454rem ≈ 80.17px - large hero (desktop)
+);
+
+// Fluid Typography using clamp() for seamless scaling
+$FluidTypography: (
+  'h1': clamp(2.5rem, 5vw + 1rem, 4rem),           // 45px → 72px fluid
+  'h2': clamp(2rem, 4vw + 0.5rem, 3.5rem),         // 36px → 63px fluid  
+  'h3': clamp(1.5rem, 3vw + 0.5rem, 2.5rem),       // 27px → 45px fluid
+  'h4': clamp(1.25rem, 2.5vw + 0.5rem, 2rem),      // 22.5px → 36px fluid
+  'body': clamp(1rem, 2vw + 0.5rem, 1.125rem),     // 18px → 20.25px fluid
+  'lead': clamp(1.2rem, 2.5vw + 0.75rem, 1.5rem),  // 21.6px → 27px fluid
+  'display': clamp(3rem, 6vw + 1rem, 5rem),         // 54px → 90px fluid
+  'display-lg': clamp(3.5rem, 8vw + 1rem, 6rem)    // 63px → 108px fluid
+);
+
+// Legacy responsive breakpoint sizing (fallback)
+$ResponsiveFontSizes: (
+  // Mobile-first approach - sizes above are mobile
+  'medium': (
+    'h1': 3rem,              // 54px on tablet+
+    'h2': 2.75rem,           // 49.5px on tablet+
+    'display': 3.5rem,       // 63px on tablet+
+    'display-lg': 4.5rem     // 81px on desktop
+  ),
+  'large': (
+    'h1': 3.5rem,            // 63px on desktop
+    'h2': 3rem,              // 54px on desktop
+    'display': 4rem,         // 72px on desktop
+    'display-lg': 5rem       // 90px on large desktop
+  )
+);
+
+// Contextual Font Sizes - For UI elements needing restraint
+$UIFontSizes: (
+  'caption': map-get($ModerateScale, 'xs'),   // 0.64rem - UI captions
+  'small': map-get($ModerateScale, 'sm'),     // 0.8rem - UI small text
+  'body': map-get($ModerateScale, 'base'),    // 1rem - UI body
+  'button': map-get($ModerateScale, 'lg'),    // 1.25rem - button text
+  'nav': map-get($ModerateScale, 'lg'),       // 1.25rem - navigation
+  'label': map-get($ModerateScale, 'sm')      // 0.8rem - form labels
+);
+
+// Swiss Typography Standards
+$LineHeight: (
+  'tight': 1.25,
+  'normal': 1.5,
+  'relaxed': 1.75
+);
+
+$LetterSpacing: (
+  'tight': -0.025em,
+  'normal': 0,
+  'wide': 0.05em
+);
+
+$FontWeight: (
+  'light': 300,
+  'normal': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700
+);
+
+// Contextual Spacing System - Golden Ratio Foundation
+// Different contexts need different spacing approaches for optimal UX
+
+// Core spacing - Uses true golden ratio for natural harmony
+$Spacing: $Scale;
+
+// Component-specific spacing for precise control
+$ComponentSpacing: (
+  // Navigation spacing
+  'nav-horizontal': map-get($Scale, 'lg'),    // φ^1 between nav items
+  'nav-vertical': map-get($Scale, 'xl'),      // φ^2 nav sections
+  
+  // Card component spacing
+  'card-padding': map-get($Scale, 'lg'),      // φ^1 internal card padding
+  'card-gap': map-get($Scale, 'xl'),          // φ^2 between cards
+  'card-content-gap': map-get($Scale, 'base'), // φ^0 between card elements
+  
+  // Content spacing
+  'section-gap': map-get($Scale, 'xxxl'),     // φ^4 between major sections
+  'content-gap': map-get($Scale, 'xl'),       // φ^2 between content blocks
+  'paragraph-gap': map-get($Scale, 'lg'),     // φ^1 between paragraphs
+  
+  // Form spacing
+  'form-field-gap': map-get($Scale, 'lg'),    // φ^1 between form fields
+  'form-section-gap': map-get($Scale, 'xl'),  // φ^2 between form sections
+  
+  // Button spacing
+  'button-padding-y': map-get($Scale, 'sm'),  // φ^-1 vertical button padding
+  'button-padding-x': map-get($Scale, 'lg'),  // φ^1 horizontal button padding
+  'button-gap': map-get($Scale, 'base'),      // φ^0 between buttons
+  
+  // Layout spacing
+  'container-padding': map-get($Scale, 'xl'), // φ^2 container side padding
+  'hero-padding': map-get($Scale, 'xxxl'),    // φ^4 hero section padding
+  
+  // Micro-spacing for precision
+  'border-width': 1px,                        // Precise 1px borders
+  'focus-outline': 2px,                       // 2px focus outlines
+  'divider-height': 1px                       // 1px dividers
+);
+
+// Responsive Grid System - Ultra-Safe Viewport-Based Containment
+$GridColumns: 12;
+$GridGutter: 1.5rem; // 27px - reasonable gutter
+$GridMaxWidth: 60rem; // Dramatically reduced to 60rem (1080px) for guaranteed containment
+
+// Enhanced Design Tokens - Professional Polish
+$BorderRadius: (
+  'none': 0,
+  'sm': 2px,      // Subtle rounding for buttons/inputs
+  'md': 4px,      // Standard component rounding
+  'lg': 8px,      // Card/section rounding
+  'full': 50%     // Circular elements
+);
+
+// Sophisticated Shadow System
+$BoxShadow: (
+  'none': none,
+  'subtle': 0 1px 3px rgba($ColorCharcoal, 0.05),
+  'soft': 0 2px 8px rgba($ColorCharcoal, 0.08),
+  'medium': 0 4px 16px rgba($ColorCharcoal, 0.12),
+  'strong': 0 8px 32px rgba($ColorCharcoal, 0.16),
+  'focus': 0 0 0 2px rgba($ColorCharcoal, 0.15)
+);
+
+// Professional Animation System
+$Transition: (
+  'fast': all 0.15s ease-out,        // Quick interactions
+  'medium': all 0.25s ease-out,      // Standard transitions
+  'slow': all 0.35s ease-out,        // Complex animations
+  'bounce': all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55), // Playful bounce
+  'smooth': all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)     // Smooth, elegant
+);
+
+// Interaction States
+$StateColors: (
+  'hover': rgba($ColorCharcoal, 0.08),
+  'active': rgba($ColorCharcoal, 0.12),
+  'focus': rgba($ColorCharcoal, 0.15),
+  'disabled': rgba($ColorConcrete, 0.5)
+);
+
+// Professional Enhancement Colors (subtle accents)
+$AccentColors: (
+  'gold': #d4af37,         // Sophisticated gold for highlights
+  'sage': #9caf88,         // Calm sage green for success states
+  'steel': #708090,        // Steel blue for information
+  'rust': #a0522d,         // Warm rust for warnings
+  'plum': #8b4b8c          // Deep plum for special emphasis
+);
+
+// Analog Texture Support - Paths for texture overlays
+$TexturePath: '/assets/images/textures/'; // Path for analog textures
+$TextureOpacity: 0.03; // Subtle texture overlay
+$NoiseOpacity: 0.02;   // Very subtle film grain

@@ -1,0 +1,201 @@
+// Component Classes - UI Elements & Interactions
+// ===============================================
+// Consolidated component classes following golden ratio system
+
+// BUTTON COMPONENT
+// ================
+
+.Button {
+    // Base button structure
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: map-get($ComponentSpacing, 'button-gap');
+    
+    // Typography
+    font-family: $FontBody;
+    font-weight: map-get($FontWeight, 'medium');
+    text-decoration: none;
+    text-align: center;
+    line-height: map-get($LineHeight, 'tight');
+    
+    // Interactive states
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    
+    // Transitions for professional feel
+    transition: map-get($Transition, 'medium');
+    
+    // Focus management
+    &:focus {
+        outline: none;
+        box-shadow: map-get($BoxShadow, 'focus');
+    }
+    
+    // Disabled state
+    &--disabled,
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+    
+    // Button Sizes - Golden Ratio Based
+    &--small {
+        font-size: map-get($UIFontSizes, 'small');
+        padding: map-get($ComponentSpacing, 'button-padding-y') * 0.618 map-get($ComponentSpacing, 'button-padding-x') * 0.618;
+        border-radius: map-get($BorderRadius, 'sm');
+        min-height: 40px;
+        min-width: 40px;
+    }
+    
+    &--medium {
+        font-size: map-get($UIFontSizes, 'button');
+        padding: map-get($ComponentSpacing, 'button-padding-y') map-get($ComponentSpacing, 'button-padding-x');
+        border-radius: map-get($BorderRadius, 'md');
+        min-height: 44px;
+    }
+    
+    &--large {
+        font-size: map-get($UIFontSizes, 'button') * $GoldenRatio;
+        padding: map-get($ComponentSpacing, 'button-padding-y') * $GoldenRatio map-get($ComponentSpacing, 'button-padding-x') * $GoldenRatio;
+        border-radius: map-get($BorderRadius, 'lg');
+        font-weight: map-get($FontWeight, 'semibold');
+        min-height: 48px;
+    }
+    
+    // Button Types - Professional Styling
+    &--primary {
+        background: $ColorCharcoal;
+        color: $ColorWhite;
+        box-shadow: map-get($BoxShadow, 'subtle');
+        
+        &:hover:not(:disabled) {
+            background: lighten($ColorCharcoal, 12%);
+            box-shadow: map-get($BoxShadow, 'soft');
+            transform: translateY(-2px);
+        }
+    }
+    
+    &--secondary {
+        background: $ColorConcrete;
+        color: $ColorWhite;
+        box-shadow: map-get($BoxShadow, 'subtle');
+        
+        &:hover:not(:disabled) {
+            background: lighten($ColorConcrete, 8%);
+            box-shadow: map-get($BoxShadow, 'soft');
+            transform: translateY(-1px);
+        }
+    }
+    
+    &--outline {
+        background: transparent;
+        color: $ColorCharcoal;
+        border: map-get($ComponentSpacing, 'border-width') solid $ColorCharcoal;
+        
+        &:hover:not(:disabled) {
+            background: map-get($StateColors, 'hover');
+            border-color: darken($ColorCharcoal, 10%);
+            transform: translateY(-1px);
+        }
+    }
+    
+    &--ghost {
+        background: transparent;
+        color: $ColorCharcoal;
+        
+        &:hover:not(:disabled) {
+            background: map-get($StateColors, 'hover');
+            transform: translateY(-1px);
+        }
+    }
+}
+
+// Legacy simple button from layout.scss
+.Button {
+  display: inline-block;
+  padding: map-get($Spacing, 'sm') map-get($Spacing, 'lg');
+  border: 1px solid $ColorConcrete;
+  border-radius: map-get($BorderRadius, 'none');
+  background: $ColorWarmWhite;
+  color: $ColorCharcoal;
+  font-family: $FontDisplay;
+  font-size: map-get($FontSizes, 'body');
+  font-weight: map-get($FontWeight, 'medium');
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: map-get($LetterSpacing, 'wide');
+  cursor: pointer;
+  transition: map-get($Transition, 'medium');
+  
+  &:hover {
+    background: $ColorConcrete;
+    color: $ColorWhite;
+    text-decoration: none;
+  }
+  
+  &.Primary {
+    background: $ColorCharcoal;
+    color: $ColorWhite;
+    border-color: $ColorCharcoal;
+    
+    &:hover {
+      background: $ColorConcrete;
+      border-color: $ColorConcrete;
+    }
+  }
+  
+  &.Secondary {
+    background: transparent;
+    border-color: $ColorConcreteLight;
+    color: $ColorConcrete;
+    
+    &:hover {
+      background: $ColorConcreteLight;
+      color: $ColorCharcoal;
+    }
+  }
+}
+
+// TYPOGRAPHY CLASSES
+// ==================
+
+.Lead {
+  font-size: map-get($FluidTypography, 'lead');
+  line-height: map-get($LineHeight, 'relaxed');
+  margin-bottom: map-get($Spacing, 'lg');
+}
+
+.Small {
+  font-size: map-get($FontSizes, 'small');
+  color: $ColorConcrete;
+}
+
+// GENERIC UTILITY CLASSES
+// ========================
+
+// Prevent grid and flex items from overflowing
+.Grid > *, .Services-Grid > *, .FeaturedWork-Grid > *, .Process-Steps > * {
+  min-width: 0;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+// LABEL ELEMENT STYLING
+// =====================
+
+label {
+  display: block;
+  margin-bottom: map-get($Spacing, 'xs');
+  font-family: $FontDisplay;
+  font-size: map-get($FontSizes, 'small');
+  font-weight: map-get($FontWeight, 'medium');
+  text-transform: uppercase;
+  letter-spacing: map-get($LetterSpacing, 'wide');
+  color: $ColorCharcoal;
+}

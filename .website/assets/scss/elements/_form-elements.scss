@@ -1,0 +1,69 @@
+// Form HTML Elements - Base Styling
+// ==================================
+// Pure HTML form element styling following golden ratio system
+
+input, textarea {
+  width: 100%;
+  padding: map-get($Spacing, 'sm');
+  border: 1px solid $ColorConcreteLight;
+  border-radius: map-get($BorderRadius, 'none');
+  background: $ColorWarmWhite;
+  font-family: $FontDisplay;
+  font-size: map-get($FontSizes, 'body');
+  color: $ColorCharcoal;
+  transition: map-get($Transition, 'medium');
+  
+  &:focus {
+    outline: none;
+    border-color: $ColorCharcoal;
+  }
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select {
+  width: 100%;
+  padding: map-get($Spacing, 'sm');
+  border: 1px solid $ColorConcreteLight;
+  border-radius: map-get($BorderRadius, 'none');
+  background: $ColorWarmWhite;
+  font-family: $FontDisplay;
+  font-size: map-get($FontSizes, 'body');
+  color: $ColorCharcoal;
+  transition: map-get($Transition, 'medium');
+  
+  &:focus {
+    outline: none;
+    border-color: $ColorCharcoal;
+  }
+}
+
+button {
+  font-family: $FontDisplay;
+  font-size: map-get($FontSizes, 'body');
+  cursor: pointer;
+  transition: map-get($Transition, 'medium');
+  border: none;
+  background: none;
+  
+  &:focus {
+    outline: 2px solid $ColorCharcoal;
+    outline-offset: 2px;
+  }
+}
+
+fieldset {
+  border: 1px solid $ColorConcreteLight;
+  padding: map-get($Spacing, 'base');
+  margin-bottom: map-get($Spacing, 'base');
+}
+
+legend {
+  font-family: $FontDisplay;
+  font-weight: map-get($FontWeight, 'semibold');
+  padding: 0 map-get($Spacing, 'sm');
+  color: $ColorCharcoal;
+}

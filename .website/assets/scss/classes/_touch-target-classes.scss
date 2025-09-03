@@ -1,0 +1,240 @@
+// Professional Touch Target Standards - Accessibility & UX Excellence
+// =====================================================================
+// Ensures all interactive elements meet 44x44px minimum for optimal usability
+
+// Universal touch target mixin
+@mixin TouchTarget($size: 44px) {
+  position: relative;
+  min-height: $size;
+  min-width: $size;
+  
+  // Create larger touch area without affecting visual design
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: $size;
+    min-height: $size;
+    // Invisible expansion for touch
+    z-index: 0;
+  }
+  
+  // Ensure content stays above invisible touch area
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Apply to all interactive elements
+a, button, 
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+textarea,
+.Button,
+.Navigation__Link,
+.Card__Link,
+.Social__Link {
+  @include TouchTarget();
+}
+
+// Form elements specific adjustments
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+  padding: map-get($Scale, 'sm') map-get($Scale, 'base'); // Ensure comfortable padding
+  min-height: 44px; // Explicit height for form fields
+  
+  @include Respond('medium') {
+    min-height: 48px; // Slightly larger on desktop for comfort
+  }
+}
+
+// Checkbox and radio button enhancements
+input[type="checkbox"],
+input[type="radio"] {
+  // Visual size can be smaller, but touch area remains 44x44
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  
+  // Larger touch area through padding
+  padding: 12px;
+  margin: -12px;
+  position: relative;
+}
+
+// Navigation link specific touch targets
+.Navigation__Link {
+  padding: map-get($Scale, 'sm') map-get($Scale, 'base');
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  
+  @include Respond('medium') {
+    padding: map-get($Scale, 'xs') map-get($Scale, 'sm');
+    // Even in constrained tablet view, maintain touch target
+    min-height: 44px;
+  }
+  
+  @include Respond('large') {
+    padding: map-get($Scale, 'sm') map-get($Scale, 'base');
+    min-height: 48px; // Larger on desktop
+  }
+}
+
+// Card link touch targets
+.Card__Link {
+  display: block;
+  padding: map-get($Scale, 'base');
+  min-height: 44px;
+  transition: map-get($Transition, 'medium');
+  
+  // Entire card becomes touch target
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: map-get($BoxShadow, 'hover');
+  }
+}
+
+// Mobile menu toggle specific
+.MenuToggle {
+  min-width: 44px;
+  min-height: 44px;
+  padding: map-get($Scale, 'sm');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  // Visual feedback for touch
+  &:active {
+    background: rgba($ColorConcrete, 0.1);
+    border-radius: map-get($BorderRadius, 'sm');
+  }
+}
+
+// Close buttons and icon buttons
+.IconButton,
+.CloseButton {
+  @include TouchTarget(44px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: map-get($Scale, 'xs');
+  cursor: pointer;
+  
+  // Icon sizing within button
+  .material-symbols-outlined {
+    font-size: 24px; // Visual size
+  }
+  
+  // Hover state for desktop
+  @include Respond('medium') {
+    &:hover {
+      background: rgba($ColorConcrete, 0.05);
+      border-radius: 50%;
+    }
+  }
+  
+  // Active state for all devices
+  &:active {
+    background: rgba($ColorConcrete, 0.1);
+    transform: scale(0.95);
+  }
+}
+
+// Social media links
+.Social__Link {
+  @include TouchTarget(44px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  // Icon can be visually smaller
+  svg, img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Pagination controls
+.Pagination__Item {
+  @include TouchTarget(44px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: map-get($Scale, 'xs') map-get($Scale, 'sm');
+  margin: 0 2px;
+}
+
+// Tab navigation
+.Tab {
+  @include TouchTarget(44px);
+  padding: map-get($Scale, 'sm') map-get($Scale, 'base');
+  cursor: pointer;
+  
+  &--active {
+    border-bottom: 2px solid $ColorCharcoal;
+  }
+}
+
+// Dropdown items
+.Dropdown__Item {
+  @include TouchTarget(44px);
+  padding: map-get($Scale, 'sm') map-get($Scale, 'base');
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  
+  &:hover {
+    background: rgba($ColorConcrete, 0.05);
+  }
+}
+
+// Ensure proper spacing between touch targets
+.ButtonGroup {
+  display: flex;
+  gap: map-get($Scale, 'sm'); // Minimum 8px between targets
+  
+  &--vertical {
+    flex-direction: column;
+  }
+}
+
+// Form field spacing for touch
+.Form__Field {
+  margin-bottom: map-get($Scale, 'lg'); // Adequate spacing between fields
+  
+  label {
+    display: block;
+    margin-bottom: map-get($Scale, 'xs');
+    cursor: pointer;
+    padding: map-get($Scale, 'xs') 0; // Increase label touch area
+  }
+}
+
+// Professional touch feedback
+@media (hover: none) {
+  // Touch devices only
+  a, button, .Button, .Navigation__Link {
+    -webkit-tap-highlight-color: rgba($ColorConcrete, 0.1);
+    
+    &:active {
+      opacity: 0.8;
+      transform: scale(0.98);
+    }
+  }
+}

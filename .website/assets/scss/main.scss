@@ -1,0 +1,31 @@
+// Main SCSS File - Reorganized Architecture
+// =========================================
+// Mobile-First Responsive Design with Intuitive File Organization
+
+// CRITICAL ORDER - Variables and Mixins MUST come first
+@import 'variables';    // MUST BE FIRST - defines golden ratio tokens
+@import 'responsive';   // MUST BE SECOND - defines breakpoint mixins  
+@import 'fonts';        // Typography system & Material Icons
+
+// HTML Element Styles
+@import 'elements/base-elements';     // html, body, h1-h6, p, a, etc.
+@import 'elements/form-elements';     // input, textarea, select, button, etc.
+
+// CSS Class Styles
+@import 'classes/layout-classes';             // .Container, .Grid, etc.
+@import 'classes/component-classes';          // Basic component utilities
+@import 'classes/button-classes';             // .Button system
+@import 'classes/form-classes';               // .FormField system
+@import 'classes/card-classes';               // .Card system
+@import 'classes/navigation-classes';         // .Navigation system
+@import 'classes/footer-classes';             // .Footer system
+@import 'classes/testimonial-classes';        // .Testimonial system
+@import 'classes/team-classes';               // .TeamMember system
+@import 'classes/process-classes';            // .ProcessStep system
+@import 'classes/brand-enhancement-classes';  // Brand polish enhancements
+@import 'classes/touch-target-classes';       // Touch target standards
+@import 'classes/visual-sophistication-classes'; // Museum-quality visual enhancements
+
+// Page-Specific Styles
+@import 'pages/blog-page';           // Blog listing and post styles
+@import 'pages/case-study-page';     // Case study display styles

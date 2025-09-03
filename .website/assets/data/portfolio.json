@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "id": "aiden-jae",
+      "title": "Aiden Jae",
+      "client": "Aiden Jae",
+      "template": "case-study",
+      "services": ["Brand Identity", "UI/UX Design", "Shopify Development"],
+      "description": "A complete brand and e-commerce build for a fashion-focused client, blending minimalist identity design with a high-conversion Shopify storefront.",
+      "challenge": "The client needed to launch a modern brand with both strong visual identity and a functional e-commerce presence. The existing setup lacked cohesion and scalability.",
+      "solution": "We created a full-stack identity and Shopify build including logo, typography, and a custom Shopify theme with responsive UI and optimized checkout flow.",
+      "results": [
+        "Seamless launch of brand and storefront",
+        "Positive reception of brand identity",
+        "Improved customer engagement and sales readiness"
+      ],
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS"],
+      "image": "/assets/images/portfolio/aiden-jae.jpg",
+      "gallery": [
+        "/assets/images/portfolio/aiden-jae-home.jpg",
+        "/assets/images/portfolio/aiden-jae-product.jpg",
+        "/assets/images/portfolio/aiden-jae-brand.jpg"
+      ],
+      "url": "https://aidenjae.com",
+      "featured": true,
+      "date": "2023-08-01"
+    },
+    {
+      "id": "altrueism",
+      "title": "Altrueism",
+      "client": "Altrueism",
+      "template": "gallery",
+      "services": ["Brand Identity", "UX/UI Design"],
+      "description": "A clean, accessible brand and user experience system created to communicate trust, clarity, and purpose across web and print touchpoints.",
+      "challenge": "Altrueism needed to stand apart in a competitive market with a brand system that balanced modern aesthetics with approachability.",
+      "solution": "We developed a timeless typographic system, color palette, and UX-driven layouts that reinforced clarity and trust. Deliverables included brand guidelines and responsive web designs.",
+      "results": [
+        "Strong visual consistency across all platforms",
+        "Improved user trust through simplified UX",
+        "Scalable system for future expansion"
+      ],
+      "technologies": ["Figma", "SCSS", "Responsive Web Design"],
+      "image": "/assets/images/portfolio/altrueism.jpg",
+      "gallery": [
+        "/assets/images/portfolio/altrueism-brand.jpg",
+        "/assets/images/portfolio/altrueism-ui.jpg",
+        "/assets/images/portfolio/altrueism-guidelines.jpg"
+      ],
+      "url": "https://altrueism.com",
+      "featured": false,
+      "date": "2023-06-15"
+    },
+    {
+      "id": "everyday-gold",
+      "title": "Everyday Gold",
+      "client": "Everyday Gold",
+      "template": "case-study",
+      "services": ["Brand Design", "UI/UX", "Shopify Development"],
+      "description": "A full brand and e-commerce design for a luxury goods brand, combining refined aesthetics with a performant Shopify experience.",
+      "challenge": "The client required a unified brand presence and a Shopify storefront that communicated luxury while remaining user-friendly and scalable.",
+      "solution": "We crafted a brand system rooted in elegance and simplicity, then extended it into a responsive Shopify storefront with optimized navigation and product storytelling.",
+      "results": [
+        "Elevated brand positioning in luxury segment",
+        "Optimized customer shopping flow",
+        "Strong foundation for scaling product lines"
+      ],
+      "technologies": ["Shopify", "Liquid", "JavaScript", "SCSS"],
+      "image": "/assets/images/portfolio/everyday-gold.jpg",
+      "gallery": [
+        "/assets/images/portfolio/everyday-gold-home.jpg",
+        "/assets/images/portfolio/everyday-gold-product.jpg",
+        "/assets/images/portfolio/everyday-gold-brand.jpg"
+      ],
+      "url": "https://everydaygold.com",
+      "featured": true,
+      "date": "2023-09-10"
+    }
+  ]
+}

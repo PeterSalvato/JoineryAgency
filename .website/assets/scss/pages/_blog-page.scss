@@ -1,0 +1,50 @@
+// Blog Component Styles
+// Uses the existing golden ratio system
+
+.BlogPage {
+    .BlogPosts {
+        .blog-list {
+            .article {
+                margin-bottom: map-get($Spacing, 'xl');
+                padding-bottom: map-get($Spacing, 'lg');
+                border-bottom: 1px solid rgba($ColorPrimary, 0.1);
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                &__header {
+                    margin-bottom: map-get($Spacing, 'lg');
+                }
+                
+                &__title {
+                    font-size: map-get($FontSizes, 'h2');
+                    margin-bottom: map-get($Spacing, 'sm');
+                    
+                    a {
+                        color: $ColorPrimary;
+                        text-decoration: none;
+                        
+                        &:hover {
+                            color: $ColorAccent;
+                        }
+                    }
+                }
+                
+                &__meta {
+                    font-size: map-get($FontSizes, 'small');
+                    color: rgba($ColorPrimary, 0.7);
+                    margin-bottom: map-get($Spacing, 'base');
+                }
+                
+                &__content {
+                    line-height: $GoldenRatio;
+                    
+                    p {
+                        margin-bottom: map-get($Spacing, 'base');
+                    }
+                }
+            }
+        }
+    }
+}

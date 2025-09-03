@@ -2,6 +2,45 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🚨 MANDATORY REQUIREMENTS - BLOCKING RULES
+
+### Essential Files - READ THESE FIRST OR FAIL
+- **CURRENT_PLANNING.md** - Contains active planning context and decisions (REQUIRED)
+- **docs/conventions.md** - Development standards and agent requirements (REQUIRED)  
+- **docs/symbol-index.md** - Comprehensive system mapping for agent reference (REQUIRED)
+
+### 🚨 CRITICAL: MANDATORY Documentation Updates
+**BLOCKING REQUIREMENT**: These documentation updates are NOT OPTIONAL
+
+#### Documentation Update Rules (MANDATORY)
+1. **CURRENT_PLANNING.md Updates - REQUIRED**:
+   - ✅ **ALWAYS document** any planning decisions, architectural changes, or session progress
+   - ✅ **ALWAYS update** when completing tasks or making system modifications
+   - ✅ **ALWAYS maintain** session continuity information with current status
+   - ❌ **NEVER** make planning decisions without documenting them
+   - ❌ **NEVER** end planning sessions without updating current status
+
+2. **docs/conventions.md Updates - REQUIRED**:
+   - ✅ **ALWAYS update** when establishing new development standards
+   - ✅ **ALWAYS document** new agent requirements or architectural patterns
+   - ✅ **ALWAYS maintain** consistent standards across all agent work
+   - ❌ **NEVER** create new conventions without documenting them
+   - ❌ **NEVER** deviate from documented conventions without updating them
+
+3. **docs/symbol-index.md Updates - REQUIRED**:
+   - ✅ **ALWAYS update** when creating new functions, components, or systems
+   - ✅ **ALWAYS document** new agent capabilities or integration points
+   - ✅ **ALWAYS maintain** comprehensive system mapping for agent reference
+   - ❌ **NEVER** create new code without updating symbol index
+   - ❌ **NEVER** modify system architecture without documenting changes
+
+#### Enforcement Pattern - MANDATORY
+- **Before any architectural decision**: Check if documentation update required
+- **After any implementation**: Update appropriate documentation files  
+- **End of any planning session**: Update CURRENT_PLANNING.md with status and next steps
+- **Creation of new code**: Update symbol-index.md with new elements
+- **Any convention changes**: Update docs/conventions.md immediately
+
 ## Project Overview
 
 **Mockup-to-Site AI Agency** - An AI-powered design consultancy staffed with specialized agents that transform design mockups into professional, production-ready websites. Each agent embodies proven expert methodologies from industry leaders to provide domain-specific consultation and guidance.
@@ -17,9 +56,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Directory Structure
 - `/agents/` - 28 specialist agent definitions with proven methodologies
 - `/production/` - Production department with manager and 6 production agents
+- `/.website/` - Clean PHP/SCSS website for integration with AI system
 - `/docs/` - System documentation and implementation guides
 - `/research/` - Research materials and planning documents
-- `/sessions/` - Session persistence and planning continuity
+- `/CURRENT_PLANNING.md` - **CRITICAL**: Active planning state and session continuity
 
 ### Agent Categories
 1. **Business Strategy & Sales** (8 agents) - Sales, pricing, proposals, client management
@@ -133,11 +173,12 @@ Each agent file includes:
 - Test with real consultation scenarios
 
 ### Planning & Session Continuity
-- **CRITICAL**: When planning or strategy sessions begin, immediately document the context in `CURRENT_PLANNING.md`
+- **CRITICAL**: Always read `CURRENT_PLANNING.md` at session start to understand current state and context
+- **MANDATORY**: When planning or strategy sessions begin, immediately document the context in `CURRENT_PLANNING.md`
 - Update planning documentation continuously throughout the session
-- Always read existing planning files at session start to maintain continuity
 - Document decisions, next steps, and current state to prevent loss of progress
 - Use git commits to preserve planning milestones and major decisions
+- **CONTEXT REQUIRED**: `CURRENT_PLANNING.md` contains the complete business architecture, integration strategy, and current focus areas
 
 ### Quality Standards
 - Professional consultation quality in all agent responses
@@ -180,7 +221,17 @@ This is a **complete AI-powered design consultancy** combining consultation and 
 - **Integration**: Standardized YAML interfaces ensure seamless consultant-to-production workflows
 
 When working with this system, prioritize:
-1. Clear identification of domain expertise needed for consultation
-2. Selection of appropriate specialist agents for advice
-3. Production requests with detailed specifications or consultant recommendations
-4. Quality assurance through standardized production processes
+1. **Read `CURRENT_PLANNING.md` first** - Essential context for current state and objectives
+2. Clear identification of domain expertise needed for consultation
+3. Selection of appropriate specialist agents for advice
+4. Production requests with detailed specifications or consultant recommendations
+5. Quality assurance through standardized production processes
+
+## Essential Files to Check
+
+### Before Starting Any Work:
+- **`CURRENT_PLANNING.md`** - Contains complete business architecture, integration strategy, and current focus
+- **`/.website/`** - PHP/SCSS website ready for AI system integration
+- **`/docs/conventions.md`** - **CRITICAL**: Development standards, coding rules, and AI agent requirements
+- **`/docs/symbol-index.md`** - Complete system mapping and component reference for AI agents
+- **Directory overview** - Understand system components and current development status

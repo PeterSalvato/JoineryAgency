@@ -1,0 +1,234 @@
+// Layout Classes - Grid Systems & Containers  
+// ============================================
+// Swiss-inspired layout classes following golden ratio system
+
+.Main {
+  min-height: calc(100vh - 200px);
+}
+
+// Responsive Container - Aggressive Viewport Containment
+.Container {
+  width: 100%;
+  max-width: $GridMaxWidth;
+  margin: 0 auto;
+  padding: 0 1rem; // 18px mobile padding
+  box-sizing: border-box; // Crucial for preventing overflow
+  
+  // Aggressive containment - never exceed viewport width
+  max-width: min(60rem, 95vw); // Use CSS min() for bulletproof containment
+  
+  @include Respond('medium') {
+    padding: 0 2rem; // 36px tablet padding
+    max-width: min(60rem, 92vw); // Leave more room for tablet padding
+  }
+  
+  @include Respond('large') {
+    padding: 0 3rem; // 54px desktop padding
+    max-width: min(60rem, 90vw); // Leave room for desktop padding
+  }
+}
+
+// Minimal Golden Ratio Grid System
+.Grid {
+  display: grid;
+  gap: map-get($Spacing, 'base'); // φ^0 = 1rem (18px)
+  
+  @include Respond('medium') {
+    gap: map-get($Spacing, 'lg'); // φ^1 ≈ 1.618rem (29.124px)
+  }
+  
+  // Basic column layouts - mobile first
+  &.OneColumn {
+    grid-template-columns: 1fr;
+  }
+  
+  &.TwoColumn {
+    grid-template-columns: 1fr; // Single column on mobile
+    
+    @include Respond('small') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &.ThreeColumn {
+    grid-template-columns: 1fr; // Single column on mobile
+    
+    @include Respond('small') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include Respond('medium') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &.FourColumn {
+    grid-template-columns: 1fr; // Single column on mobile
+    
+    @include Respond('small') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include Respond('medium') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @include Respond('large') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  // Swiss asymmetrical layouts - stacked on mobile
+  &.AsymmetricalLeft {
+    grid-template-columns: 1fr; // Stacked on mobile
+    
+    @include Respond('medium') {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  
+  &.AsymmetricalRight {
+    grid-template-columns: 1fr; // Stacked on mobile
+    
+    @include Respond('medium') {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  
+  // 12-column Swiss grid - responsive
+  &.TwelveColumn {
+    grid-template-columns: repeat(2, 1fr); // 2 cols on mobile
+    
+    @include Respond('small') {
+      grid-template-columns: repeat(4, 1fr); // 4 cols on small
+    }
+    
+    @include Respond('medium') {
+      grid-template-columns: repeat(6, 1fr); // 6 cols on medium
+    }
+    
+    @include Respond('large') {
+      grid-template-columns: repeat(12, 1fr); // Full 12 cols on large
+    }
+  }
+}
+
+// Services Grid - Golden Ratio Layout Enhancement
+.Services-Grid {
+  display: grid;
+  gap: map-get($Spacing, 'xl'); // φ^2 spacing for visual breathing
+  grid-template-columns: 1fr; // Single column on mobile
+  width: 100%; // Ensure grid doesn't overflow
+  
+  // Enhanced visual hierarchy through progressive disclosure
+  & > *:first-child {
+    transform: translateY(-#{map-get($Scale, 'xs')}); // Subtle elevation for primary
+  }
+  
+  @include Respond('medium') {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); // Two columns with flexible sizing
+    gap: map-get($Spacing, 'xxl'); // φ^3 spacing on larger screens
+  }
+  
+  @include Respond('large') {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); // Three columns with flexible sizing
+    gap: map-get($Spacing, 'xxl'); // Maintain φ^3 spacing for optimal visual flow
+  }
+}
+
+// Hero Grid Layout
+.Hero-Grid {
+  display: grid;
+  gap: map-get($Spacing, 'xl');
+  align-items: center;
+  
+  @include Respond('large') {
+    grid-template-columns: 1fr 1fr;
+    gap: map-get($Spacing, 'xxl');
+  }
+}
+
+.Hero__Image {
+  order: -1;
+  
+  @include Respond('large') {
+    order: 0;
+  }
+}
+
+// Form Layout Classes
+.FormGroup {
+  margin-bottom: map-get($Spacing, 'base');
+}
+
+// Placeholder Image System
+.placeholder-image {
+  background-color: $ColorCoolGray;
+  border: 2px dashed $ColorConcreteLight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 200px;
+  z-index: 1; // Ensure placeholder is above card overlays
+  
+  // Use a child element for X marks to avoid conflicts with card hover effects
+  &::before {
+    content: '✕';
+    font-size: 48px;
+    color: $ColorConcrete;
+    opacity: 0.3;
+    font-weight: 300;
+  }
+  
+  // Size variants
+  &.small {
+    min-height: 120px;
+    
+    &::before {
+      font-size: 32px;
+    }
+  }
+  
+  &.large {
+    min-height: 300px;
+    
+    &::before {
+      font-size: 64px;
+    }
+  }
+  
+  &.hero {
+    min-height: 400px;
+    
+    @include Respond('medium') {
+      min-height: 500px;
+    }
+    
+    &::before {
+      font-size: 72px;
+    }
+  }
+  
+  // Card placeholder styling
+  &.card {
+    min-height: 180px;
+    border-radius: map-get($BorderRadius, 'none');
+    
+    &::before {
+      font-size: 40px;
+    }
+  }
+}
+
+// Fix placeholder inside card image containers
+.Card__Image .placeholder-image,
+.PortfolioCard-Image .placeholder-image {
+  height: 200px; // Match card image height
+  min-height: 200px;
+  
+  @include Respond('medium') {
+    height: 240px; // Match desktop card image height
+    min-height: 240px;
+  }
+}

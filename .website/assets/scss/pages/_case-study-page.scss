@@ -1,0 +1,325 @@
+// Case Study Page Styles - Professional Layout
+// ===========================================
+
+.CaseStudyPage {
+  // Hero section for case studies
+  .CaseStudy-Hero {
+    background: linear-gradient(135deg, $ColorWarmWhite 0%, $ColorCoolGray 100%);
+    padding: map-get($Spacing, 'xl') 0;
+    
+    @include Respond('medium') {
+      padding: map-get($Spacing, 'xxl') 0;
+    }
+  }
+  
+  .CaseStudy-Breadcrumb {
+    margin-bottom: map-get($Spacing, 'base');
+    
+    .Breadcrumb-Link {
+      display: inline-flex;
+      align-items: center;
+      gap: map-get($Spacing, 'xs');
+      color: $ColorConcrete;
+      text-decoration: none;
+      font-size: map-get($FontSizes, 'small');
+      text-transform: uppercase;
+      letter-spacing: map-get($LetterSpacing, 'wide');
+      transition: map-get($Transition, 'medium');
+      
+      .material-symbols-outlined {
+        font-size: 16px;
+      }
+      
+      &:hover {
+        color: $ColorCharcoal;
+      }
+    }
+  }
+  
+  .CaseStudy-Header {
+    max-width: 800px;
+    
+    @include Respond('medium') {
+      max-width: 900px;
+    }
+  }
+  
+  .CaseStudy-Meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: map-get($Spacing, 'base');
+    gap: map-get($Spacing, 'sm');
+    
+    @include Respond('medium') {
+      margin-bottom: map-get($Spacing, 'lg');
+    }
+  }
+  
+  .CaseStudy-Services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($Spacing, 'xs');
+  }
+  
+  .CaseStudy-Client {
+    display: flex;
+    align-items: center;
+    gap: map-get($Spacing, 'xs');
+    font-size: map-get($FontSizes, 'small');
+    color: $ColorConcreteLight;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    white-space: nowrap;
+    
+    .material-symbols-outlined {
+      font-size: 16px;
+      color: $ColorConcreteLight;
+    }
+  }
+  
+  .CaseStudy-Title {
+    font-size: map-get($FontSizes, 'h1');
+    font-weight: map-get($FontWeight, 'bold');
+    line-height: map-get($LineHeight, 'tight');
+    margin-bottom: map-get($Spacing, 'base');
+    color: $ColorCharcoal;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'tight');
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'display');
+      margin-bottom: map-get($Spacing, 'lg');
+    }
+  }
+  
+  .CaseStudy-Description {
+    font-size: map-get($FontSizes, 'lead');
+    color: $ColorConcrete;
+    line-height: map-get($LineHeight, 'normal');
+    margin-bottom: map-get($Spacing, 'lg');
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'h4');
+      margin-bottom: map-get($Spacing, 'xl');
+    }
+  }
+  
+  .CaseStudy-Actions {
+    margin-bottom: map-get($Spacing, 'base');
+  }
+  
+  // Main project image
+  .CaseStudy-Image {
+    padding: map-get($Spacing, 'lg') 0;
+    
+    @include Respond('medium') {
+      padding: map-get($Spacing, 'xl') 0;
+    }
+  }
+  
+  .CaseStudy-MainImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: map-get($BorderRadius, 'none');
+    border: 1px solid $ColorConcreteLight;
+    
+    @include Respond('medium') {
+      height: 400px;
+    }
+    
+    @include Respond('large') {
+      height: 500px;
+    }
+  }
+  
+  // Content sections
+  .CaseStudy-Content {
+    padding: map-get($Spacing, 'xl') 0;
+    
+    @include Respond('medium') {
+      padding: map-get($Spacing, 'xxl') 0;
+    }
+  }
+  
+  .CaseStudy-Grid {
+    display: grid;
+    gap: map-get($Spacing, 'xl');
+    
+    @include Respond('medium') {
+      grid-template-columns: 1fr 1fr;
+      gap: map-get($Spacing, 'xxl');
+    }
+    
+    .CaseStudy-Results,
+    .CaseStudy-Tech {
+      @include Respond('medium') {
+        grid-column: span 2;
+      }
+    }
+  }
+  
+  .CaseStudy-Section {
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: map-get($Spacing, 'xs');
+      font-size: map-get($FontSizes, 'h3');
+      font-weight: map-get($FontWeight, 'bold');
+      color: $ColorCharcoal;
+      text-transform: uppercase;
+      letter-spacing: map-get($LetterSpacing, 'wide');
+      margin-bottom: map-get($Spacing, 'base');
+      
+      .material-symbols-outlined {
+        font-size: 20px;
+      }
+      
+      @include Respond('medium') {
+        font-size: map-get($FontSizes, 'h2');
+        margin-bottom: map-get($Spacing, 'lg');
+      }
+    }
+    
+    p {
+      color: $ColorConcrete;
+      line-height: map-get($LineHeight, 'normal');
+      font-size: map-get($FontSizes, 'body');
+      
+      @include Respond('medium') {
+        font-size: map-get($FontSizes, 'lead');
+      }
+    }
+  }
+  
+  .CaseStudy-ResultsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: map-get($Spacing, 'sm');
+      margin-bottom: map-get($Spacing, 'base');
+      color: $ColorCharcoal;
+      font-size: map-get($FontSizes, 'body');
+      line-height: map-get($LineHeight, 'normal');
+      
+      .material-symbols-outlined {
+        font-size: 18px;
+        color: $ColorConcrete;
+        flex-shrink: 0;
+        margin-top: 2px; // Align with text baseline
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      @include Respond('medium') {
+        font-size: map-get($FontSizes, 'lead');
+      }
+    }
+  }
+  
+  .TechStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($Spacing, 'sm');
+  }
+  
+  .TechTag {
+    display: inline-block;
+    background: $ColorCharcoal;
+    color: $ColorWarmWhite;
+    padding: map-get($Spacing, 'xs') map-get($Spacing, 'base');
+    border-radius: map-get($BorderRadius, 'none');
+    font-size: map-get($FontSizes, 'body');
+    font-weight: map-get($FontWeight, 'medium');
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+  }
+  
+  // Gallery section
+  .CaseStudy-Gallery {
+    padding: map-get($Spacing, 'xl') 0;
+    background: $ColorCoolGray;
+    
+    @include Respond('medium') {
+      padding: map-get($Spacing, 'xxl') 0;
+    }
+    
+    h2 {
+      font-size: map-get($FontSizes, 'h2');
+      font-weight: map-get($FontWeight, 'bold');
+      color: $ColorCharcoal;
+      text-transform: uppercase;
+      letter-spacing: map-get($LetterSpacing, 'wide');
+      text-align: center;
+      margin-bottom: map-get($Spacing, 'xl');
+      
+      @include Respond('medium') {
+        font-size: map-get($FontSizes, 'h1');
+        margin-bottom: map-get($Spacing, 'xxl');
+      }
+    }
+  }
+  
+  .Gallery-Grid {
+    display: grid;
+    gap: map-get($Spacing, 'base');
+    
+    @include Respond('medium') {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: map-get($Spacing, 'lg');
+    }
+  }
+  
+  .Gallery-Image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: map-get($BorderRadius, 'none');
+    border: 1px solid $ColorConcreteLight;
+    transition: map-get($Transition, 'medium');
+    
+    &:hover {
+      transform: scale(1.02);
+      border-color: $ColorConcrete;
+    }
+    
+    @include Respond('medium') {
+      height: 280px;
+    }
+  }
+  
+  // Navigation section
+  .CaseStudy-Navigation {
+    padding: map-get($Spacing, 'xl') 0;
+    border-top: 1px solid $ColorConcreteLight;
+    
+    @include Respond('medium') {
+      padding: map-get($Spacing, 'xxl') 0;
+    }
+  }
+  
+  .CaseStudy-Nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: map-get($Spacing, 'base');
+    
+    .Button {
+      display: inline-flex;
+      align-items: center;
+      gap: map-get($Spacing, 'xs');
+      
+      .material-symbols-outlined {
+        font-size: 16px;
+        transition: map-get($Transition, 'medium');
+      }
+    }
+  }
+}

@@ -1,0 +1,471 @@
+// Professional Form Components
+// ============================
+
+.FormField {
+  margin-bottom: map-get($ComponentSpacing, 'form-field-gap');
+  position: relative;
+  
+  &__Label {
+    display: block;
+    font-size: map-get($UIFontSizes, 'label');
+    font-weight: map-get($FontWeight, 'semibold');
+    color: $ColorCharcoal;
+    margin-bottom: map-get($Scale, 'xs');
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    
+    .FormField--error & {
+      color: $ColorError;
+    }
+    
+    .FormField--success & {
+      color: $ColorSuccess;
+    }
+  }
+  
+  &__Required {
+    color: $ColorError;
+    font-weight: map-get($FontWeight, 'bold');
+    margin-left: 2px;
+  }
+  
+  &__InputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__Input {
+    width: 100%;
+    padding: map-get($ComponentSpacing, 'button-padding-y') map-get($ComponentSpacing, 'button-padding-x');
+    font-size: map-get($UIFontSizes, 'body');
+    font-family: $FontBody;
+    color: $ColorCharcoal;
+    background: $ColorWarmWhite;
+    border: 2px solid $ColorConcreteLight;
+    border-radius: map-get($BorderRadius, 'md');
+    transition: map-get($Transition, 'medium');
+    outline: none;
+    
+    &::placeholder {
+      color: $ColorConcrete;
+      font-style: italic;
+    }
+    
+    &:focus {
+      border-color: map-get($AccentColors, 'steel');
+      box-shadow: map-get($BoxShadow, 'focus');
+      background: $ColorWhite;
+    }
+    
+    &:hover:not(:focus) {
+      border-color: $ColorConcrete;
+      background: $ColorWhite;
+    }
+    
+    // Icon spacing
+    .FormField__Icon--left + & {
+      padding-left: calc(#{map-get($ComponentSpacing, 'button-padding-x')} + #{map-get($Scale, 'xl')} + #{map-get($Scale, 'xs')});
+    }
+    
+    // Validation states
+    .FormField--error & {
+      border-color: $ColorError;
+      background: rgba($ColorError, 0.02);
+      
+      &:focus {
+        border-color: $ColorError;
+        box-shadow: 0 0 0 2px rgba($ColorError, 0.15);
+      }
+    }
+    
+    .FormField--success & {
+      border-color: $ColorSuccess;
+      background: rgba($ColorSuccess, 0.02);
+      
+      &:focus {
+        border-color: $ColorSuccess;
+        box-shadow: 0 0 0 2px rgba($ColorSuccess, 0.15);
+      }
+    }
+  }
+  
+  &__Textarea {
+    resize: vertical;
+    min-height: calc(#{map-get($ComponentSpacing, 'button-padding-y')} * 2 + #{map-get($Scale, 'base')} * 4);
+    line-height: map-get($LineHeight, 'normal');
+  }
+  
+  // Select dropdown styling
+  &__Select {
+    appearance: none;
+    padding-right: calc(#{map-get($ComponentSpacing, 'button-padding-x')} + #{map-get($Scale, 'lg')});
+    cursor: pointer;
+    
+    &:invalid {
+      color: $ColorConcrete;
+    }
+  }
+  
+  &__SelectIcon {
+    position: absolute;
+    right: map-get($ComponentSpacing, 'button-padding-x');
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: $ColorConcrete;
+    transition: map-get($Transition, 'fast');
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'lg');
+    }
+    
+    .FormField__Input:focus + & {
+      color: map-get($AccentColors, 'steel');
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+  
+  // Checkbox styling
+  &__Checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: map-get($Scale, 'sm');
+    cursor: pointer;
+  }
+  
+  &__CheckboxInput {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  &__CheckboxBox {
+    width: map-get($Scale, 'lg');
+    height: map-get($Scale, 'lg');
+    border: 2px solid $ColorConcreteLight;
+    border-radius: map-get($BorderRadius, 'sm');
+    background: $ColorWarmWhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: map-get($Transition, 'medium');
+    flex-shrink: 0;
+    margin-top: 2px; // Align with text baseline
+    
+    &:hover {
+      border-color: $ColorConcrete;
+      background: $ColorWhite;
+    }
+  }
+  
+  &__CheckboxCheck {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: map-get($Transition, 'fast');
+    color: $ColorWhite;
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'base');
+    }
+  }
+  
+  &__CheckboxInput:checked + &__CheckboxBox {
+    background: map-get($AccentColors, 'steel');
+    border-color: map-get($AccentColors, 'steel');
+    
+    .FormField__CheckboxCheck {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  &__CheckboxInput:focus + &__CheckboxBox {
+    box-shadow: map-get($BoxShadow, 'focus');
+  }
+  
+  &__CheckboxLabel {
+    font-size: map-get($UIFontSizes, 'body');
+    color: $ColorCharcoal;
+    line-height: map-get($LineHeight, 'normal');
+    cursor: pointer;
+    margin: 0;
+    font-weight: map-get($FontWeight, 'normal');
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  
+  // Input icons
+  &__Icon {
+    position: absolute;
+    z-index: 2;
+    color: $ColorConcrete;
+    transition: map-get($Transition, 'fast');
+    
+    &--left {
+      left: map-get($ComponentSpacing, 'button-padding-x');
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'lg');
+    }
+    
+    .FormField__Input:focus ~ & {
+      color: map-get($AccentColors, 'steel');
+    }
+  }
+  
+  // Validation icons
+  &__ValidationIcon {
+    position: absolute;
+    right: map-get($ComponentSpacing, 'button-padding-x');
+    top: 50%;
+    transform: translateY(-50%);
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'lg');
+    }
+    
+    &--error {
+      color: $ColorError;
+    }
+    
+    &--success {
+      color: $ColorSuccess;
+    }
+  }
+  
+  // Help text
+  &__Help {
+    font-size: map-get($UIFontSizes, 'caption');
+    color: $ColorConcrete;
+    margin-top: map-get($Scale, 'xs');
+    line-height: map-get($LineHeight, 'normal');
+  }
+  
+  // Error messages
+  &__Error {
+    display: flex;
+    align-items: flex-start;
+    gap: map-get($Scale, 'xs');
+    margin-top: map-get($Scale, 'xs');
+    padding: map-get($Scale, 'xs') map-get($Scale, 'sm');
+    background: rgba($ColorError, 0.05);
+    border: 1px solid rgba($ColorError, 0.2);
+    border-radius: map-get($BorderRadius, 'sm');
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  &__ErrorIcon {
+    color: $ColorError;
+    flex-shrink: 0;
+    margin-top: 1px; // Align with text
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'base');
+    }
+  }
+  
+  &__ErrorText {
+    font-size: map-get($UIFontSizes, 'caption');
+    color: $ColorError;
+    line-height: map-get($LineHeight, 'normal');
+  }
+  
+  // Success messages
+  &__Success {
+    display: flex;
+    align-items: flex-start;
+    gap: map-get($Scale, 'xs');
+    margin-top: map-get($Scale, 'xs');
+    padding: map-get($Scale, 'xs') map-get($Scale, 'sm');
+    background: rgba($ColorSuccess, 0.05);
+    border: 1px solid rgba($ColorSuccess, 0.2);
+    border-radius: map-get($BorderRadius, 'sm');
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  &__SuccessIcon {
+    color: $ColorSuccess;
+    flex-shrink: 0;
+    margin-top: 1px; // Align with text
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'base');
+    }
+  }
+  
+  &__SuccessText {
+    font-size: map-get($UIFontSizes, 'caption');
+    color: $ColorSuccess;
+    line-height: map-get($LineHeight, 'normal');
+  }
+  
+  // Field variants
+  &--inline {
+    .FormField__Checkbox {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  &--compact {
+    margin-bottom: map-get($ComponentSpacing, 'form-field-gap') * 0.75;
+    
+    .FormField__Input {
+      padding: calc(#{map-get($ComponentSpacing, 'button-padding-y')} * 0.75) calc(#{map-get($ComponentSpacing, 'button-padding-x')} * 0.75);
+      font-size: map-get($UIFontSizes, 'small');
+    }
+  }
+}
+
+// Form groups and layouts
+.Form {
+  &__Group {
+    margin-bottom: map-get($ComponentSpacing, 'form-section-gap');
+    
+    &--inline {
+      display: flex;
+      gap: map-get($ComponentSpacing, 'form-field-gap');
+      align-items: flex-end;
+      
+      .FormField {
+        margin-bottom: 0;
+        flex: 1;
+      }
+      
+      @include Respond('small', 'max') {
+        flex-direction: column;
+        align-items: stretch;
+        
+        .FormField {
+          margin-bottom: map-get($ComponentSpacing, 'form-field-gap');
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  
+  &__Section {
+    margin-bottom: map-get($ComponentSpacing, 'form-section-gap');
+    padding-bottom: map-get($ComponentSpacing, 'form-section-gap');
+    border-bottom: 1px solid $ColorCoolGray;
+    
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+  
+  &__SectionTitle {
+    font-size: map-get($FontSizes, 'h4');
+    font-weight: map-get($FontWeight, 'bold');
+    color: $ColorCharcoal;
+    margin: 0 0 map-get($Scale, 'lg') 0;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+  }
+  
+  &__Actions {
+    display: flex;
+    gap: map-get($ComponentSpacing, 'button-gap');
+    justify-content: flex-end;
+    margin-top: map-get($ComponentSpacing, 'form-section-gap');
+    padding-top: map-get($ComponentSpacing, 'form-section-gap');
+    border-top: 1px solid $ColorCoolGray;
+    
+    @include Respond('small', 'max') {
+      flex-direction: column-reverse;
+      
+      .Button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Form validation states animation
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100px;
+  }
+}
+
+// Professional contact form styling
+.ContactForm {
+  background: $ColorWarmWhite;
+  border: 1px solid $ColorConcreteLight;
+  border-radius: map-get($BorderRadius, 'lg');
+  padding: map-get($ComponentSpacing, 'card-padding');
+  box-shadow: map-get($BoxShadow, 'soft');
+  
+  @include Respond('medium') {
+    padding: map-get($Scale, 'xl');
+  }
+  
+  &__Header {
+    text-align: center;
+    margin-bottom: map-get($ComponentSpacing, 'form-section-gap');
+    
+    &-Title {
+      font-size: map-get($FontSizes, 'h3');
+      font-weight: map-get($FontWeight, 'bold');
+      color: $ColorCharcoal;
+      margin: 0 0 map-get($Scale, 'sm') 0;
+      text-transform: uppercase;
+      letter-spacing: map-get($LetterSpacing, 'wide');
+    }
+    
+    &-Subtitle {
+      color: $ColorConcrete;
+      font-size: map-get($FontSizes, 'body');
+      margin: 0;
+    }
+  }
+}
+
+// Loading states
+.Form--loading {
+  .FormField__Input,
+  .FormField__Select,
+  .FormField__Textarea {
+    background: $ColorCoolGray;
+    pointer-events: none;
+  }
+  
+  .Button {
+    pointer-events: none;
+    opacity: 0.7;
+    
+    &::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      margin-left: map-get($Scale, 'xs');
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

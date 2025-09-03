@@ -1,0 +1,40 @@
+{
+  "name": "design-development-consultancy",
+  "version": "1.0.0",
+  "description": "Professional consultancy website with golden ratio design system",
+  "scripts": {
+    "css": "sass assets/scss/main.scss assets/css/main.css",
+    "css:watch": "sass --watch assets/scss/main.scss:assets/css/main.css",
+    "css:compressed": "sass assets/scss/main.scss assets/css/main.css --style=compressed",
+    "docs:check": "node scripts/validate-docs.js",
+    "docs:enforce": "node scripts/validate-docs.js --fix",
+    "docs:setup": "chmod +x .git/hooks/pre-commit && chmod +x scripts/validate-docs.js && echo '✅ Documentation enforcement activated'",
+    "commit:safe": "npm run docs:check && git commit",
+    "commit:force": "git commit --no-verify"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "playwright": "^1.55.0",
+    "sass": "^1.69.0"
+  },
+  "globalDependencies": {
+    "@playwright/mcp": "^0.0.36",
+    "@upstash/context7-mcp": "^1.0.16",
+    "sourcegraph-mcp-server": "^1.4.2"
+  },
+  "mcpServers": {
+    "description": "Model Context Protocol servers for enhanced AI agent capabilities",
+    "playwright": {
+      "command": "@playwright/mcp",
+      "description": "Interactive browser automation and real-time design validation"
+    },
+    "context7": {
+      "command": "context7-mcp", 
+      "description": "Session memory and project continuity tracking"
+    },
+    "sourcegraph": {
+      "command": "sourcegraph-mcp-server",
+      "description": "Advanced code intelligence and semantic search"
+    }
+  }
+}

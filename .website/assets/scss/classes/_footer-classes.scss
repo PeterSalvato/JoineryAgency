@@ -1,0 +1,48 @@
+// Footer Component Styles
+// =======================
+
+.Footer {
+  background-color: $ColorPrimary;
+  color: white;
+  margin-top: map-get($Spacing, 'xxl');
+  
+  &__Content {
+    display: grid;
+    gap: map-get($Spacing, 'xl');
+    padding: map-get($Spacing, 'xxl') 0 map-get($Spacing, 'xl') 0;
+    
+    @include Respond('medium') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &__Section {
+    h4 {
+      color: white;
+      margin-bottom: map-get($Spacing, 'base');
+    }
+    
+    ul {
+      list-style: none;
+      
+      li {
+        margin-bottom: map-get($Spacing, 'xs');
+      }
+    }
+    
+    a {
+      color: rgba(white, 0.8);
+      
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  
+  &__Bottom {
+    border-top: 1px solid rgba(white, 0.2);
+    padding: map-get($Spacing, 'base') 0;
+    text-align: center;
+    color: rgba(white, 0.6);
+  }
+}

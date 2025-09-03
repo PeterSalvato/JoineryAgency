@@ -1,0 +1,366 @@
+// Professional Team Component
+// ============================
+
+.TeamMember {
+  background: $ColorWarmWhite;
+  border: 1px solid $ColorConcreteLight;
+  border-radius: map-get($BorderRadius, 'md');
+  padding: map-get($ComponentSpacing, 'card-padding');
+  transition: map-get($Transition, 'medium');
+  position: relative;
+  box-shadow: map-get($BoxShadow, 'subtle');
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: map-get($BoxShadow, 'soft');
+    border-color: $ColorConcrete;
+  }
+  
+  // Avatar section
+  &__Avatar {
+    position: relative;
+    width: map-get($Scale, 'xxxl');
+    height: map-get($Scale, 'xxxl');
+    margin: 0 auto map-get($Scale, 'lg');
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid $ColorCoolGray;
+      transition: map-get($Transition, 'medium');
+    }
+    
+    &__Placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, $ColorConcrete, $ColorConcreteLight);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid $ColorCoolGray;
+    }
+    
+    &__Initial {
+      font-size: map-get($FontSizes, 'h2');
+      font-weight: map-get($FontWeight, 'bold');
+      color: $ColorWhite;
+      position: relative;
+      z-index: 2;
+    }
+    
+    &__Pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.1;
+      
+      &--1 {
+        background: 
+          radial-gradient(circle at 30% 30%, rgba($ColorWhite, 0.3) 2px, transparent 2px),
+          radial-gradient(circle at 70% 70%, rgba($ColorWhite, 0.2) 1px, transparent 1px);
+        background-size: map-get($Scale, 'base') map-get($Scale, 'base');
+      }
+      
+      &--2 {
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 4px,
+          rgba($ColorWhite, 0.2) 4px,
+          rgba($ColorWhite, 0.2) 8px
+        );
+      }
+      
+      &--3 {
+        background: 
+          linear-gradient(90deg, transparent 49%, rgba($ColorWhite, 0.2) 50%, transparent 51%),
+          linear-gradient(0deg, transparent 49%, rgba($ColorWhite, 0.1) 50%, transparent 51%);
+        background-size: 12px 12px;
+      }
+    }
+    
+    .TeamMember--featured & {
+      width: map-get($Scale, 'massive');
+      height: map-get($Scale, 'massive');
+      margin-bottom: map-get($Scale, 'xl');
+      
+      &__Initial {
+        font-size: map-get($FontSizes, 'display');
+      }
+    }
+    
+    .TeamMember--compact & {
+      width: map-get($Scale, 'xxl');
+      height: map-get($Scale, 'xxl');
+      margin-bottom: map-get($Scale, 'base');
+      
+      &__Initial {
+        font-size: map-get($FontSizes, 'h4');
+      }
+    }
+  }
+  
+  // Social links overlay
+  &__Social {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background: rgba($ColorCharcoal, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: map-get($Scale, 'xs');
+    opacity: 0;
+    transform: scale(0.9);
+    transition: map-get($Transition, 'medium');
+    
+    .TeamMember:hover & {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  &__SocialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: map-get($Scale, 'lg');
+    height: map-get($Scale, 'lg');
+    background: rgba($ColorWhite, 0.2);
+    border-radius: 50%;
+    color: $ColorWhite;
+    text-decoration: none;
+    transition: map-get($Transition, 'fast');
+    
+    &:hover {
+      background: map-get($AccentColors, 'gold');
+      transform: scale(1.1);
+    }
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'base');
+    }
+  }
+  
+  // Content section
+  &__Content {
+    text-align: center;
+    
+    .TeamMember--standard & {
+      text-align: left;
+    }
+  }
+  
+  &__Header {
+    margin-bottom: map-get($ComponentSpacing, 'card-content-gap');
+  }
+  
+  &__Name {
+    font-size: map-get($FontSizes, 'h4');
+    font-weight: map-get($FontWeight, 'bold');
+    color: $ColorCharcoal;
+    margin: 0 0 map-get($Scale, 'xs') 0;
+    line-height: map-get($LineHeight, 'tight');
+    
+    .TeamMember--featured & {
+      font-size: map-get($FontSizes, 'h2');
+      margin-bottom: map-get($Scale, 'sm');
+    }
+    
+    .TeamMember--compact & {
+      font-size: map-get($FontSizes, 'lead');
+      margin-bottom: 2px;
+    }
+  }
+  
+  &__Role {
+    font-size: map-get($FontSizes, 'body');
+    color: map-get($AccentColors, 'steel');
+    font-weight: map-get($FontWeight, 'medium');
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    
+    .TeamMember--featured & {
+      font-size: map-get($FontSizes, 'lead');
+    }
+    
+    .TeamMember--compact & {
+      font-size: map-get($FontSizes, 'small');
+    }
+  }
+  
+  &__Bio {
+    margin-bottom: map-get($ComponentSpacing, 'card-content-gap');
+    
+    p {
+      color: $ColorConcrete;
+      line-height: map-get($LineHeight, 'normal');
+      margin: 0;
+      font-size: map-get($FontSizes, 'body');
+      
+      .TeamMember--compact & {
+        font-size: map-get($FontSizes, 'small');
+      }
+    }
+  }
+  
+  // Skills section
+  &__Skills {
+    border-top: 1px solid $ColorCoolGray;
+    padding-top: map-get($Scale, 'base');
+    margin-top: map-get($Scale, 'base');
+  }
+  
+  &__SkillsLabel {
+    font-size: map-get($FontSizes, 'small');
+    font-weight: map-get($FontWeight, 'semibold');
+    color: $ColorCharcoal;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    margin-bottom: map-get($Scale, 'sm');
+  }
+  
+  &__SkillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($Scale, 'xs');
+  }
+  
+  &__Skill {
+    display: inline-block;
+    background: $ColorCoolGray;
+    color: $ColorCharcoal;
+    padding: map-get($Scale, 'xs') map-get($Scale, 'sm');
+    border-radius: map-get($BorderRadius, 'sm');
+    font-size: map-get($FontSizes, 'caption');
+    font-weight: map-get($FontWeight, 'medium');
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    transition: map-get($Transition, 'fast');
+    
+    &:hover {
+      background: $ColorConcrete;
+      color: $ColorWhite;
+    }
+  }
+  
+  // Layout variants
+  &--featured {
+    text-align: center;
+    padding: map-get($Scale, 'xl');
+    background: linear-gradient(135deg, $ColorWarmWhite 0%, $ColorCoolGray 100%);
+    border: 2px solid $ColorConcrete;
+    
+    @include Respond('medium') {
+      padding: map-get($Scale, 'xxl');
+    }
+    
+    &:hover {
+      border-color: $ColorCharcoal;
+      box-shadow: map-get($BoxShadow, 'medium');
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        map-get($AccentColors, 'steel'), 
+        lighten(map-get($AccentColors, 'steel'), 20%), 
+        map-get($AccentColors, 'steel')
+      );
+    }
+  }
+  
+  &--compact {
+    padding: map-get($ComponentSpacing, 'form-field-gap');
+    
+    .TeamMember__Header {
+      margin-bottom: map-get($Scale, 'sm');
+    }
+    
+    .TeamMember__Bio {
+      margin-bottom: map-get($Scale, 'sm');
+    }
+  }
+  
+  &--standard {
+    display: flex;
+    gap: map-get($Scale, 'lg');
+    align-items: flex-start;
+    
+    .TeamMember__Avatar {
+      margin: 0;
+      flex-shrink: 0;
+    }
+    
+    .TeamMember__Content {
+      flex: 1;
+      text-align: left;
+    }
+    
+    @include Respond('small', 'max') {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      
+      .TeamMember__Avatar {
+        margin-bottom: map-get($Scale, 'lg');
+      }
+      
+      .TeamMember__Content {
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Team grid layouts
+.Team-Grid {
+  display: grid;
+  gap: map-get($ComponentSpacing, 'card-gap');
+  
+  &--single {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  &--double {
+    @include Respond('medium') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &--triple {
+    @include Respond('medium') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include Respond('large') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &--quad {
+    @include Respond('medium') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include Respond('large') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

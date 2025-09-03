@@ -1,0 +1,454 @@
+// Mobile-First Bauhaus Navigation
+// ================================
+
+.Navigation {
+  background-color: $ColorWarmWhite;
+  border-bottom: 2px solid $ColorConcrete;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: map-get($Spacing, 'base');
+    padding-bottom: map-get($Spacing, 'base');
+    
+    @include Respond('medium') {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: map-get($Spacing, 'lg');
+      padding-top: map-get($Spacing, 'lg');
+      padding-bottom: map-get($Spacing, 'lg');
+    }
+  }
+}
+
+// Logo - Vignelli Systematic Typography
+// Pure form without decoration - sophistication through restraint
+.Logo {
+  &__Text {
+    font-size: map-get($FontSizes, 'h4');
+    font-weight: map-get($FontWeight, 'bold');
+    color: $ColorCharcoal; // Pure semantic meaning - no decoration needed
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    line-height: 1;
+    
+    // VIGNELLI PRINCIPLE: No pseudo-elements, no shadows, no decorative elements
+    // Sophistication = functional purity, not visual complexity
+    // The typography IS the design - nothing more required
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'h3');
+    }
+  }
+}
+
+// Mobile-First Swiss Navigation Menu
+.Navigation {
+  &__Menu {
+    display: none; // Hidden on mobile by default
+    
+    @include Respond('medium') {
+      display: flex;
+      list-style: none;
+      gap: map-get($Spacing, 'sm'); // Reduced gap to prevent overflow
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap; // Allow wrapping if needed
+      max-width: 100%; // Constrain to container width
+    }
+    
+    @include Respond('large') {
+      gap: map-get($Spacing, 'lg'); // Restore larger gap on desktop
+      flex-wrap: nowrap; // No wrapping needed on desktop
+    }
+    
+    // Mobile menu when active
+    &.Active {
+      display: flex;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: $ColorWarmWhite;
+      border-bottom: 2px solid $ColorConcrete;
+      flex-direction: column;
+      padding: map-get($Spacing, 'base');
+      gap: map-get($Spacing, 'base');
+      
+      @include Respond('medium') {
+        position: static;
+        background: none;
+        border: none;
+        flex-direction: row;
+        padding: 0;
+        gap: map-get($Spacing, 'lg');
+      }
+    }
+  }
+  
+  
+  &__Link {
+    font-weight: map-get($FontWeight, 'medium');
+    font-size: map-get($UIFontSizes, 'small'); // Smaller font for tablet
+    color: $ColorCharcoal;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'normal'); // Reduced letter spacing
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: map-get($ComponentSpacing, 'nav-horizontal') 0;
+    display: flex;
+    align-items: center;
+    gap: map-get($Scale, 'xs');
+    position: relative;
+    white-space: nowrap; // Prevent text wrapping
+    flex-shrink: 1; // Allow links to shrink slightly
+    background: linear-gradient(135deg, transparent 0%, rgba($ColorCoolGray, 0.02) 100%);
+    border-radius: 4px;
+    
+    @include Respond('large') {
+      font-size: map-get($UIFontSizes, 'nav'); // Full size on desktop
+      letter-spacing: map-get($LetterSpacing, 'wide'); // Restore wide spacing
+      flex-shrink: 0; // No shrinking on desktop
+    }
+    
+    // Icon styling within navigation links
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'base'); // Smaller icons on tablet
+      transition: map-get($Transition, 'medium');
+      flex-shrink: 0; // Icons don't shrink
+      
+      @include Respond('large') {
+        font-size: map-get($Scale, 'lg'); // Restore full size on desktop
+      }
+    }
+    
+    // Text content responsive behavior - PROFESSIONAL SOLUTION
+    .Navigation__LinkText {
+      display: inline; // Always show text by default
+      
+      // Use fluid font sizing instead of hiding text
+      @media (max-width: 840px) and (min-width: 768px) {
+        // Professional solution: scale text instead of hiding
+        font-size: clamp(0.65rem, 1.5vw, 0.75rem); // Fluid scaling for tight space
+        letter-spacing: 0; // Remove extra spacing to save room
+      }
+      
+      @include Respond('large') {
+        display: inline; // Full size on desktop
+        font-size: inherit; // Use parent font size
+      }
+    }
+    
+    // Sophisticated hover states with micro-interactions
+    &:hover {
+      color: $ColorConcrete;
+      transform: translateY(-1px) scale(1.02);
+      background: linear-gradient(135deg, rgba($ColorCoolGray, 0.04) 0%, rgba($ColorConcrete, 0.02) 100%);
+      box-shadow: 0 4px 8px rgba($ColorCharcoal, 0.08);
+      
+      .material-symbols-outlined {
+        color: $ColorConcrete;
+        transform: scale(1.1);
+      }
+      
+      &::after {
+        opacity: 0.4;
+        transform: scaleX(1);
+        background: linear-gradient(90deg, transparent 0%, $ColorConcrete 50%, transparent 100%);
+      }
+    }
+    
+    // Active/current page state
+    &--active,
+    &.Active {
+      color: $ColorCharcoal;
+      border-bottom-color: map-get($AccentColors, 'gold');
+      font-weight: map-get($FontWeight, 'semibold');
+      
+      .material-symbols-outlined {
+        color: map-get($AccentColors, 'gold');
+      }
+      
+      &::after {
+        opacity: 0.1;
+        background: map-get($AccentColors, 'gold');
+        transform: scaleX(1);
+      }
+    }
+    
+    // Sophisticated underline effect
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $ColorConcrete;
+      opacity: 0;
+      transform: scaleX(0);
+      transition: map-get($Transition, 'medium');
+      transform-origin: center;
+    }
+    
+    @include Respond('medium') {
+      padding: map-get($Scale, 'xs') 0;
+    }
+  }
+  
+  // Mobile Navigation Toggle
+  &__Toggle {
+    display: flex; // Show on mobile
+    background: none;
+    border: none;
+    padding: map-get($Spacing, 'xs');
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    
+    @include Respond('medium') {
+      display: none; // Hide on tablet and up
+    }
+    
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $ColorCharcoal;
+      transition: all 0.3s ease;
+      border-radius: 1px;
+      
+      &:first-child {
+        transform-origin: top left;
+      }
+      
+      &:nth-child(2) {
+        opacity: 1;
+      }
+      
+      &:last-child {
+        transform-origin: bottom left;
+      }
+    }
+    
+    // Active state (when menu is open)
+    &.Active {
+      span:first-child {
+        transform: rotate(45deg) translate(3px, -1px);
+      }
+      
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      span:last-child {
+        transform: rotate(-45deg) translate(3px, 1px);
+      }
+    }
+    
+    &:hover span {
+      background: $ColorConcrete;
+    }
+  }
+
+  // Breadcrumb Navigation
+  &__Breadcrumb {
+    background: linear-gradient(to right, $ColorWarmWhite, $ColorCoolGray);
+    border-bottom: 1px solid rgba($ColorConcrete, 0.2);
+    padding: map-get($Scale, 'sm') 0;
+  }
+}
+
+// Professional Breadcrumb Component
+.Breadcrumb {
+  &__List {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: map-get($Scale, 'xs');
+  }
+  
+  &__Item {
+    display: flex;
+    align-items: center;
+    gap: map-get($Scale, 'xs');
+    
+    &--current {
+      color: $ColorCharcoal;
+      font-weight: map-get($FontWeight, 'medium');
+    }
+  }
+  
+  &__Link {
+    color: $ColorConcrete;
+    text-decoration: none;
+    font-size: map-get($UIFontSizes, 'small');
+    font-weight: map-get($FontWeight, 'normal');
+    transition: map-get($Transition, 'fast');
+    
+    &:hover {
+      color: $ColorCharcoal;
+      text-decoration: underline;
+    }
+  }
+  
+  &__Separator {
+    color: $ColorConcreteLight;
+    font-size: map-get($Scale, 'sm');
+    display: flex;
+    align-items: center;
+    
+    .material-symbols-outlined {
+      font-size: map-get($Scale, 'base');
+    }
+  }
+}
+
+// Enhanced Logo Styling
+.Logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: map-get($Transition, 'medium');
+  
+  img {
+    height: map-get($Scale, 'xl');
+    width: auto;
+    transition: map-get($Transition, 'medium');
+    
+    @include Respond('medium') {
+      height: map-get($Scale, 'xxl');
+    }
+  }
+  
+  &:hover {
+    transform: scale(1.05);
+    
+    img {
+      filter: brightness(1.1);
+    }
+  }
+  
+  &--active {
+    img {
+      filter: drop-shadow(0 0 8px rgba(map-get($AccentColors, 'gold'), 0.3));
+    }
+  }
+}
+
+// Minimal Professional Hero Section
+.Hero {
+  background: linear-gradient(135deg, $ColorWarmWhite 0%, $ColorCoolGray 100%);
+  padding: map-get($Spacing, 'xl') 0;
+  position: relative;
+  text-align: center;
+  
+  @include Respond('medium') {
+    padding: map-get($Spacing, 'xxl') 0;
+    text-align: left;
+  }
+  
+  // Subtle geometric elements - very restrained
+  //&::before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 20%;
+  //  right: 8%;
+  //  width: 20px;
+  //  height: 20px;
+  //  background: $ColorConcreteLight;
+  //  transform: rotate(45deg);
+  //  opacity: 0.3;
+  //  
+  //  @include Respond('medium') {
+  //    width: 40px;
+  //    height: 40px;
+  //    opacity: 0.4;
+  //  }
+  //}
+  //
+  //&::after {
+  //  content: '';
+  //  position: absolute;
+  //  bottom: 25%;
+  //  left: 5%;
+  //  width: 16px;
+  //  height: 16px;
+  //  background: $ColorConcrete;
+  //  border-radius: 50%;
+  //  opacity: 0.2;
+  //  
+  //  @include Respond('medium') {
+  //    width: 24px;
+  //    height: 24px;
+  //    opacity: 0.3;
+  //  }
+  //}
+  
+  .Container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  &__Content {
+    width: 100%; // Full width on mobile
+    text-align: inherit;
+    
+    @include Respond('medium') {
+      max-width: 60%;
+    }
+    
+    @include Respond('large') {
+      max-width: 50%;
+    }
+  }
+  
+  &__Title {
+    font-size: map-get($FluidTypography, 'display'); // Fluid scaling display text
+    font-weight: map-get($FontWeight, 'bold');
+    line-height: map-get($LineHeight, 'tight');
+    margin-bottom: clamp(1.5rem, 3vw + 1rem, 2rem); // Fluid margin
+    color: $ColorCharcoal;
+    text-transform: none;
+    letter-spacing: map-get($LetterSpacing, 'tight');
+    
+    // Subtle concrete accent
+    span {
+      color: $ColorConcrete;
+    }
+  }
+  
+  &__Subtitle {
+    font-size: map-get($FluidTypography, 'lead'); // Fluid lead text
+    font-weight: map-get($FontWeight, 'normal');
+    line-height: map-get($LineHeight, 'normal');
+    color: $ColorConcreteDark;
+    margin-bottom: clamp(1.618rem, 3vw + 1rem, 2.618rem); // Fluid margin
+  }
+  
+  &__Actions {
+    display: flex;
+    gap: map-get($Spacing, 'sm');
+    flex-direction: column; // Stacked on mobile
+    align-items: center;
+    
+    @include Respond('small') {
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    @include Respond('medium') {
+      justify-content: flex-start;
+      gap: map-get($Spacing, 'base');
+    }
+  }
+}

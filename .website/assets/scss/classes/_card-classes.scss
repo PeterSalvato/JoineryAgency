@@ -1,0 +1,633 @@
+// Bauhaus Card Components - Museum-Quality Geometric Forms
+// Vignelli Systematic Design + Analog Texture Integration
+// =======================================================
+
+.Card {
+  background: $ColorWarmWhite;
+  border: 1px solid $ColorConcreteLight;
+  border-radius: map-get($BorderRadius, 'none'); // Pure geometry
+  transition: map-get($Transition, 'medium');
+  overflow: hidden;
+  position: relative;
+  box-shadow: map-get($BoxShadow, 'subtle');
+  
+  &:hover {
+    background: $ColorCoolGray;
+    border-color: $ColorConcrete;
+    box-shadow: map-get($BoxShadow, 'soft');
+    transform: translateY(-2px);
+  }
+  
+  // Subtle concrete accent bars
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $ColorConcrete;
+  }
+  
+  &__Image {
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: 200px; // Shorter on mobile
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: map-get($Transition, 'medium');
+      
+      @include Respond('medium') {
+        height: 240px; // 8px grid aligned on desktop
+      }
+    }
+    
+    // Geometric overlay on hover
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 48%, $ColorConcrete 50%, transparent 52%);
+      opacity: 0;
+      transition: map-get($Transition, 'medium');
+    }
+    
+    &:hover {
+      img {
+        filter: grayscale(0%);
+      }
+      
+      &::after {
+        opacity: 0.1;
+      }
+    }
+  }
+  
+  &__Content {
+    padding: map-get($ComponentSpacing, 'card-padding');
+    
+    > * + * {
+      margin-top: map-get($ComponentSpacing, 'card-content-gap');
+    }
+  }
+  
+  &__Title {
+    font-size: map-get($FontSizes, 'h4');
+    font-weight: map-get($FontWeight, 'bold');
+    margin: 0 0 map-get($ComponentSpacing, 'card-content-gap') 0;
+    color: $ColorCharcoal;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    line-height: map-get($LineHeight, 'tight');
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'h3');
+    }
+  }
+  
+  &__Description {
+    color: $ColorConcrete;
+    margin: 0 0 map-get($ComponentSpacing, 'card-content-gap') 0;
+    line-height: map-get($LineHeight, 'normal');
+    font-size: map-get($FontSizes, 'body');
+  }
+  
+  &__Link {
+    display: inline-flex;
+    align-items: center;
+    gap: map-get($Scale, 'xs');
+    font-weight: map-get($FontWeight, 'medium');
+    font-size: map-get($UIFontSizes, 'small');
+    color: $ColorCharcoal;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    transition: map-get($Transition, 'fast');
+    margin-top: auto;
+    
+    &:hover {
+      color: map-get($AccentColors, 'gold');
+      border-bottom-color: map-get($AccentColors, 'gold');
+      transform: translateX(map-get($Scale, 'xs'));
+    }
+    
+    &::after {
+      content: '→';
+      transition: map-get($Transition, 'fast');
+    }
+    
+    &:hover::after {
+      transform: translateX(2px);
+    }
+  }
+  
+  // Sophisticated Geometric Image Placeholders
+  &__ImagePlaceholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, $ColorWarmWhite 0%, $ColorCoolGray 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include Respond('medium') {
+      height: 240px;
+    }
+    
+    &__Pattern {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      
+      // Pattern variations for visual interest
+      &--1 {
+        background: 
+          linear-gradient(45deg, transparent 30%, rgba($ColorConcrete, 0.05) 31%, rgba($ColorConcrete, 0.05) 32%, transparent 33%),
+          linear-gradient(-45deg, transparent 30%, rgba($ColorConcrete, 0.03) 31%, rgba($ColorConcrete, 0.03) 32%, transparent 33%);
+        background-size: map-get($Scale, 'xxl') map-get($Scale, 'xxl');
+      }
+      
+      &--2 {
+        background: 
+          radial-gradient(circle at 25% 25%, rgba($ColorConcrete, 0.04) 1px, transparent 1px),
+          radial-gradient(circle at 75% 75%, rgba($ColorConcrete, 0.06) 1px, transparent 1px);
+        background-size: map-get($Scale, 'xl') map-get($Scale, 'xl');
+      }
+      
+      &--3 {
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent map-get($Scale, 'lg'),
+          rgba($ColorConcrete, 0.03) map-get($Scale, 'lg'),
+          rgba($ColorConcrete, 0.03) calc(#{map-get($Scale, 'lg')} + 1px)
+        );
+      }
+      
+      &--4 {
+        background: 
+          linear-gradient(90deg, transparent 49%, rgba($ColorConcrete, 0.05) 50%, transparent 51%),
+          linear-gradient(0deg, transparent 49%, rgba($ColorConcrete, 0.03) 50%, transparent 51%);
+        background-size: map-get($Scale, 'xxxl') map-get($Scale, 'xxxl');
+      }
+    }
+    
+    &__Geometry {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden; // Prevent child elements from extending beyond boundaries
+    }
+    
+    &__Shape {
+      position: absolute;
+      
+      &--primary {
+        width: min(map-get($Scale, 'xxl'), 40px); // φ^2 on mobile, max 40px
+        height: min(map-get($Scale, 'xxl'), 40px);
+        background: rgba($ColorCharcoal, 0.08);
+        transform: rotate(45deg);
+        
+        @include Respond('medium') {
+          width: min(map-get($Scale, 'xxxl'), 60px); // φ^4 on desktop, max 60px
+          height: min(map-get($Scale, 'xxxl'), 60px);
+        }
+      }
+      
+      &--secondary {
+        width: min(map-get($Scale, 'lg'), 30px); // φ^1 on mobile, max 30px
+        height: min(map-get($Scale, 'lg'), 30px);
+        border: 2px solid rgba($ColorConcrete, 0.15);
+        border-radius: 50%;
+        top: -#{map-get($Scale, 'sm')}; // Reduced negative margin
+        right: -#{map-get($Scale, 'xs')}; // Reduced negative margin
+        
+        @include Respond('medium') {
+          width: min(map-get($Scale, 'xl'), 45px); // φ^2 on desktop, max 45px
+          height: min(map-get($Scale, 'xl'), 45px);
+          top: -#{map-get($Scale, 'lg')};
+          right: -#{map-get($Scale, 'base')};
+        }
+      }
+      
+      &--accent {
+        width: map-get($Scale, 'lg');
+        height: 2px;
+        background: rgba(map-get($AccentColors, 'gold'), 0.2);
+        bottom: -#{map-get($Scale, 'sm')};
+        left: -#{map-get($Scale, 'base')};
+        transform: rotate(-15deg);
+      }
+    }
+    
+    // Hover animation
+    &:hover {
+      .Card__ImagePlaceholder__Shape {
+        &--primary {
+          transform: rotate(45deg) scale(1.1);
+          background: rgba($ColorCharcoal, 0.12);
+        }
+        
+        &--secondary {
+          transform: scale(1.1);
+          border-color: rgba($ColorConcrete, 0.25);
+        }
+        
+        &--accent {
+          background: rgba(map-get($AccentColors, 'gold'), 0.4);
+          transform: rotate(-15deg) scaleX(1.2);
+        }
+      }
+    }
+  }
+  
+  // Subtle concrete variants - let imagery provide color
+  &.Dark {
+    &::before {
+      background: $ColorConcreteDark;
+    }
+  }
+  
+  &.Light {
+    &::before {
+      background: $ColorConcreteLight;
+    }
+  }
+}
+
+// Portfolio Index Cards - Clean Navigation Layout
+.PortfolioIndex {
+  display: grid;
+  gap: map-get($Spacing, 'xl');
+  
+  @include Respond('medium') {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: map-get($Spacing, 'xxl');
+  }
+}
+
+.PortfolioCard {
+  background: $ColorWarmWhite;
+  border: 1px solid $ColorConcreteLight;
+  border-radius: map-get($BorderRadius, 'none');
+  overflow: hidden;
+  transition: map-get($Transition, 'medium');
+  position: relative;
+  
+  &:hover {
+    background: $ColorCoolGray;
+    border-color: $ColorConcrete;
+    transform: translateY(-4px);
+  }
+  
+  // Subtle concrete accent bars
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $ColorConcrete;
+  }
+  
+  &-Image {
+    position: relative;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: map-get($Transition, 'medium');
+    }
+    
+    // Geometric overlay on hover
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 48%, $ColorConcrete 50%, transparent 52%);
+      opacity: 0;
+      transition: map-get($Transition, 'medium');
+    }
+    
+    // Service card placeholder sizing
+    .Card__ImagePlaceholder {
+      height: 160px;
+      min-height: 160px;
+      
+      @include Respond('medium') {
+        height: 180px;
+        min-height: 180px;
+      }
+    }
+  }
+  
+  &:hover &-Image {
+    img {
+      filter: grayscale(0%);
+    }
+    
+    &::after {
+      opacity: 0.1;
+    }
+  }
+  
+  &-Content {
+    padding: map-get($Spacing, 'lg');
+    
+    @include Respond('medium') {
+      padding: map-get($Spacing, 'xl');
+    }
+  }
+  
+  &-Meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: map-get($Spacing, 'base');
+    gap: map-get($Spacing, 'sm');
+    
+    @include Respond('medium') {
+      margin-bottom: map-get($Spacing, 'lg');
+    }
+  }
+  
+  &-Services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: map-get($Spacing, 'xs');
+  }
+  
+  &-Client {
+    display: flex;
+    align-items: center;
+    gap: map-get($Spacing, 'xs');
+    font-size: map-get($FontSizes, 'small');
+    color: $ColorConcreteLight;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    white-space: nowrap;
+    
+    .material-symbols-outlined {
+      font-size: 16px;
+      color: $ColorConcreteLight;
+    }
+  }
+  
+  &-Title {
+    margin-bottom: map-get($Spacing, 'sm');
+  }
+  
+  &-Link {
+    font-size: map-get($FontSizes, 'h3');
+    font-weight: map-get($FontWeight, 'bold');
+    color: $ColorCharcoal;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    text-decoration: none;
+    display: block;
+    transition: map-get($Transition, 'medium');
+    
+    &:hover {
+      color: $ColorConcrete;
+    }
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'h2');
+    }
+  }
+  
+  &-Description {
+    color: $ColorConcrete;
+    margin-bottom: map-get($Spacing, 'lg');
+    line-height: map-get($LineHeight, 'normal');
+  }
+  
+  &-Actions {
+    display: flex;
+    gap: map-get($Spacing, 'sm');
+    flex-wrap: wrap;
+    
+    .Button {
+      display: inline-flex;
+      align-items: center;
+      gap: map-get($Spacing, 'xs');
+      
+      .material-symbols-outlined {
+        font-size: 16px;
+        transition: map-get($Transition, 'medium');
+      }
+    }
+  }
+}
+
+// Tags for services
+.Tag {
+  display: inline-block;
+  background: $ColorConcreteLight;
+  color: $ColorCharcoal;
+  padding: map-get($Spacing, 'xs') map-get($Spacing, 'sm');
+  border-radius: map-get($BorderRadius, 'none');
+  font-size: map-get($FontSizes, 'caption');
+  font-weight: map-get($FontWeight, 'medium');
+  text-transform: uppercase;
+  letter-spacing: map-get($LetterSpacing, 'wide');
+}
+
+// Service Cards - Mobile-First Centered Layout
+.ServiceCard {
+  text-align: center;
+  background: $ColorWarmWhite;
+  border: 1px solid $ColorConcreteLight;
+  border-radius: map-get($BorderRadius, 'none');
+  padding: map-get($Spacing, 'lg');
+  transition: map-get($Transition, 'medium');
+  position: relative;
+  
+  @include Respond('medium') {
+    padding: map-get($Spacing, 'xl');
+  }
+  
+  &:hover {
+    background: $ColorCoolGray;
+    border-color: $ColorConcrete;
+    
+    // Service card placeholder hover effects
+    .Card__ImagePlaceholder {
+      .Card__ImagePlaceholder__Shape--primary {
+        transform: rotate(45deg) scale(1.1);
+        background: rgba($ColorCharcoal, 0.12);
+      }
+      
+      .Card__ImagePlaceholder__Shape--secondary {
+        transform: scale(1.1);
+        border-color: rgba($ColorConcrete, 0.25);
+      }
+      
+      .Card__ImagePlaceholder__Shape--accent {
+        background: rgba(map-get($AccentColors, 'gold'), 0.4);
+        transform: rotate(-15deg) scaleX(1.2);
+      }
+    }
+  }
+  
+  // Subtle concrete accent bars
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $ColorConcrete;
+  }
+  
+  &-Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: map-get($Spacing, 'base');
+    
+    .material-symbols-outlined {
+      font-size: 48px;
+      margin-bottom: map-get($Spacing, 'sm');
+      color: $ColorConcrete;
+      
+      @include Respond('medium') {
+        font-size: 56px;
+        margin-bottom: map-get($Spacing, 'base');
+      }
+    }
+  }
+  
+  &-Title {
+    font-size: map-get($FontSizes, 'h4');
+    font-weight: map-get($FontWeight, 'bold');
+    color: $ColorCharcoal;
+    text-transform: uppercase;
+    letter-spacing: map-get($LetterSpacing, 'wide');
+    margin: 0;
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'h3');
+    }
+  }
+  
+  &-Description {
+    color: $ColorConcrete;
+    margin-bottom: map-get($Spacing, 'lg');
+    line-height: map-get($LineHeight, 'normal');
+  }
+  
+  &-Features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    
+    li {
+      display: flex;
+      align-items: center;
+      gap: map-get($Spacing, 'xs');
+      margin-bottom: map-get($Spacing, 'xs');
+      color: $ColorCharcoal;
+      font-size: map-get($FontSizes, 'body');
+      
+      .material-symbols-outlined {
+        font-size: 16px;
+        color: $ColorConcrete;
+        flex-shrink: 0;
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .Card__Icon {
+    width: 48px; // Smaller on mobile
+    height: 48px;
+    background: $ColorCharcoal;
+    margin: 0 auto map-get($Spacing, 'base');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include Respond('medium') {
+      width: 64px; // 8px grid aligned
+      height: 64px;
+      margin: 0 auto map-get($Spacing, 'lg');
+    }
+    
+    // Material Icons integration
+    .material-symbols-outlined,
+    .material-symbols-rounded {
+      color: $ColorWhite;
+      font-size: 24px;
+      
+      @include Respond('medium') {
+        font-size: 32px;
+      }
+    }
+    
+    // Geometric shapes as icons (fallback)
+    &.Circle {
+      border-radius: 50%;
+    }
+    
+    &.Triangle {
+      width: 0;
+      height: 0;
+      border-left: 24px solid transparent; // Smaller on mobile
+      border-right: 24px solid transparent;
+      border-bottom: 42px solid $ColorBlack;
+      background: transparent;
+      
+      @include Respond('medium') {
+        border-left: 32px solid transparent;
+        border-right: 32px solid transparent;
+        border-bottom: 56px solid $ColorCharcoal;
+      }
+    }
+    
+    &.Square {
+      // Default square shape
+    }
+    
+    // Concrete palette variants
+    &.Light {
+      background: $ColorConcreteLight;
+      
+      .material-symbols-outlined,
+      .material-symbols-rounded {
+        color: $ColorCharcoal;
+      }
+    }
+    
+    &.Dark {
+      background: $ColorConcreteDark;
+    }
+  }
+}

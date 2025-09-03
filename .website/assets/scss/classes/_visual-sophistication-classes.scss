@@ -1,0 +1,361 @@
+// Visual Sophistication & Micro-Interactions - Museum-Quality Design
+// ====================================================================
+// Elevates the design from functional to exceptional with subtle depth and delight
+
+// Enhanced box shadows for depth and layering
+$SophisticatedShadows: (
+  'subtle': (0 1px 3px rgba($ColorCharcoal, 0.05)),
+  'soft': (0 4px 6px -1px rgba($ColorCharcoal, 0.07), 0 2px 4px -1px rgba($ColorCharcoal, 0.05)),
+  'medium': (0 10px 15px -3px rgba($ColorCharcoal, 0.08), 0 4px 6px -2px rgba($ColorCharcoal, 0.04)),
+  'elevated': (0 20px 25px -5px rgba($ColorCharcoal, 0.08), 0 10px 10px -5px rgba($ColorCharcoal, 0.04)),
+  'floating': (0 25px 50px -12px rgba($ColorCharcoal, 0.15)),
+  'inset': (inset 0 2px 4px 0 rgba($ColorCharcoal, 0.06))
+);
+
+// Professional hover transitions
+@mixin HoverLift($amount: -2px) {
+  transition: all map-get($Transition, 'smooth');
+  
+  &:hover {
+    transform: translateY($amount);
+    box-shadow: map-get($SophisticatedShadows, 'elevated');
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: map-get($SophisticatedShadows, 'soft');
+  }
+}
+
+// Subtle entrance animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+// Apply sophisticated shadows to key elements
+.Navigation {
+  box-shadow: map-get($SophisticatedShadows, 'soft');
+  backdrop-filter: blur(10px);
+  background-color: rgba($ColorWarmWhite, 0.98);
+}
+
+.Card {
+  box-shadow: map-get($SophisticatedShadows, 'soft');
+  @include HoverLift(-4px);
+  
+  // Subtle border for definition
+  border: 1px solid rgba($ColorConcrete, 0.1);
+  
+  // Loading shimmer effect
+  &--loading {
+    background: linear-gradient(
+      90deg,
+      $ColorWarmWhite 0%,
+      rgba($ColorConcrete, 0.05) 50%,
+      $ColorWarmWhite 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+// Button enhancements
+.Button {
+  box-shadow: map-get($SophisticatedShadows, 'subtle');
+  position: relative;
+  overflow: hidden;
+  
+  // Ripple effect on click
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  &:active::after {
+    width: 300%;
+    height: 300%;
+  }
+  
+  &--primary {
+    @include HoverLift(-1px);
+    
+    &:hover {
+      box-shadow: 
+        map-get($SophisticatedShadows, 'medium'),
+        0 0 20px rgba($ColorCharcoal, 0.1);
+    }
+  }
+  
+  &--secondary {
+    border: 1px solid rgba($ColorConcrete, 0.2);
+    
+    &:hover {
+      border-color: rgba($ColorConcrete, 0.4);
+      background: rgba($ColorConcrete, 0.02);
+    }
+  }
+}
+
+// Hero section depth
+.Hero {
+  position: relative;
+  
+  &__Content {
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+  }
+  
+  &__Title {
+    animation-delay: 0.1s;
+  }
+  
+  &__Subtitle {
+    animation-delay: 0.2s;
+  }
+  
+  &__Actions {
+    animation-delay: 0.3s;
+  }
+}
+
+// Services grid animation
+.Services-Grid {
+  .Service {
+    animation: fadeInScale 0.6s ease-out;
+    animation-fill-mode: both;
+    
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+}
+
+// Process steps visual enhancement
+.Process-Step {
+  position: relative;
+  
+  .Process-Step__Number {
+    box-shadow: map-get($SophisticatedShadows, 'soft');
+    position: relative;
+    
+    // Subtle glow effect
+    &::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, $ColorConcrete, transparent);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity map-get($Transition, 'smooth');
+      z-index: -1;
+    }
+  }
+  
+  &:hover .Process-Step__Number::before {
+    opacity: 0.3;
+  }
+}
+
+// Form field enhancements
+input, textarea, select {
+  transition: all map-get($Transition, 'smooth');
+  box-shadow: map-get($SophisticatedShadows, 'subtle');
+  border: 1px solid rgba($ColorConcrete, 0.2);
+  
+  &:hover {
+    border-color: rgba($ColorConcrete, 0.3);
+  }
+  
+  &:focus {
+    box-shadow: 
+      map-get($SophisticatedShadows, 'soft'),
+      0 0 0 3px rgba($ColorCharcoal, 0.05);
+    border-color: $ColorCharcoal;
+    outline: none;
+  }
+  
+  &:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+    box-shadow: 
+      map-get($SophisticatedShadows, 'soft'),
+      0 0 0 3px rgba(231, 76, 60, 0.1);
+  }
+}
+
+// Typography refinements
+h1, h2, h3 {
+  position: relative;
+  
+  // Subtle accent line animation
+  &::before {
+    transition: width map-get($Transition, 'smooth');
+    width: map-get($Scale, 'lg');
+  }
+  
+  &:hover::before {
+    width: map-get($Scale, 'xl');
+  }
+}
+
+// Link hover effects
+a:not(.Button):not(.Navigation__Link) {
+  position: relative;
+  transition: color map-get($Transition, 'fast');
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: $ColorCharcoal;
+    transition: width map-get($Transition, 'smooth');
+  }
+  
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// Image enhancements
+img {
+  transition: transform map-get($Transition, 'smooth');
+  
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+// Scroll reveal animations
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Loading states
+.Loading {
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba($ColorWarmWhite, 0.5) 50%,
+      transparent 100%
+    );
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+// Focus indicators for accessibility
+:focus-visible {
+  outline: 2px solid $ColorCharcoal;
+  outline-offset: 2px;
+  border-radius: map-get($BorderRadius, 'sm');
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Selection styling
+::selection {
+  background: rgba($ColorCharcoal, 0.1);
+  color: $ColorCharcoal;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $ColorWarmWhite;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($ColorConcrete, 0.3);
+  border-radius: 6px;
+  border: 3px solid $ColorWarmWhite;
+  
+  &:hover {
+    background: rgba($ColorConcrete, 0.5);
+  }
+}
+
+// Print styles for professionalism
+@media print {
+  .Navigation,
+  .Footer,
+  .Button,
+  .MenuToggle {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: white;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}

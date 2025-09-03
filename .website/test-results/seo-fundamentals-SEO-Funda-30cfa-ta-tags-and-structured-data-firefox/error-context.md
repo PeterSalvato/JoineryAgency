@@ -1,0 +1,189 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Joinery SystemWorks" [ref=e4] [cursor=pointer]:
+        - /url: index.php
+        - img "Joinery SystemWorks" [ref=e5] [cursor=pointer]
+      - list [ref=e6]:
+        - listitem [ref=e7]:
+          - link "Home" [ref=e8] [cursor=pointer]:
+            - /url: index.php
+            - generic [ref=e9] [cursor=pointer]: home
+            - generic [ref=e10] [cursor=pointer]: Home
+        - listitem [ref=e11]:
+          - link "About" [ref=e12] [cursor=pointer]:
+            - /url: about.php
+            - generic [ref=e13] [cursor=pointer]: info
+            - generic [ref=e14] [cursor=pointer]: About
+        - listitem [ref=e15]:
+          - link "Portfolio" [ref=e16] [cursor=pointer]:
+            - /url: portfolio.php
+            - generic [ref=e17] [cursor=pointer]: work
+            - generic [ref=e18] [cursor=pointer]: Portfolio
+        - listitem [ref=e19]:
+          - link "Contact" [ref=e20] [cursor=pointer]:
+            - /url: contact.php
+            - generic [ref=e21] [cursor=pointer]: mail
+            - generic [ref=e22] [cursor=pointer]: Contact
+        - listitem [ref=e23]:
+          - link "Blog" [ref=e24] [cursor=pointer]:
+            - /url: blog.php
+            - generic [ref=e25] [cursor=pointer]: article
+            - generic [ref=e26] [cursor=pointer]: Blog
+  - main [ref=e27]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - heading "Systems That Work. Design That Matters." [level=1] [ref=e32]:
+          - text: Systems That
+          - generic [ref=e33]: Work
+          - text: .
+          - text: Design That
+          - generic [ref=e34]: Matters
+          - text: .
+        - paragraph [ref=e35]: We transform complex business challenges into elegant digital solutions through systematic design thinking, mathematical precision, and user-centered development.
+        - generic [ref=e36]:
+          - link "View Our Work" [ref=e37] [cursor=pointer]:
+            - /url: portfolio.php
+          - link "Start Your Project" [ref=e38] [cursor=pointer]:
+            - /url: contact.php
+      - generic "Hero Image Placeholder" [ref=e40]: ✕
+    - generic [ref=e43]:
+      - heading "The Golden Ratio of Digital Craft" [level=2] [ref=e44]
+      - paragraph [ref=e45]: Every pixel, every interaction, every line of code follows the mathematical harmony found in nature. We don't just build websites—we architect digital ecosystems where form and function exist in perfect proportion.
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: "1.618"
+          - generic [ref=e49]: Golden Ratio Foundation
+        - generic [ref=e50]:
+          - generic [ref=e51]: 100%
+          - generic [ref=e52]: Custom Systems
+        - generic [ref=e53]:
+          - generic [ref=e54]: ∞
+          - generic [ref=e55]: Scalable Solutions
+    - generic [ref=e57]:
+      - generic [ref=e58]:
+        - heading "Comprehensive Digital Solutions" [level=2] [ref=e59]
+        - paragraph [ref=e60]: From strategy to implementation, we handle every aspect of your digital transformation.
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e70]:
+            - img "Design Systems Architecture Service" [ref=e71]: architecture
+            - heading "Design Systems Architecture" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Build scalable, maintainable design systems that grow with your business. Every component, every pattern, mathematically proportioned for maximum impact.
+          - list [ref=e74]:
+            - listitem [ref=e75]:
+              - generic [ref=e76]: check_circle
+              - text: Golden Ratio Proportions
+            - listitem [ref=e77]:
+              - generic [ref=e78]: check_circle
+              - text: Component Libraries
+            - listitem [ref=e79]:
+              - generic [ref=e80]: check_circle
+              - text: Brand Guidelines
+            - listitem [ref=e81]:
+              - generic [ref=e82]: check_circle
+              - text: Accessibility Standards
+        - generic [ref=e83]:
+          - generic [ref=e91]:
+            - img "Full-Stack Development Service" [ref=e92]: code
+            - heading "Full-Stack Development" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Custom web applications built with modern technologies and performance-first architecture. Clean code, robust security, seamless user experiences.
+          - list [ref=e95]:
+            - listitem [ref=e96]:
+              - generic [ref=e97]: check_circle
+              - text: Custom PHP/JavaScript
+            - listitem [ref=e98]:
+              - generic [ref=e99]: check_circle
+              - text: API Development
+            - listitem [ref=e100]:
+              - generic [ref=e101]: check_circle
+              - text: Database Design
+            - listitem [ref=e102]:
+              - generic [ref=e103]: check_circle
+              - text: Performance Optimization
+        - generic [ref=e104]:
+          - generic [ref=e112]:
+            - img "Digital Strategy & Consulting Service" [ref=e113]: analytics
+            - heading "Digital Strategy & Consulting" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Strategic guidance to align your digital presence with business objectives. We analyze, plan, and execute transformation roadmaps.
+          - list [ref=e116]:
+            - listitem [ref=e117]:
+              - generic [ref=e118]: check_circle
+              - text: Technical Audits
+            - listitem [ref=e119]:
+              - generic [ref=e120]: check_circle
+              - text: Growth Strategy
+            - listitem [ref=e121]:
+              - generic [ref=e122]: check_circle
+              - text: Team Training
+            - listitem [ref=e123]:
+              - generic [ref=e124]: check_circle
+              - text: Process Optimization
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - heading "Featured Projects" [level=2] [ref=e128]
+        - paragraph [ref=e129]: Recent work that demonstrates our systematic approach to digital problem-solving.
+      - generic [ref=e130]:
+        - article [ref=e131]:
+          - img "Aiden Jae" [ref=e133]
+          - generic [ref=e134]:
+            - heading "Aiden Jae" [level=3] [ref=e135]
+            - paragraph [ref=e136]: A complete brand and e-commerce build for a fashion-focused client, blending minimalist identity design with a high-conversion Shopify storefront.
+            - link "View Project" [ref=e137] [cursor=pointer]:
+              - /url: portfolio.php#aiden-jae
+        - article [ref=e138]:
+          - img "Everyday Gold" [ref=e140]
+          - generic [ref=e141]:
+            - heading "Everyday Gold" [level=3] [ref=e142]
+            - paragraph [ref=e143]: A full brand and e-commerce design for a luxury goods brand, combining refined aesthetics with a performant Shopify experience.
+            - link "View Project" [ref=e144] [cursor=pointer]:
+              - /url: portfolio.php#everyday-gold
+      - link "View All Projects" [ref=e146] [cursor=pointer]:
+        - /url: portfolio.php
+    - generic [ref=e149]:
+      - heading "Our Systematic Approach" [level=2] [ref=e150]
+      - paragraph [ref=e151]: Every project follows our proven methodology that balances analytical rigor with creative innovation.
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - generic [ref=e156]: "01"
+          - generic [ref=e158]:
+            - heading "Discovery & Analysis" [level=3] [ref=e159]
+            - paragraph [ref=e160]: We begin by understanding your business, users, and technical requirements through comprehensive research and stakeholder interviews.
+        - generic [ref=e161]:
+          - generic [ref=e164]: "02"
+          - generic [ref=e166]:
+            - heading "System Architecture" [level=3] [ref=e167]
+            - paragraph [ref=e168]: Design scalable information architecture and technical systems that support current needs while enabling future growth.
+        - generic [ref=e169]:
+          - generic [ref=e172]: "03"
+          - generic [ref=e174]:
+            - heading "Iterative Development" [level=3] [ref=e175]
+            - paragraph [ref=e176]: Build and refine through continuous feedback loops, ensuring every detail meets our exacting standards for quality and performance.
+        - generic [ref=e177]:
+          - generic [ref=e180]: "04"
+          - generic [ref=e181]:
+            - heading "Launch & Optimization" [level=3] [ref=e182]
+            - paragraph [ref=e183]: Deploy with comprehensive testing, monitoring, and ongoing optimization to ensure long-term success and measurable impact.
+  - contentinfo [ref=e184]:
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - heading "Design & Development Consultancy" [level=4] [ref=e188]
+          - paragraph [ref=e189]: Visual Design, UX Design & System Architecture
+        - generic [ref=e190]:
+          - heading "Services" [level=4] [ref=e191]
+          - list [ref=e192]:
+            - listitem [ref=e193]: Visual Design
+            - listitem [ref=e194]: UX Design
+            - listitem [ref=e195]: System Architecture
+            - listitem [ref=e196]: Development
+        - generic [ref=e197]:
+          - heading "Contact" [level=4] [ref=e198]
+          - paragraph [ref=e199]: Ready to start your next project?
+          - link "Get In Touch" [ref=e200] [cursor=pointer]:
+            - /url: contact.php
+      - paragraph [ref=e202]: © 2025 Design & Development Consultancy. All rights reserved.
+```

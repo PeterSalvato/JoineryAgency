@@ -1,0 +1,380 @@
+// Brand Enhancement System - Museum-Quality Visual Excellence
+// Vignelli Systematic Design + Analog Texture Integration
+// ==========================================================
+
+// Section Headers - Consistent Brand Hierarchy
+.Section-Header {
+  text-align: center;
+  margin-bottom: map-get($Scale, 'xxxl'); // φ^4 spacing for section emphasis
+  position: relative;
+  width: 100%; // Ensure full container width
+  max-width: 100%; // Prevent exceeding parent width
+  overflow: hidden; // Hide any content that exceeds boundaries
+  box-sizing: border-box; // Include padding in width calculations
+  
+  @include Respond('medium') {
+    margin-bottom: map-get($Scale, 'massive') * 0.5; // φ^5 * 0.5 for desktop breathing
+  }
+  
+  h2 {
+    font-size: map-get($FontSizes, 'h2');
+    margin-bottom: map-get($Scale, 'base');
+    word-wrap: break-word; // Ensure long words break to prevent horizontal overflow
+    overflow-wrap: break-word; // Modern browsers
+    hyphens: auto; // Enable hyphenation for better text wrapping
+    max-width: 100%; // Ensure h2 never exceeds container width
+    box-sizing: border-box; // Include padding in width calculations
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'h1'); // Larger on desktop
+    }
+    
+    // Sophisticated concrete accent with analog texture reference
+    &::after {
+      content: '';
+      display: block;
+      width: min(map-get($Scale, 'xxl'), 80vw); // φ^2 on mobile, capped at 80% viewport width
+      max-width: 100%; // Ensure never exceeds container
+      height: 3px;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba($ColorConcrete, 0.6) 20%, 
+        rgba($ColorConcrete, 0.9) 50%, 
+        rgba($ColorConcrete, 0.6) 80%, 
+        transparent 100%
+      );
+      // Subtle paper texture reference
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.08) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size: 6px 6px, 9px 9px;
+      margin: map-get($Scale, 'base') auto; // φ^0 spacing, centered
+      opacity: 0.85;
+      
+      @include Respond('medium') {
+        width: min(map-get($Scale, 'xxxl'), 90vw); // φ^4 on desktop, capped at 90% viewport
+        background-size: 8px 8px, 12px 12px;
+      }
+    }
+  }
+  
+  p {
+    font-size: map-get($FontSizes, 'lead');
+    color: $ColorConcreteDark;
+    max-width: 60ch; // Optimal reading length
+    margin: 0 auto;
+    line-height: map-get($LineHeight, 'relaxed');
+  }
+}
+
+// Brand Statistics Display - Mathematical Emphasis
+.Philosophy-Stats {
+  display: grid;
+  gap: map-get($Scale, 'xl'); // φ^2 spacing
+  grid-template-columns: 1fr;
+  margin-top: map-get($Scale, 'xxl'); // φ^3 top spacing
+  
+  @include Respond('medium') {
+    grid-template-columns: repeat(3, 1fr);
+    gap: map-get($Scale, 'xxl'); // φ^3 spacing on larger screens
+  }
+  
+  .Stat {
+    text-align: center;
+    padding: map-get($Scale, 'lg') map-get($Scale, 'base'); // φ^1 x φ^0 padding
+    border: 1px solid $ColorConcreteLight;
+    border-radius: map-get($BorderRadius, 'none');
+    background: linear-gradient(135deg, $ColorWarmWhite 0%, $ColorCoolGray 100%);
+    transition: map-get($Transition, 'medium');
+    
+    &:hover {
+      transform: translateY(-#{map-get($Scale, 'xs')}) scale(1.02); // φ^-2 lift with subtle scale
+      box-shadow: 0 8px 25px rgba($ColorConcrete, 0.12), 0 3px 8px rgba($ColorCharcoal, 0.08); // Layered shadows
+      border-color: $ColorConcrete;
+      background: linear-gradient(135deg, rgba($ColorCoolGray, 0.02) 0%, rgba($ColorConcrete, 0.03) 100%);
+    }
+    
+    &-Number {
+      display: block;
+      font-size: map-get($FontSizes, 'h1');
+      font-weight: map-get($FontWeight, 'bold');
+      color: $ColorCharcoal;
+      margin-bottom: map-get($Scale, 'sm'); // φ^-1 spacing
+      line-height: 1;
+      
+      @include Respond('medium') {
+        font-size: map-get($FontSizes, 'display');
+      }
+    }
+    
+    &-Label {
+      font-size: map-get($FontSizes, 'small');
+      color: $ColorConcrete;
+      text-transform: uppercase;
+      letter-spacing: map-get($LetterSpacing, 'wide');
+      font-weight: map-get($FontWeight, 'medium');
+    }
+  }
+}
+
+// Process Steps - Enhanced Visual Hierarchy with Mathematical Containment
+.Process-Steps {
+  display: grid;
+  gap: clamp(map-get($Scale, 'base'), 3vw, map-get($Scale, 'xl')); // Fluid spacing
+  margin-top: map-get($Scale, 'xxxl'); // φ^4 top spacing
+  width: 100%; // Ensure grid container doesn't exceed viewport
+  max-width: 100%; // Additional constraint
+  overflow: hidden; // Prevent any child overflow
+  container: process-steps / inline-size; // Container queries support
+  
+  // Fluid responsive columns using CSS Grid's auto-fit
+  @include Respond('medium') {
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(map-get($Scale, 'lg'), 2vw, map-get($Scale, 'xxl')); // Fluid gap scaling
+  }
+  
+  // Enhanced constraints for different viewport sizes
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Tablet optimization
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1299px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Small desktop
+  }
+  
+  @media (min-width: 1300px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Large desktop
+    gap: clamp(map-get($Scale, 'base'), 1.5vw, map-get($Scale, 'xl')); // Controlled spacing
+  }
+}
+
+.ProcessStep {
+  position: relative;
+  text-align: center;
+  padding: map-get($Scale, 'base') map-get($Scale, 'xs'); // φ^0 x φ^-2 mobile padding
+  width: 100%; // Ensure step doesn't exceed grid cell
+  max-width: 100%; // Additional constraint
+  min-width: 0; // Allow flex/grid shrinking
+  box-sizing: border-box; // Include padding in width calculation
+  
+  @include Respond('small') {
+    padding: map-get($Scale, 'lg') map-get($Scale, 'sm'); // φ^1 x φ^-1 small screen
+  }
+  
+  @include Respond('medium') {
+    padding: map-get($Scale, 'xl') map-get($Scale, 'base'); // φ^2 x φ^0 medium+
+  }
+  
+  @include Respond('large') {
+    padding: map-get($Scale, 'xl') map-get($Scale, 'lg'); // φ^2 x φ^1 desktop
+  }
+  
+  @include Respond('medium') {
+    text-align: left;
+  }
+  
+  // Mathematical step numbering - Museum-quality precision
+  &-Number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: map-get($Scale, 'xl'); // φ^2 mobile size (was φ^4)
+    height: map-get($Scale, 'xl');
+    background: linear-gradient(135deg, $ColorCharcoal 0%, rgba($ColorCharcoal, 0.9) 100%);
+    color: $ColorWhite;
+    font-size: map-get($FontSizes, 'body'); // Smaller mobile font
+    font-weight: map-get($FontWeight, 'bold');
+    border-radius: 50%;
+    margin-bottom: map-get($Scale, 'base'); // φ^0 mobile spacing
+    position: relative;
+    flex-shrink: 0; // Prevent number circle from shrinking
+    box-shadow: 0 4px 12px rgba($ColorCharcoal, 0.15), inset 0 1px 2px rgba(255,255,255,0.1);
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    @include Respond('medium') {
+      width: map-get($Scale, 'xxl'); // φ^3 medium size
+      height: map-get($Scale, 'xxl');
+      font-size: map-get($FontSizes, 'h5');
+      margin-bottom: map-get($Scale, 'lg'); // φ^1 spacing
+      box-shadow: 0 6px 16px rgba($ColorCharcoal, 0.18), inset 0 1px 3px rgba(255,255,255,0.12);
+    }
+    
+    @include Respond('large') {
+      width: map-get($Scale, 'xxxl'); // φ^4 desktop size
+      height: map-get($Scale, 'xxxl');
+      font-size: map-get($FontSizes, 'h4');
+      box-shadow: 0 8px 20px rgba($ColorCharcoal, 0.2), inset 0 1px 4px rgba(255,255,255,0.15);
+    }
+    
+    // Enhanced accent ring with subtle animation
+    &::after {
+      content: '';
+      position: absolute;
+      top: -#{map-get($Scale, 'xs')}; // φ^-2 offset
+      left: -#{map-get($Scale, 'xs')};
+      right: -#{map-get($Scale, 'xs')};
+      bottom: -#{map-get($Scale, 'xs')};
+      border: 2px solid rgba($ColorConcrete, 0.6);
+      border-radius: 50%;
+      opacity: 0.5;
+      transition: all 0.25s ease-out;
+    }
+    
+    // Sophisticated hover state
+    &:hover {
+      transform: scale(1.05) translateY(-1px);
+      box-shadow: 0 12px 30px rgba($ColorCharcoal, 0.25), inset 0 2px 5px rgba(255,255,255,0.2);
+      background: linear-gradient(135deg, rgba($ColorCharcoal, 1.05) 0%, $ColorCharcoal 100%);
+      
+      &::after {
+        opacity: 0.8;
+        border-color: rgba($ColorConcrete, 0.9);
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  h3 {
+    font-size: map-get($FontSizes, 'body'); // Smaller mobile size
+    margin-bottom: map-get($Scale, 'xs'); // φ^-2 mobile spacing
+    color: $ColorCharcoal;
+    word-wrap: break-word; // Prevent text overflow
+    hyphens: auto; // Allow hyphenation
+    max-width: 100%; // Constrain width
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'h5');
+      margin-bottom: map-get($Scale, 'sm'); // φ^-1 spacing
+    }
+    
+    @include Respond('large') {
+      font-size: map-get($FontSizes, 'h4');
+      margin-bottom: map-get($Scale, 'base'); // φ^0 spacing
+    }
+    
+    // Remove the default heading accent line
+    &::before {
+      display: none;
+    }
+  }
+  
+  p {
+    color: $ColorConcrete;
+    line-height: map-get($LineHeight, 'normal');
+    font-size: map-get($FontSizes, 'small'); // Smaller mobile text
+    word-wrap: break-word; // Prevent text overflow
+    hyphens: auto; // Allow hyphenation
+    max-width: 100%; // Constrain width
+    
+    @include Respond('medium') {
+      font-size: map-get($FontSizes, 'body');
+    }
+  }
+  
+  // Connection lines between steps (desktop only) - PROPERLY CONTAINED
+  @include Respond('large') {
+    // 3-column layout connections with proper containment
+    &:not(:nth-child(3n))::after {
+      content: '';
+      position: absolute;
+      top: calc(#{map-get($Scale, 'xl')} + #{map-get($Scale, 'xxl')} * 0.5); // Proper calc for center
+      right: calc(-1 * #{map-get($Scale, 'lg')} * 0.5); // Proper negative calculation
+      width: map-get($Scale, 'lg'); // φ^1 line length
+      height: 2px;
+      background: linear-gradient(90deg, $ColorConcrete 0%, transparent 100%);
+      opacity: 0.3;
+      pointer-events: none; // Prevent interaction issues
+      z-index: 0; // Keep behind content
+    }
+  }
+  
+  // 4-column layout connections (wide screens)
+  @media (min-width: 1300px) {
+    &:not(:nth-child(4n))::after {
+      right: -#{map-get($Scale, 'base') / 2}; // Smaller gap for 4-column
+      width: map-get($Scale, 'base'); // φ^0 line length
+    }
+    
+    // Remove 3-column specific connections  
+    &:not(:nth-child(3n))::after {
+      display: none;
+    }
+  }
+}
+
+// Enhanced Philosophy Section
+.Philosophy {
+  background: linear-gradient(135deg, $ColorWarmWhite 0%, $ColorCoolGray 50%, $ColorWarmWhite 100%);
+  padding: map-get($Scale, 'xxxl') 0; // φ^4 padding
+  position: relative;
+  
+  &-Content {
+    max-width: 80ch; // Optimal reading width
+    margin: 0 auto;
+    text-align: center;
+    
+    h2 {
+      font-size: map-get($FontSizes, 'h1');
+      margin-bottom: map-get($Scale, 'xl'); // φ^2 spacing
+      
+      @include Respond('medium') {
+        font-size: map-get($FontSizes, 'display');
+      }
+    }
+    
+    > p {
+      font-size: map-get($FontSizes, 'lead');
+      color: $ColorConcreteDark;
+      line-height: map-get($LineHeight, 'relaxed');
+      margin-bottom: map-get($Scale, 'xxl'); // φ^3 spacing before stats
+    }
+  }
+}
+
+// Featured Work Grid Enhancement
+.FeaturedWork {
+  background: $ColorWarmWhite;
+  padding: map-get($Scale, 'xxxl') 0; // φ^4 section padding
+  
+  &-Grid {
+    display: grid;
+    gap: map-get($Scale, 'xl'); // φ^2 spacing
+    margin-bottom: map-get($Scale, 'xxl'); // φ^3 spacing before actions
+    
+    @include Respond('medium') {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: map-get($Scale, 'xxl'); // φ^3 desktop spacing
+    }
+  }
+  
+  &-Actions {
+    text-align: center;
+    margin-top: map-get($Scale, 'xl'); // φ^2 top spacing
+  }
+}
+
+// Approach Section Enhancement
+.Approach {
+  background: linear-gradient(to bottom, $ColorWarmWhite 0%, $ColorCoolGray 100%);
+  padding: map-get($Scale, 'xxxl') 0; // φ^4 section padding
+  
+  &-Content {
+    max-width: 90ch; // Slightly wider for process content
+    margin: 0 auto;
+    text-align: center;
+    
+    > h2 {
+      margin-bottom: map-get($Scale, 'lg'); // φ^1 spacing
+      
+      @include Respond('medium') {
+        margin-bottom: map-get($Scale, 'xl'); // φ^2 desktop spacing
+      }
+    }
+    
+    > p {
+      font-size: map-get($FontSizes, 'lead');
+      color: $ColorConcrete;
+      line-height: map-get($LineHeight, 'relaxed');
+    }
+  }
+}

@@ -1,0 +1,169 @@
+// Base HTML Elements - Foundation Styles
+// =====================================
+// Pure HTML tag styling following golden ratio system
+
+// Universal reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+// Document foundation
+html {
+  box-sizing: border-box;
+  font-size: 18px; // Golden Ratio foundation - 18px base
+  line-height: map-get($LineHeight, 'normal');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Professional viewport management without band-aid solutions
+html, body {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  font-family: $FontBody; // Monospace for tech feel
+  font-weight: map-get($FontWeight, 'normal');
+  color: $ColorCharcoal;
+  background-color: $ColorWarmWhite;
+  font-size: map-get($FontSizes, 'body'); // φ^0 = 1rem (18px)
+  line-height: map-get($LineHeight, 'relaxed'); // More breathing room for monospace
+  letter-spacing: map-get($LetterSpacing, 'normal');
+}
+
+// Responsive media elements
+img, video, iframe, embed, object, svg {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+// Golden Ratio Typography Hierarchy - Mathematical Precision
+h1, h2, h3, h4, h5, h6 {
+  font-family: $FontDisplay; // Clean sans-serif for headings
+  font-weight: map-get($FontWeight, 'bold');
+  line-height: map-get($LineHeight, 'tight');
+  margin-bottom: map-get($Scale, 'lg'); // φ^1 spacing for breathing room
+  color: $ColorCharcoal;
+  text-align: left; // Minimal, flush left
+  letter-spacing: map-get($LetterSpacing, 'tight'); // Tighter for large sizes
+  
+  // Enhanced visual hierarchy through subtle accent lines
+  &::before {
+    content: '';
+    display: block;
+    width: map-get($Scale, 'xl'); // φ^2 accent line
+    height: 2px;
+    background: linear-gradient(90deg, $ColorConcrete 0%, transparent 100%);
+    margin-bottom: map-get($Scale, 'sm'); // φ^-1 spacing
+    opacity: 0.6;
+  }
+}
+
+// Fluid Responsive Typography - Seamless Scaling
+h1 { 
+  font-size: map-get($FluidTypography, 'h1'); // Fluid scaling with clamp()
+  margin-bottom: 1.5rem;
+}
+
+h2 { 
+  font-size: map-get($FluidTypography, 'h2'); // Fluid scaling with clamp()
+  margin-bottom: 1.25rem;
+}
+
+h3 { 
+  font-size: map-get($FluidTypography, 'h3'); // Fluid scaling with clamp()
+  margin-bottom: 1rem;
+}
+
+h4 { 
+  font-size: map-get($FluidTypography, 'h4'); // Fluid scaling with clamp()
+  margin-bottom: 0.75rem;
+  
+  // Remove accent line for smaller headings
+  &::before {
+    display: none;
+  }
+}
+
+h5, h6 {
+  &::before {
+    display: none;
+  }
+}
+
+// Body Text - Swiss Standards
+p {
+  margin-bottom: map-get($Spacing, 'base');
+  text-align: left; // Flush left, ragged right
+  line-height: map-get($LineHeight, 'normal');
+}
+
+// Links - Minimal, Professional
+a {
+  color: $ColorCharcoal;
+  text-decoration: underline;
+  text-decoration-color: $ColorConcrete;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: map-get($Transition, 'medium');
+  
+  &:hover {
+    color: $ColorConcrete;
+    text-decoration-color: $ColorCharcoal;
+  }
+}
+
+// Lists - Geometric Alignment
+ul, ol {
+  margin-bottom: map-get($Spacing, 'base');
+  padding-left: map-get($Spacing, 'lg');
+}
+
+li {
+  margin-bottom: map-get($Spacing, 'xs');
+}
+
+// Images - Full-bleed Geometry
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Minimal Dividers
+hr {
+  border: none;
+  height: 1px;
+  background-color: $ColorConcreteLight;
+  margin: map-get($Spacing, 'xl') 0;
+}
+
+// Code - Monospace Functionality  
+code, pre {
+  font-family: $FontMono;
+  font-size: map-get($FontSizes, 'small');
+  background-color: $ColorCoolGray;
+  color: $ColorCharcoal;
+  padding: map-get($Spacing, 'xs');
+}
+
+pre {
+  display: block;
+  margin-bottom: map-get($Spacing, 'base');
+  padding: map-get($Spacing, 'base');
+  overflow-x: auto;
+  
+  // Prevent text from causing horizontal scroll
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}

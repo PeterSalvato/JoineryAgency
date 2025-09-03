@@ -1,0 +1,56 @@
+// Responsive Design System
+// ========================
+
+// Breakpoint System
+$Breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px
+);
+
+// Responsive Mixin
+@mixin Respond($breakpoint, $type: 'min') {
+  @if map-has-key($Breakpoints, $breakpoint) {
+    @if $type == 'max' {
+      @media (max-width: #{map-get($Breakpoints, $breakpoint) - 1px}) {
+        @content;
+      }
+    } @else {
+      @media (min-width: map-get($Breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  }
+}
+
+// Mobile-first responsive mixin aliases
+@mixin mobile {
+  @include Respond('small', 'max') {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include Respond('medium') {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include Respond('large') {
+    @content;
+  }
+}
+
+// Container Mixin
+@mixin Container($maxWidth: 1200px) {
+  width: 100%;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 map-get($Spacing, 'base');
+  
+  @include Respond('medium') {
+    padding: 0 map-get($Spacing, 'lg');
+  }
+}

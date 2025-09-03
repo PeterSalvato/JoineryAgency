@@ -16,8 +16,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Directory Structure
 - `/agents/` - 28 specialist agent definitions with proven methodologies
+- `/production/` - Production department with manager and 6 production agents
 - `/docs/` - System documentation and implementation guides
 - `/research/` - Research materials and planning documents
+- `/sessions/` - Session persistence and planning continuity
 
 ### Agent Categories
 1. **Business Strategy & Sales** (8 agents) - Sales, pricing, proposals, client management
@@ -28,8 +30,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Status
 
-**Current Phase**: Persona-based consultation using expert methodologies
-**Future**: Enhanced with genuine capabilities (image processing, code generation, validation tools)
+**Current Phase**: Complete consultation and production system operational
+**Consultation Layer**: 28 specialist agents providing expert methodologies
+**Production Department**: 6 production agents executing recommendations through coordinated workflows
 
 ## Key Expert Methodologies
 
@@ -76,18 +79,32 @@ npm list -g --depth=0 | grep -E "(playwright|context7|sourcegraph|sequential|thi
 
 ## Usage Guidelines
 
-### Agent Consultation Model
-1. **User identifies need** - Specific challenge or domain expertise required
-2. **Agent selection** - Choose the most relevant specialist for the challenge
-3. **Focused consultation** - Agent provides actionable advice using proven methodology
-4. **User implementation** - User decides which recommendations to apply
-5. **Follow-up available** - Additional specialists can be consulted as needed
+### Consultation and Production Workflow
+1. **Consultation Phase**
+   - User identifies specific challenge or domain expertise required
+   - Select appropriate specialist consultant agent
+   - Agent provides actionable advice using proven methodology
+2. **Production Phase** 
+   - User requests production implementation of consultant recommendations
+   - Production Manager receives request and routes to appropriate production agents
+   - Production agents execute tasks with standardized YAML interfaces
+3. **Delivery**
+   - Production system delivers complete implementation from code to deployment
+   - Quality assurance and performance optimization included
 
-### How to Request Agent Consultation
+### How to Request Services
+
+#### Consultation Requests
 - Be specific about the challenge or domain you need guidance on
 - Request individual specialists rather than multiple agents at once
 - Implement recommendations selectively based on your specific context
 - Follow up with additional specialists as needed for complex projects
+
+#### Production Requests
+- Provide consultant recommendations or detailed specifications
+- Production Manager automatically routes to appropriate production agents
+- System handles multi-agent coordination and standardized interfaces
+- Expect complete deliverables from concept to deployment
 
 ### Agent Selection Examples
 - **Pricing challenges**: pricing-strategist (Becca Luna methodology)
@@ -130,28 +147,40 @@ Each agent file includes:
 
 ## Future Roadmap
 
-### Phase 1: Persona Consultation (Current)
-- ✅ 28 specialist agent definitions complete
+### Phase 1: Consultation System (Complete)
+- ✅ 28 specialist agent definitions with expert methodologies
 - ✅ On-demand consultation model established
 - ✅ MCP integration for enhanced capabilities
 
-### Phase 2: Enhanced Capabilities
-- Image processing for mockup analysis
-- Code generation capabilities  
-- Real-time validation tools
-- Automated quality assurance
+### Phase 2: Production System (Complete)
+- ✅ Production Manager with task routing and coordination
+- ✅ 6 specialized production agents with standardized interfaces
+- ✅ End-to-end workflow from consultation to deployment
+- ✅ Quality assurance and performance optimization
 
-### Phase 3: Integration
-- Seamless mockup-to-site pipeline
-- Multi-agent coordination for complex projects
-- Professional output standards automation
+### Phase 3: System Integration (Complete)
+- ✅ Seamless mockup-to-site pipeline operational
+- ✅ Multi-agent coordination for complex projects
+- ✅ Professional output standards automation
+- ✅ Complete consultation and execution system
+
+### Future Enhancements
+- Advanced image processing for mockup analysis
+- Real-time design validation and testing
+- Enhanced AI capabilities integration
+- Expanded service offerings and specializations
 
 ## Implementation Notes
 
-This is a **consultation-based AI agency**, not a code generation system. The focus is on providing expert domain knowledge and strategic guidance through specialized agent personas, enhanced with MCP capabilities for deeper analysis and systematic thinking.
+This is a **complete AI-powered design consultancy** combining consultation and execution capabilities. The system provides expert domain knowledge through specialized consultant agents, then executes recommendations through a coordinated production department.
+
+### System Architecture
+- **Consultation Layer**: 28 specialist agents provide expert methodologies and strategic guidance
+- **Production Layer**: Production Manager coordinates 6 production agents for execution
+- **Integration**: Standardized YAML interfaces ensure seamless consultant-to-production workflows
 
 When working with this system, prioritize:
-1. Clear identification of domain expertise needed
-2. Selection of appropriate specialist agents
-3. Implementation of proven methodologies
-4. User-directed decision making on recommendations
+1. Clear identification of domain expertise needed for consultation
+2. Selection of appropriate specialist agents for advice
+3. Production requests with detailed specifications or consultant recommendations
+4. Quality assurance through standardized production processes

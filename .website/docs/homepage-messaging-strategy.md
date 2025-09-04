@@ -4,6 +4,54 @@
 **Context**: Strategic messaging development for homepage positioning  
 **Core Challenge**: Communicating "systems of systems" value without technical jargon
 
+## Project Goal
+**Transform our landing page to achieve 40-60% conversion rates by implementing these conversion fundamentals.**
+
+### Key Requirements
+
+#### Performance Optimization
+- **Target**: 1-second load time maximum
+- Use Google Lighthouse for testing
+- Replace heavy assets with lighter alternatives
+- Every second of delay costs 10-15% of traffic
+
+#### Call-to-Action Strategy
+- Implement low-friction CTAs (e.g., "Try for free", "Take a look around")
+- Avoid asking for payment immediately
+- For demo cycles: create incentives to encourage demo signups
+
+#### Above-the-Fold Optimization
+- Clear header explaining what we do in 1-2 sentences
+- Body copy that expands on the value proposition
+- Hint at our ICP (ideal customer profile)
+- Include simple, low-friction CTA
+- Add product image or contextual visual
+
+#### Social Proof Implementation
+- For new companies: Use industry quotes from thought leaders
+- Display investor logos if applicable
+- Collect and showcase user testimonials (text and video)
+- Continuously gather testimonials from all users
+
+#### Demo/Product Walkthrough
+- Create simple Loom video explanation
+- Personal introduction building trust
+- Quick product walkthrough
+- No need for expensive high-production videos
+
+#### Modern Branding & Design
+- Ensure contemporary, professional appearance
+- Match branding to target audience
+- Use quality website templates if design isn't a strength
+- Leverage AI tools for better design assets
+- Avoid clipart - use quality images
+
+#### Target Audience Clarity
+- Make it clear who the product is for (and who it's not for)
+- Use industry-specific language and terminology
+- Be highly specific rather than trying to appeal to everyone
+- Example: "influencer marketing managers at DTC companies doing $5M+ revenue"
+
 ## Strategic Evolution
 
 ### Initial Direction (Rejected)

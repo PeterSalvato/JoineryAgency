@@ -1,237 +1,59 @@
-# CLAUDE.md
+# CLAUDE.md - Agency Office Hub
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+**This repository is the central office space for Joinery Systemworks - an AI-powered design consultancy. All agency operations, standards, and client work are coordinated from here.**
 
-## 🚨 MANDATORY REQUIREMENTS - BLOCKING RULES
+## 🚨 COLLABORATION PROTOCOL
 
-### Essential Files - READ THESE FIRST OR FAIL
-- **CURRENT_PLANNING.md** - Contains active planning context and decisions (REQUIRED)
-- **docs/conventions.md** - Development standards and agent requirements (REQUIRED)  
-- **docs/symbol-index.md** - Comprehensive system mapping for agent reference (REQUIRED)
+### 🔥 MANDATORY: Read Documentation First
+**Before ANY task or discussion:**
 
-### 🚨 CRITICAL: MANDATORY Documentation Updates
-**BLOCKING REQUIREMENT**: These documentation updates are NOT OPTIONAL
+1. **CHECK** `git status` and recent file changes to catch any planning updates
+2. **READ** the relevant documentation completely (including any recent untracked/modified files)
+3. **DEMONSTRATE** understanding by summarizing key points  
+4. **VALIDATE** your approach matches existing patterns
+5. **PROCEED** only after confirmation
 
-#### Documentation Update Rules (MANDATORY)
-1. **CURRENT_PLANNING.md Updates - REQUIRED**:
-   - ✅ **ALWAYS document** any planning decisions, architectural changes, or session progress
-   - ✅ **ALWAYS update** when completing tasks or making system modifications
-   - ✅ **ALWAYS maintain** session continuity information with current status
-   - ❌ **NEVER** make planning decisions without documenting them
-   - ❌ **NEVER** end planning sessions without updating current status
+**Never say "Oh I didn't see that" - this indicates failed validation**
 
-2. **docs/conventions.md Updates - REQUIRED**:
-   - ✅ **ALWAYS update** when establishing new development standards
-   - ✅ **ALWAYS document** new agent requirements or architectural patterns
-   - ✅ **ALWAYS maintain** consistent standards across all agent work
-   - ❌ **NEVER** create new conventions without documenting them
-   - ❌ **NEVER** deviate from documented conventions without updating them
+## 📋 Essential Documentation (READ FIRST)
 
-3. **docs/symbol-index.md Updates - REQUIRED**:
-   - ✅ **ALWAYS update** when creating new functions, components, or systems
-   - ✅ **ALWAYS document** new agent capabilities or integration points
-   - ✅ **ALWAYS maintain** comprehensive system mapping for agent reference
-   - ❌ **NEVER** create new code without updating symbol index
-   - ❌ **NEVER** modify system architecture without documenting changes
+### Agency Operations
+- **`/CURRENT_PLANNING.md`** - Current session context and active decisions
+- **`/docs/conventions.md`** - Development standards and coding requirements
+- **`/docs/symbol-index.md`** - System architecture and component relationships
 
-#### Enforcement Pattern - MANDATORY
-- **Before any architectural decision**: Check if documentation update required
-- **After any implementation**: Update appropriate documentation files  
-- **End of any planning session**: Update CURRENT_PLANNING.md with status and next steps
-- **Creation of new code**: Update symbol-index.md with new elements
-- **Any convention changes**: Update docs/conventions.md immediately
+### Client Work  
+- **`/projects/`** - All client projects with individual CLAUDE.md dispatch files
+- Each client project has its own conventions, symbols, and planning docs
 
-## Project Overview
+### Website Development
+- **`/.website/`** - Agency website with its own documentation system
+- **`/.website/docs/`** - Website-specific planning and conventions
 
-**Mockup-to-Site AI Agency** - An AI-powered design consultancy staffed with specialized agents that transform design mockups into professional, production-ready websites. Each agent embodies proven expert methodologies from industry leaders to provide domain-specific consultation and guidance.
+## 🔄 Documentation Maintenance Protocol
 
-## Architecture & Structure
+### Update Requirements
+**MANDATORY**: Update documentation for any changes to standards, architecture, or planning
+- Planning decisions → Update `CURRENT_PLANNING.md` with **summary + link to detailed doc**
+- Development standards → Update `docs/conventions.md`  
+- New code/components → Update `docs/symbol-index.md`
+- **Detailed planning docs encouraged** - but must be indexed in main planning file
 
-### Agent System
-- **28 specialized AI agents** organized by domain expertise
-- **Consultation model** - agents provide focused advice when specifically requested
-- **Expert methodologies** - each agent based on proven practitioners (Chris Do, Don Norman, etc.)
-- **Stateless design** - agents are persona-based consultants, not persistent systems
+**CURRENT_PLANNING.md = session index, not comprehensive planning document**
 
-### Directory Structure
-- `/agents/` - 28 specialist agent definitions with proven methodologies
-- `/production/` - Production department with manager and 6 production agents
-- `/.website/` - Clean PHP/SCSS website for integration with AI system
-- `/docs/` - System documentation and implementation guides
-- `/research/` - Research materials and planning documents
-- `/CURRENT_PLANNING.md` - **CRITICAL**: Active planning state and session continuity
+## 🏢 What This Office Contains
 
-### Agent Categories
-1. **Business Strategy & Sales** (8 agents) - Sales, pricing, proposals, client management
-2. **Design & Visual** (6 agents) - Visual design, branding, photography, illustration
-3. **Technical & Architecture** (5 agents) - Frontend, responsive design, performance, accessibility
-4. **Content & Communication** (5 agents) - Copywriting, content strategy, marketing
-5. **Analysis & Operations** (4 agents) - User research, competitive analysis, project management
+**Project Type**: AI-powered design consultancy with consultation + production capabilities
+**Your Role**: Development assistant following established patterns and documentation
+**Key Principle**: All detailed information lives in specialized docs - CLAUDE.md just points you to them
 
-## Development Status
+## 🚀 Getting Started
 
-**Current Phase**: Complete consultation and production system operational
-**Consultation Layer**: 28 specialist agents providing expert methodologies
-**Production Department**: 6 production agents executing recommendations through coordinated workflows
+1. **Read** `CURRENT_PLANNING.md` for current session context
+2. **Check** `docs/conventions.md` for development standards  
+3. **Review** `docs/symbol-index.md` for system architecture
+4. **Follow** the validation protocol above
 
-## Key Expert Methodologies
+---
 
-### Chris Do (The Futur)
-- **Agents**: sales-specialist, proposal-specialist, client-discovery-specialist  
-- **Focus**: Value-based selling, client psychology, business strategy
-
-### Don Norman (Human-Centered Design)
-- **Agents**: ux-interaction-specialist
-- **Focus**: Usability principles, cognitive psychology, accessibility
-
-### Becca Luna (Menu-Based Pricing)
-- **Agents**: pricing-strategist
-- **Focus**: Service packaging, pricing psychology, conversion optimization
-
-### Paula Scher (Pentagram)
-- **Agents**: brand-designer
-- **Focus**: Visual identity systems, brand development
-
-### Massimo Vignelli (Systematic Design)
-- **Agents**: visual-design-specialist
-- **Focus**: Typography, grid systems, mathematical proportions
-
-## MCP Integration
-
-This project integrates with Model Context Protocol (MCP) servers to enhance agent capabilities:
-
-### Available MCP Tools
-- **@playwright/mcp** - Real-time design validation and interactive testing
-- **@upstash/context7-mcp** - Project memory and session continuity  
-- **sourcegraph-mcp-server** - Code intelligence and pattern analysis
-- **@modelcontextprotocol/server-sequential-thinking** - Multi-step problem solving
-- **sequential-thinking-mcp** - Adaptive reasoning and complex analysis
-
-### MCP Setup
-```bash
-# Install globally
-npm install -g @playwright/mcp @upstash/context7-mcp sourcegraph-mcp-server
-npm install -g @modelcontextprotocol/server-sequential-thinking sequential-thinking-mcp
-
-# Verify installation
-npm list -g --depth=0 | grep -E "(playwright|context7|sourcegraph|sequential|thinking)"
-```
-
-## Usage Guidelines
-
-### Consultation and Production Workflow
-1. **Consultation Phase**
-   - User identifies specific challenge or domain expertise required
-   - Select appropriate specialist consultant agent
-   - Agent provides actionable advice using proven methodology
-2. **Production Phase** 
-   - User requests production implementation of consultant recommendations
-   - Production Manager receives request and routes to appropriate production agents
-   - Production agents execute tasks with standardized YAML interfaces
-3. **Delivery**
-   - Production system delivers complete implementation from code to deployment
-   - Quality assurance and performance optimization included
-
-### How to Request Services
-
-#### Consultation Requests
-- Be specific about the challenge or domain you need guidance on
-- Request individual specialists rather than multiple agents at once
-- Implement recommendations selectively based on your specific context
-- Follow up with additional specialists as needed for complex projects
-
-#### Production Requests
-- Provide consultant recommendations or detailed specifications
-- Production Manager automatically routes to appropriate production agents
-- System handles multi-agent coordination and standardized interfaces
-- Expect complete deliverables from concept to deployment
-
-### Agent Selection Examples
-- **Pricing challenges**: pricing-strategist (Becca Luna methodology)
-- **Sales issues**: sales-specialist (Chris Do methodology) 
-- **Design problems**: visual-design-specialist (Massimo Vignelli approach)
-- **UX concerns**: ux-interaction-specialist (Don Norman principles)
-- **Brand development**: brand-strategist or brand-designer
-- **Technical architecture**: frontend-architecture-specialist
-
-## Agent File Structure
-
-Each agent file includes:
-- **Overview**: Agent purpose and methodology basis
-- **Triggers**: When to consult this specialist
-- **Core Expertise**: Key knowledge areas and capabilities
-- **Use When**: Specific scenarios and example requests
-- **Methodology**: Underlying framework and approach
-- **Key Frameworks**: Specific tools and techniques
-
-## Development Principles
-
-### Agent Development
-- Base agents on proven expert methodologies, not generic AI advice
-- Define clear triggers and use cases for each specialist
-- Maintain focus on specific domain expertise
-- Test with real consultation scenarios
-
-### Planning & Session Continuity
-- **CRITICAL**: Always read `CURRENT_PLANNING.md` at session start to understand current state and context
-- **MANDATORY**: When planning or strategy sessions begin, immediately document the context in `CURRENT_PLANNING.md`
-- Update planning documentation continuously throughout the session
-- Document decisions, next steps, and current state to prevent loss of progress
-- Use git commits to preserve planning milestones and major decisions
-- **CONTEXT REQUIRED**: `CURRENT_PLANNING.md` contains the complete business architecture, integration strategy, and current focus areas
-
-### Quality Standards
-- Professional consultation quality in all agent responses
-- Actionable, specific recommendations based on established frameworks
-- Clear delineation between different specialist domains
-- Consistency with expert methodologies and approaches
-
-## Future Roadmap
-
-### Phase 1: Consultation System (Complete)
-- ✅ 28 specialist agent definitions with expert methodologies
-- ✅ On-demand consultation model established
-- ✅ MCP integration for enhanced capabilities
-
-### Phase 2: Production System (Complete)
-- ✅ Production Manager with task routing and coordination
-- ✅ 6 specialized production agents with standardized interfaces
-- ✅ End-to-end workflow from consultation to deployment
-- ✅ Quality assurance and performance optimization
-
-### Phase 3: System Integration (Complete)
-- ✅ Seamless mockup-to-site pipeline operational
-- ✅ Multi-agent coordination for complex projects
-- ✅ Professional output standards automation
-- ✅ Complete consultation and execution system
-
-### Future Enhancements
-- Advanced image processing for mockup analysis
-- Real-time design validation and testing
-- Enhanced AI capabilities integration
-- Expanded service offerings and specializations
-
-## Implementation Notes
-
-This is a **complete AI-powered design consultancy** combining consultation and execution capabilities. The system provides expert domain knowledge through specialized consultant agents, then executes recommendations through a coordinated production department.
-
-### System Architecture
-- **Consultation Layer**: 28 specialist agents provide expert methodologies and strategic guidance
-- **Production Layer**: Production Manager coordinates 6 production agents for execution
-- **Integration**: Standardized YAML interfaces ensure seamless consultant-to-production workflows
-
-When working with this system, prioritize:
-1. **Read `CURRENT_PLANNING.md` first** - Essential context for current state and objectives
-2. Clear identification of domain expertise needed for consultation
-3. Selection of appropriate specialist agents for advice
-4. Production requests with detailed specifications or consultant recommendations
-5. Quality assurance through standardized production processes
-
-## Essential Files to Check
-
-### Before Starting Any Work:
-- **`CURRENT_PLANNING.md`** - Contains complete business architecture, integration strategy, and current focus
-- **`/.website/`** - PHP/SCSS website ready for AI system integration
-- **`/docs/conventions.md`** - **CRITICAL**: Development standards, coding rules, and AI agent requirements
-- **`/docs/symbol-index.md`** - Complete system mapping and component reference for AI agents
-- **Directory overview** - Understand system components and current development status
+***All project details, methodologies, agent information, and technical specifications are documented in the specialized files listed above. This dispatch document just tells you where to find them.***
